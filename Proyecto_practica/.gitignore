@@ -1,0 +1,2 @@
+# Lista de carpetas/archivos que no serán cargados en la nube
+node_modules
