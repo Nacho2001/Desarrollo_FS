@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let coleccion = []
+    let cont = 0
+do { // Ingresa numeros hasta que el usuario ingrese 0
+    var rta = parseInt(prompt("Ingresa un número"))
+    coleccion[cont] = rta
+    cont=cont+1
+} while (rta != 0); // Cuando ingresa 0, ya no pide más numeros
+let CopiaColeccion = coleccion.slice() // crea una copia del arreglo
+let menor = coleccion[0] // Crea la variable menor que inicialmente toma el primer valor del arreglo original
+for (let i = 0; i < coleccion.length; i++) { // Para cada número del arreglo coleccion...
+    for (let i2 = 0; i2 < CopiaColeccion.length; i2++) { // Recorre la copia del arreglo ...
+        if (coleccion[i] < CopiaColeccion[i2]) { // Para comparar con cada valor y saber cual es menor
+            menor = coleccion[i] // Al menor lo carga en la variable "menor" ...
+        }   
+    }
+    document.write(menor+", ") // La cual se imprime por pantalla
+    CopiaColeccion=CopiaColeccion.splice(i) // y es eliminada del arreglo copia para continuar con el seguiente valor más bajo
+}
+</script> <!-- consultar-->

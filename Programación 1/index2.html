@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Realice un algoritmo que permita determinar el sueldo semanal de un
+        trabajador con base en las horas trabajadas y el pago por hora,
+        considerando que a partir de la hora número 41 y hasta la 45, cada hora se
+        le paga el doble, de la hora 46 a la 50, el triple, y que trabajar más de 50
+        horas no está permitido. */
+        let horasTrabajadas = parseInt(prompt("Ingrese las horas de trabajo"))
+        let valorHora = parseInt(prompt("Ingrese el valor de la hora"))
+        if (horasTrabajadas <= 40) {
+            resultado = horasTrabajadas*valorHora
+        }
+        if (horasTrabajadas > 40 && horasTrabajadas <=45) {
+            horasExtras = horasTrabajadas-40
+            resultado = 40*valorHora + horasExtras*2*valorHora
+        }
+        if (horasTrabajadas > 45 && horasTrabajadas <=50) {
+            horasExtras = horasTrabajadas-45
+            resultado = 40*valorHora + 5*2*valorHora+horasExtras*3*valorHora
+        }
+        if (horasTrabajadas > 50) {
+            resultado="No se puede trabajar en esas condiciones"
+        }
+        document.write("El salario es: $"+resultado)
+        // << Contenido fuera del script >>
+
+        /*const numero = 0
+        let letra = ""
+        var booleano = true
+        document.write(numero)
+        console.log()
+        innerHtml.innerhtml*/
+    </script>
+</body>
+</html>

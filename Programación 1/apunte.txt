@@ -1,0 +1,42 @@
+06/06/2022
+
+Para aplicar un cambio de estilo sencillo, es conveniente utilizar <p style> y así le aplica un estilo aplica
+un estilo a la etiqueta p.
+
+También se puede utilizar una etiqueta <style>:
+   /* <style>
+        p{
+            font-size: 50px;
+            color: brown;
+            background-color: aqua;
+        }
+    </style> */
+
+De esta manera, la proxima estiqueta <p> tendrá este estilo
+
+La ultima opción es utilizar una hoja de estilo y luego linkearla desde el html
+<link rel="stylesheet" href="hoja_estilo.css">
+stylesheet indica hoja de estilo, y href señala el archivo
+
+Contenido de la hoja:
+p{ 
+    font-size: 50px;
+    color: brown;
+    background-color: aqua;
+}
+// Estilo a la etiqueta <p>
+
+body{
+    background-color: aquamarine;
+}
+// Cambio el color de fondo del body
+
+#parrafo{
+    color: aliceblue;
+}
+// A lo que tenga id "parrafo"; el # es para indicar id
+
+.class{
+    color: aquamarine
+}
+// Con esto, se crea una clase con este estilo

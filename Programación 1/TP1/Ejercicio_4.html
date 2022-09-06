@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> // Se debe calcular cuánto debe pagar el usuario en base a las horas de estacionamiento
+            // y el costo por hora
+        let valorXhora = parseFloat(prompt("Escriba cuánto vale 1 hora de estacionamiento:"))
+        let horasEstacionamiento = parseInt(prompt("Cuántas horas lleva el vehículo estacionado?"))
+        let total = valorXhora*horasEstacionamiento
+        document.write("El total a pagar es de $"+total.toFixed(2))
+    </script>
+</body>
+</html>

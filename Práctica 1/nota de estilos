@@ -1,0 +1,11 @@
+clases de div: 
+    container
+    row
+Tamaños:
+columnas -> col-3, col-6. Puede ser hasta 12, si el total de las columnas supera el 12, la ultima columna
+ se enviará abajo
+
+col-md-6: columna tamaño 6 en pantallas medianas y grandes
+
+bg-color: color del fondo ej: bg-primary (fondo de color azul claro)
+text-color: color del texto

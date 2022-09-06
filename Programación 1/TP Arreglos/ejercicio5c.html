@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5c</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let lista = []
+    let rta = 0
+    do {
+        rta = prompt("Ingresa un nro")
+        lista.push(rta)
+    } while (rta != 0);
+    lista.pop()
+    lista.forEach(n => {
+        document.write(n+", ")
+    });
+    let lista2 =[]
+    let num = prompt("Ingresar otro nro: ")
+    for (let i = 0; i < lista.length; i++) {
+        if (lista[i] < num) {
+            lista2.push(lista[i])
+        }
+    }
+    document.write("<br>")
+    for (let n of lista2) {
+        document.write(n+", ")
+    }
+</script>
+</html>

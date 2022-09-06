@@ -1,0 +1,13 @@
+// Crear un arreglo vacío con X longitud:
+
+let array = new array(3)
+// Nuevo arreglo con longitud 3
+array.length // 3
+
+// Acceder al último elemento de un array:
+let ultimo = array[array.length-1] // Ultimo_elemento
+
+//Recorrer un array
+array.forEach(function(elemento,indice,array) { // recorre el array
+    console.log(elemento,indice) // y por cada elemento imprime el elemento y su nro en el indice por consola
+})

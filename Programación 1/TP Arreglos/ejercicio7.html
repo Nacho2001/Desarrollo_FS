@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let lista = [1,2,3,2,4,2,5,1,6,8,5,9]
+    let num = parseFloat(prompt("Cual número solicita?"));
+    let rep = 0
+    for (let index = 0; index < lista.length; index++) {
+        if (num == lista[index]) {
+            rep=rep+1
+        }
+    }
+    document.write(`El valor ${num} se repite ${rep-1}, se encuentra ${rep} vez/veces`)
+</script>
+</html>

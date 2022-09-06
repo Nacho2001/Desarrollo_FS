@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5a</title>
+</head>
+<body>
+    
+</body>
+<script> // Consultar: por que no muestra valores superiores al nro eliminado
+    let lista = []
+    let rta = 0
+    do {
+        rta = prompt("Ingresa un nro")
+        lista.push(rta)
+    } while (rta != 0);
+    lista.pop()
+    lista.forEach(n => {
+        document.write(n+", ")
+    });
+    let rta2 = 0
+    rta2 = prompt("Ahora ingresa el valor a eliminar: ")
+    for (let i = 0; i < lista.length; i++) {
+        if (rta2 == lista[i]) {
+            lista.splice(i)
+        }
+    }
+    document.write("<br>")
+    for (let n of lista) {
+        document.write(n+", ")        
+    }
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5d</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let lista = []
+    let rta = 0
+    do {
+        rta = prompt("Ingresa un nro")
+        lista.push(rta)
+    } while (rta != 0);
+    lista.pop()
+    lista.forEach(n => {
+        document.write(n+", ")
+    });
+    let nuevaLista = []
+    for (let i = 0; i < lista.length; i++) {
+        let c = 0
+        for (let i2 = 0; i2 < lista.length; i2++) {
+            if (parseFloat(lista[i]) == parseFloat(lista[i2])) {
+                c=c+1
+            }
+        }
+        nuevaLista.push("["+lista[i]+","+c+"]")
+    } 
+    /*for (let i3 = 0; i3 < nuevaLista.length; i3++) { // Elimina elementos duplicados de nuevaLista
+        for (let i4 = 1; i4 < nuevaLista.length; i4++) {
+            if (nuevaLista[i3] == nuevaLista[i4]) {
+                nuevaLista.splice(i4)
+            }      
+        }
+    }*/
+    document.write("<br>"+ nuevaLista)
+</script>
+</html>

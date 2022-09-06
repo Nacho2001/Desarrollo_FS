@@ -1,0 +1,31 @@
+Al obtener un dato que no será modificado, es conveniente guardarlo en una constante const, ya que ocupa menos
+ espacio que una variable let
+
+diferencia entre do while y while do:
+    do while: realiza las acciones del bucle al menos 1 vez y luego realiza la comparacion
+    while do: realiza la comparación y de acuerdo a la condicion, entra en el bucle o no
+
+array.prototipe.filter()
+    Crea un nuevo arreglo con los valores de un arreglo primario que cumplan alguna condicion
+
+array.prototypef.ind()
+    Encuentra el primer valor del array primario que cumpla con x condicion
+
+array.prototipe.findInde(): Encuentra un valor pero devuelve el nro del indice
+
+array.prototype.lastIndexof() devuelve el ultimo elemento del array primario que sea igual a un elemento buscado
+
+array.prototype.pop(): Borra el ultimo elemento del array y lo devuelve por pantalla
+
+array.prototype.push(): Ingresa un elemento al final del arreglo
+
+array.prototype.reverse(): Devuelve el mismo array con los elementos en orden invertido
+
+array.prototype.slice(): Extrae una parte de un arreglo primario y lo suma a uno nuevo
+
+array.prototype.sort(): Ordena los elementos de un array, devolviendo el array original con los elementos
+ en un orden diferente
+
+array.prototype.splice(): Añade, borra o modifica elementos de un array
+
+Matriz unidimensional: Permite crear muchos arreglos dentro de uno primario

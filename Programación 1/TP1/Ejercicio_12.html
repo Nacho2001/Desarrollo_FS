@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio_12</title>
+</head>
+<body>
+    <script>
+        let precio_final = 0 //Valor inicial de precio_final
+        let precio = parseFloat(prompt("Ingrese el precio"))
+        let condicion = prompt("Desea pagar con efectivo o débito (si/no)")
+        if (condicion=="si"){
+            let precio_descuento = precio-precio*0.20
+            precio_final = precio_descuento+precio_descuento*0.21
+            document.write("El precio final es de $"+precio_final)
+        }else{
+            if (condicion=="no"){
+                precio_final = precio+precio*0.21
+                document.write("El precio final es de $"+precio_final)
+            }else{
+                alert("Valor fuera de rango")
+            }
+        }
+    </script>
+</body>
+</html>

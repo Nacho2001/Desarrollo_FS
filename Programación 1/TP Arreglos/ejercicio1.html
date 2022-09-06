@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <button id="mostrar" style="margin-top: 10px" onclick="ver_valores()">Mostrar lista</button>
+</body>
+<script>
+    function ver_valores(){
+        let valor = 1
+        let lista = []
+        do {
+            lista.push(valor)
+            valor = valor+1       
+        } while (valor <= 100);
+        lista.forEach(element => {
+            document.write(element+"<br>")
+        });
+    }
+</script>
+</html>

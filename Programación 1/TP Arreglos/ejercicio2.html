@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <div class="row" style="margin-left: 40px; margin-top: 20px;">
+        <label>Ingresar un nro</label><br>
+        <input id="nro">
+        <button onclick="lista()">Mostrar tabla</button>
+    </div>
+</body>
+<script>
+    function lista(){
+        let nro = parseInt(document.getElementById("nro").value);
+        let tabla = []
+        for (let index = 0; index < 10; index++) {
+            let resultado = nro*(index+1)
+            tabla.push(resultado)
+            document.write(nro+"x"+index+"= "+resultado + "<br>")
+        }
+    }
+</script>
+</html>
