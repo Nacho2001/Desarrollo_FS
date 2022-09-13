@@ -16,16 +16,25 @@ do { // Ingresa numeros hasta que el usuario ingrese 0
     var rta = parseInt(prompt("Ingresa un número"))
     coleccion[cont] = rta
     cont=cont+1
-} while (rta != 0); // Cuando ingresa 0, ya no pide más numeros
-let CopiaColeccion = coleccion.slice() // crea una copia del arreglo
-let menor = coleccion[0] // Crea la variable menor que inicialmente toma el primer valor del arreglo original
-for (let i = 0; i < coleccion.length; i++) { // Para cada número del arreglo coleccion...
-    for (let i2 = 0; i2 < CopiaColeccion.length; i2++) { // Recorre la copia del arreglo ...
-        if (coleccion[i] < CopiaColeccion[i2]) { // Para comparar con cada valor y saber cual es menor
-            menor = coleccion[i] // Al menor lo carga en la variable "menor" ...
-        }   
+} while (rta != 0);// Cuando ingresa 0, ya no pide más numeros
+
+let arrayOrdenado = []
+coleccion.forEach(element => { // Recorre el arreglo original y toma un elemento del array
+    for (let index = 0; index < coleccion.length; index++) {  // Realiza nuevamente el recorrido
+        let elemento2 = coleccion[index]
+        if (elemento2 < element) { // Compara el elemento anterior con cada elemento del array
+            var menor = elemento2 // si encuentra un valor menor al elemento original, lo guarda en una variable
+        }else{
+            var menor = element // caso contrario, guarda el primer elemento como el menor
+        }
     }
-    document.write(menor+", ") // La cual se imprime por pantalla
-    CopiaColeccion=CopiaColeccion.splice(i) // y es eliminada del arreglo copia para continuar con el seguiente valor más bajo
-}
+    arrayOrdenado.push[menor] // Envia el elemento mas chico al arreglo nuevo
+    //El elemento que tomó menor lo quita del array
+    let posMenor = coleccion.indexOf(menor)
+    console.log(posMenor,menor)
+    coleccion.splice(posMenor,1)
+});
+arrayOrdenado.forEach(element => {
+    document.write(element)
+});
 </script> <!-- consultar-->

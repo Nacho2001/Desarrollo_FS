@@ -11,20 +11,18 @@
 </body>
 <script> // Consultar: por que no muestra valores superiores al nro eliminado
     let lista = []
-    let rta = 0
-    do {
-        rta = prompt("Ingresa un nro")
+    do { // Ingresa números hasta que se introduce un cero
+        var rta = parseInt(prompt("Ingresa un nro"));
         lista.push(rta)
     } while (rta != 0);
-    lista.pop()
+    lista.pop() // Elimina el cero del arreglo
     lista.forEach(n => {
-        document.write(n+", ")
+        document.write(n+", ") // Imprime el arreglo por pantalla
     });
-    let rta2 = 0
-    rta2 = prompt("Ahora ingresa el valor a eliminar: ")
+    let rta2 = parseInt(prompt("Ahora ingresa el valor a eliminar: "))
     for (let i = 0; i < lista.length; i++) {
         if (rta2 == lista[i]) {
-            lista.splice(i)
+            lista.splice(i,1)
         }
     }
     document.write("<br>")

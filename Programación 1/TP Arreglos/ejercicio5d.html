@@ -11,9 +11,8 @@
 </body>
 <script>
     let lista = []
-    let rta = 0
     do {
-        rta = prompt("Ingresa un nro")
+        var rta = parseInt(prompt("Ingresa un nro"));
         lista.push(rta)
     } while (rta != 0);
     lista.pop()
@@ -30,13 +29,18 @@
         }
         nuevaLista.push("["+lista[i]+","+c+"]")
     } 
-    /*for (let i3 = 0; i3 < nuevaLista.length; i3++) { // Elimina elementos duplicados de nuevaLista
-        for (let i4 = 1; i4 < nuevaLista.length; i4++) {
-            if (nuevaLista[i3] == nuevaLista[i4]) {
-                nuevaLista.splice(i4)
-            }      
+    nuevaLista.forEach(element => {
+        //console.log(element)
+        for (let i3 = 0; i3 < nuevaLista.length; i3++) {
+            let cont = 1
+            if (element = nuevaLista[i3]) {
+                cont=cont+1
+            }
+            if (cont > 1) {
+            nuevaLista.splice(nuevaLista[i3],1)
         }
-    }*/
+        }
+    });
     document.write("<br>"+ nuevaLista)
 </script>
 </html>
