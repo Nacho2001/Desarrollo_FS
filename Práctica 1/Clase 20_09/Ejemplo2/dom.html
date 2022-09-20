@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+</head>
+<body>
+    <div id="demo"></div>
+    <p id="numero">568</p>
+    <script>
+        let numero = document.getElementById("numero").value // En este punto sino se coloca el value, se trae toda la variable y muestra la linea completa por consola
+        let texto = prompt("Ingrese un texto");
+        let texto2 = prompt("Ingrese otro texto")
+        let padre = document.getElementById("demo");
+        let hijo = document.createElement("div");
+        hijo.className += 'card';
+        let nieto1 = document.createElement("div");
+        nieto1.textContent = texto;
+        nieto1.className += 'card-text';
+        let nieto2 = document.createElement("div");
+        nieto2.textContent = texto2
+        nieto2.className += 'card-text';
+        hijo.appendChild(nieto1);
+        hijo.appendChild(nieto2);
+        padre.appendChild(hijo);
+        console.log(numero)
+    </script>
+</body>
+</html>
