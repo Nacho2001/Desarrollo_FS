@@ -13,8 +13,8 @@ class Rectangulo{
     };
 
     datos_rectangulo(){
-        return `Base del rectangulo: ${base} <br>
-        Altura del rectángulo : ${altura} <br>
+        return `Base del rectangulo: `+this.base+`<br>
+        Altura del rectángulo: `+this.altura+`<br>
         Area: `+this.area()+`<br>
         Perímetro: `+this.perimetro()
     };
@@ -33,18 +33,18 @@ class Triangulo{
     };
 
     perimetro(){
-        return lado1+lado2+lado3
+        return this.lado1+this.lado2+this.lado3
     };
 
     datos_triangulo(){
         return ` Datos triángulo: <br>
-        Lado 1: ${lado1}, <br>
-        Lado 2: ${lado2}, <br>
-        Lado 3: ${lado3}, <br>
-        Base: ${base}, <br>
-        Altura: ${altura}, <br>
-        Area: `+this.area+`, <br>
-        Perímetro: `+this.perimetro
+        Lado 1: `+this.lado1+` <br>
+        Lado 2: `+this.lado2+` <br>
+        Lado 3: `+this.lado3+` <br>
+        Base: `+this.base+` <br>
+        Altura: `+this.altura+` <br>
+        Area: `+this.area()+` <br>
+        Perímetro: `+this.perimetro()
     }
 };
 class Circulo{
@@ -53,19 +53,19 @@ class Circulo{
     };
 
     area(){
-        return 3.14*Math.pow(radio,2)
+        return 3,14*Math.pow(this.radio,2)
     };
 
     perimetro(){
-        return 2*3.14*radio
+        return 2*3,14*this.radio
     };
 
     datos_circulo(){
         return `
         Datos circulo: <br>
-        Radio: ${radio},
-        Area: `+this.area+`, <br>
-        Perímetro: `+this.perimetro
+        Radio: `+this.radio+` <br>
+        Area: `+this.area()+` <br>
+        Perímetro: `+this.perimetro()
     }
 };
 
@@ -82,7 +82,7 @@ function lectura_rectangulo(){
     let base_rec = parseFloat(document.getElementById("base_rec").value);
     let altura_rec = parseFloat(document.getElementById("altura_rec").value);
     let data = new Rectangulo(base_rec,altura_rec);
-    document.getElementById("rta").innerHTML = data.datos_rectangulo;
+    document.getElementById("rta").innerHTML = data.datos_rectangulo();
 };
 
 function triangulo(){
@@ -107,7 +107,7 @@ function lectura_triangulo(){
     let lado2 = parseFloat(document.getElementById("lado2").value);
     let lado3 = parseFloat(document.getElementById("lado3").value);
     let data = new Triangulo(base_tri,altura_tri,lado1,lado2,lado3);
-    document.getElementById("rta").innerHTML = data.datos_triangulo;
+    document.getElementById("rta").innerHTML = data.datos_triangulo();
 };
 
 function circulo(){
@@ -120,7 +120,7 @@ function circulo(){
 function lectura_circulo(){
     let radio_cir = parseFloat(document.getElementById("radio_cir").value);
     let data = new Circulo(radio_cir)
-    document.getElementById("rta").innerHTML = data.datos_circulo;
+    document.getElementById("rta").innerHTML = data.datos_circulo();
 }
 
 function check_figura(){
