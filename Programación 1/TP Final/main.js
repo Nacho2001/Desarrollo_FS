@@ -31,30 +31,46 @@ class Personal{
     get pacientes(){
         return this._pacientes
     };
-}
- // Crear un metodo para agregar paciente
- //Utilizar un arreglo para mapear el arreglo de pacientes y redirigirlo a un arreglo de pacientes de x doctor
-class Doctores extends Personal{
-    constructor(nombre,apellido,matricula,pacientes,especialidad){
-        super(nombre,apellido,matricula,pacientes);
-        this.especialidad = especialidad
-    };
-    turnos_doc(){
-        // Lee el arreglo de pacientes y lee el medico que solicitó, luego lo carga en el array del medico correspondiente
+    pacientes(){
         for (let i = 0; i < personal.length; i++) {
             const medico = personal[i];
             for (let i2 = 0; i2 < pacientes.length; i2++) {
                 const paciente = pacientes[i];
                 if (paciente.medico = medico.apellido) {
-                    turnos_
+                    pacientes_med.push([paciente.apellido,paciente.nombre,paciente.turno])
                 }
             }
+            //Actualiza el objeto con los pacientes
+            doc1
+        }
+    }
+    mostrar_datos(){
+        
+    }
+}
+ // Crear un metodo para agregar paciente
+ //Utilizar un arreglo para mapear el arreglo de pacientes y redirigirlo a un arreglo de pacientes de x doctor
+class Doctores extends Personal{
+    constructor(nombre,apellido,matricula,pacientes,pacientes_med,especialidad){
+        super(nombre,apellido,matricula,pacientes,pacientes_med);
+        this.especialidad = especialidad
+    };
+    turnos(){
+        // Lee el arreglo de pacientes y lee el medico que solicitó, luego lo carga en el array del medico correspondiente
+        for (let i = 0; i < doctores.length; i++) {
+            const medico = doctores[i];
+            for (let i2 = 0; i2 < pacientes.length; i2++) {
+                const paciente = pacientes[i];
+                if (paciente.medico = medico.apellido) {
+                    this.pacientes_med = [paciente.nombre, paciente.apellido, paciente.turno]
+                }
+            }
+            //Actualiza el objeto con los pacientes
+            doc1
         }
 
-    };
-    muestra_datos_doc(){
+    }; 
 
-    }
 }
 
 class Enfermeros extends Personal{
@@ -119,11 +135,12 @@ let turnos = []
 let turno = 0
 
 // 2- Carga los objetos doctores y enfermeros al array:
-let doc1 = {nombre: "Cristian", apellido: "García", especialidad: "Cirugía", matricula: 876539}
-let doc2 = {nombre: "Marta", apellido: "Rios", especialidad: "Kinesiología", matricula: 992357}
-let enf1 = {nombre: "Luis", apellido: "Sanchez", especialidad:"Oftalmología", licenciatura:"Licenciado en oftalmología"}
-let enf2 = {nombre: "Barbara", apellido: "Muñoz", especialidad: "Cirugia", licenciatura:"Licenciada en Cirugia"}
+let doc1 = {nombre: "Cristian", apellido: "García", especialidad: "Cirugía", matricula: 876539,pacientes: []}
+let doc2 = {nombre: "Marta", apellido: "Rios", especialidad: "Kinesiología", matricula: 992357,pacientes:[]}
+let enf1 = {nombre: "Luis", apellido: "Sanchez", matricula: 628323, licenciatura:"Licenciado en kinesiologia",pacientes: []}
+let enf2 = {nombre: "Barbara", apellido: "Muñoz", matricula: 984354, licenciatura:"Licenciada en Cirugia",pacientes: []}
 personal.push(doc1,doc2,enf1,enf2)
+console.log(personal)
 
 
 // 3° Mostrar los apellidos del personal en el select
@@ -134,11 +151,11 @@ for (let i = 0; i < personal.length; i++) {
 }
 
 // Crea un arreglo para cada uno de los doctores/enfermeros
-for (let i = 0; i < personal.length; i++) {
+/*for (let i = 0; i < personal.length; i++) {
     const element = personal[i].apellido;
-    let t_$element = ["1"]
-    console.log(element)
-}
+    let turnos_$i = []
+    console.log(turnos_$i)
+}*/
 
 // Obtener los datos
 function carga(){ // Funcion que toma los datos del paciente luego de pulsar el boton
@@ -151,5 +168,10 @@ function carga(){ // Funcion que toma los datos del paciente luego de pulsar el 
     turno = turno+1
     class_paciente = new Paciente(nombreC,apellidoC,dni,f_nacimiento,medico,o_social,turno) // Enviar los datos a la clase Paciente
     class_paciente.ob_paciente()
+    // Para cada miembro ddel personal, crear un objeto con sus respectivos pacientes
+    for (let i = 0; i < personal.length; i++) {
+        const element = personal[i];
+        medenf = new Personal(element.nombre, element.apellido, element.matricula,element.pacientes)
+    }
 
 }
