@@ -31,21 +31,13 @@ class Personal{
     get pacientes(){
         return this._pacientes
     };
-    pacientes(){
-        for (let i = 0; i < personal.length; i++) {
-            const medico = personal[i];
-            for (let i2 = 0; i2 < pacientes.length; i2++) {
-                const paciente = pacientes[i];
-                if (paciente.medico = medico.apellido) {
-                    pacientes_med.push([paciente.apellido,paciente.nombre,paciente.turno])
-                }
-            }
-            //Actualiza el objeto con los pacientes
-            doc1
+    generador_turnos(){
+        // Compara el apellido del profesional solicitado con el del actual tomado por la clase, si coincide, envia un arreglo con el turno
+        if(cliente.doc_enf == this.apellido){
+            let turno = {turno: cliente.turno, apellido: cliente.apellido, nombre: cliente.nombre}
+            this.pacientes.push(turno)
+            turnos.push(turno)
         }
-    }
-    mostrar_datos(){
-        
     }
 }
  // Crear un metodo para agregar paciente
@@ -55,20 +47,11 @@ class Doctores extends Personal{
         super(nombre,apellido,matricula,pacientes,pacientes_med);
         this.especialidad = especialidad
     };
-    turnos(){
-        // Lee el arreglo de pacientes y lee el medico que solicitó, luego lo carga en el array del medico correspondiente
-        for (let i = 0; i < doctores.length; i++) {
-            const medico = doctores[i];
-            for (let i2 = 0; i2 < pacientes.length; i2++) {
-                const paciente = pacientes[i];
-                if (paciente.medico = medico.apellido) {
-                    this.pacientes_med = [paciente.nombre, paciente.apellido, paciente.turno]
-                }
-            }
-            //Actualiza el objeto con los pacientes
-            doc1
+    turnos_doc(){
+        for (let i = 0; i < turnos.length; i++) {
+            const element = turnos[i];
+            return element
         }
-
     }; 
 
 }
@@ -81,13 +64,13 @@ class Enfermeros extends Personal{
 }
 
 class Paciente{
-    constructor(nombre,apellido,dni,f_nacimiento,turno,medico,o_social){
+    constructor(nombre,apellido,dni,f_nacimiento,doc_enf,o_social,turno){
         this._nombre = nombre
         this._apellido = apellido
         this._dni = dni
         this._f_nacimiento = f_nacimiento
         this._turno = turno
-        this.medico = medico
+        this.doc_enf = doc_enf
         this._o_social = o_social
     };
     get nombre(){
@@ -97,16 +80,16 @@ class Paciente{
         return this._apellido
     };
     get dni(){
-        return dni
+        return this._dni
     };
     get f_nacimiento(){
         return this._f_nacimiento
-    }
+    };
     get turno(){
         return this._turno
     };
     get o_social(){
-        return this.o_social
+        return this._o_social
     }
     edad(){ //calculo de edad
         let f_hoy = new Date() // fecha actual
@@ -114,16 +97,29 @@ class Paciente{
         let diferencia = f_hoy.getTime() - f_nacimiento.getTime() // Realiza la resta en milisegundos
         return Math.trunc(diferencia / 31536000000) // Convierte el resultado en años y lo entrega
     }
-    ob_paciente(){ //Crea objeto paciente
-        let paciente = {nombre: this.nombre, apellido: this.apellido, dni: this.dni, fecha_nacimiento: this.f_nacimiento, edad: this.edad(), obra_social: this.o_social, turno: this.turno, medico: this.medico}
+    ob_paciente(){ //Crea objeto paciente y lo carga en arreglo
+        let paciente = {nombre: this.nombre, apellido: this.apellido, dni: this.dni, fecha_nacimiento: this.f_nacimiento, edad: this.edad(), obra_social: this.o_social, turno: this.turno, doc_enf: this.doc_enf}
         pacientes.push(paciente)
+
     }
     muestra_datos_p(){
-
+        for (let i = 0; i < pacientes.length; i++) {
+            const element = pacientes[i];
+            
+        }
+        
     }
 }
 
 //Inicio del programa
+//Traer elementos desde html
+let nombre = document.getElementById("nombre")
+let apellido = document.getElementById("apellido")
+let dni = document.getElementById("dni")
+let f_nacimiento = document.getElementById("f_nacimiento")
+let doc_enf = document.getElementById("doc_enf")
+let o_social = document.getElementById("o_social")
+
 //Definicion de arreglos
 // 1- Crear los arreglos que contendrán los datos
 let personal = []
@@ -135,43 +131,59 @@ let turnos = []
 let turno = 0
 
 // 2- Carga los objetos doctores y enfermeros al array:
-let doc1 = {nombre: "Cristian", apellido: "García", especialidad: "Cirugía", matricula: 876539,pacientes: []}
-let doc2 = {nombre: "Marta", apellido: "Rios", especialidad: "Kinesiología", matricula: 992357,pacientes:[]}
-let enf1 = {nombre: "Luis", apellido: "Sanchez", matricula: 628323, licenciatura:"Licenciado en kinesiologia",pacientes: []}
-let enf2 = {nombre: "Barbara", apellido: "Muñoz", matricula: 984354, licenciatura:"Licenciada en Cirugia",pacientes: []}
-personal.push(doc1,doc2,enf1,enf2)
-console.log(personal)
+let doc1 = {nombre: "Cristian", apellido: "García", especialidad: "Cirugía", matricula: 876539, pacientes:[]}
+let doc2 = {nombre: "Marta", apellido: "Rios", especialidad: "Kinesiología", matricula: 992357, pacientes:[]}
+doctores.push(doc1,doc2)
+let enf1 = {nombre: "Luis", apellido: "Sanchez", matricula: 628323, licenciatura:"Licenciado en kinesiologia",pacientes:[]}
+let enf2 = {nombre: "Barbara", apellido: "Muñoz", matricula: 984354, licenciatura:"Licenciada en Cirugia",pacientes:[]}
+enfermeros.push(enf1,enf2)
+personal.push(doctores,enfermeros)
+//console.log(personal)
 
 
 // 3° Mostrar los apellidos del personal en el select
-let select = document.getElementById("docenf")
 for (let i = 0; i < personal.length; i++) {
     const element = personal[i];
-    select.innerHTML += `<option value="${element.apellido}">${element.apellido}, ${element.nombre}</option>`
+    doc_enf.innerHTML += `<option value="${element.apellido}">${element.apellido}, ${element.nombre}</option>`
 }
-
-// Crea un arreglo para cada uno de los doctores/enfermeros
-/*for (let i = 0; i < personal.length; i++) {
-    const element = personal[i].apellido;
-    let turnos_$i = []
-    console.log(turnos_$i)
-}*/
-
+let cliente = {nombre: "nacho", apellido: "migoni", dni:43285976, f_nacimiento: 2001-04-07, doc_enf: "Rios", o_social:"Ipross",turno:1}
 // Obtener los datos
 function carga(){ // Funcion que toma los datos del paciente luego de pulsar el boton
-    let nombreC = document.getElementById("nombreC").value
-    let apellidoC = document.getElementById("apellidoC").value
-    let dni = document.getElementById("dni").value
-    let f_nacimiento = document.getElementById("f_nacimiento").value
-    let medico = select.value
-    let o_social = document.getElementById("o_social").value
+    nombre = nombre.value
+    apellido = apellido.value
+    dni = dni.value
+    f_nacimiento = f_nacimiento.value
+    doc_enf = doc_enf.value
+    o_social = o_social.value
     turno = turno+1
-    class_paciente = new Paciente(nombreC,apellidoC,dni,f_nacimiento,medico,o_social,turno) // Enviar los datos a la clase Paciente
+    // Enviar los datos a la clase Paciente
+    class_paciente = new Paciente(cliente.nombre,cliente.apellido,cliente.dni,cliente.f_nacimiento,cliente.doc_enf,cliente.o_social,cliente.turno)
     class_paciente.ob_paciente()
-    // Para cada miembro ddel personal, crear un objeto con sus respectivos pacientes
     for (let i = 0; i < personal.length; i++) {
         const element = personal[i];
-        medenf = new Personal(element.nombre, element.apellido, element.matricula,element.pacientes)
+        for (let index = 0; index < element.length; index++) {
+            const element2 = element[index];
+            class_personal = new Personal(element2.nombre, element2.apellido,element2.matricula,element2.pacientes)
+            class_personal.generador_turnos()
+        } 
     }
+    let confirmacion = confirm("Cargar otro paciente?")
+    if(confirmacion){
+        limpiar_campos()
+    }else{
+        class_paciente.muestra_datos_p()
+    }
+}
+
+function limpiar_campos(){
+    nombre.innerHTML = ''
+    apellido.innerHTML = ''
+    dni.innerHTML = ''
+    f_nacimiento.innerHTML = ''
+    doc_enf.innerHTML = ''
+    o_social.innerHTML = ''
+}
+
+function informe(){
 
 }
