@@ -1,10 +1,9 @@
 class Clinica{
-    constructor(nombre,dueño,r_juridica,enfermeros,pacientes){
-        this.nombre = nombre
-        this.dueño = dueño
-        this.r_juridica = r_juridica
-        this.doctores = doctores // Ver array de doctores
-        this.enfermeros = enfermeros // Ver array de enfermeros
+    constructor(nombre,dueño,r_juridica,personal,pacientes){
+        this.nombre = "Sanatorio"
+        this.dueño = "Nacho"
+        this.r_juridica = "El responsable de este edificio es: "+this.nombre
+        this.personal = personal
         this.pacientes = pacientes 
     };
     muestra(){ //tomar un elemento html y enviar los datos de la clinica alli
@@ -43,11 +42,11 @@ class Personal{
  // Crear un metodo para agregar paciente
  //Utilizar un arreglo para mapear el arreglo de pacientes y redirigirlo a un arreglo de pacientes de x doctor
 class Doctores extends Personal{
-    constructor(nombre,apellido,matricula,pacientes,pacientes_med,especialidad){
-        super(nombre,apellido,matricula,pacientes,pacientes_med);
+    constructor(nombre,apellido,matricula,pacientes,especialidad){
+        super(nombre,apellido,matricula,pacientes);
         this.especialidad = especialidad
     };
-    turnos_doc(){
+    ver_turnos(){
         for (let i = 0; i < turnos.length; i++) {
             const element = turnos[i];
             return element
@@ -60,8 +59,11 @@ class Enfermeros extends Personal{
     constructor(nombre,apellido,matricula,pacientes,licenciatura){
         super(nombre,apellido,matricula,pacientes)
         this.licenciatura = licenciatura
-    }
-}
+    };
+    datos_enfermero(){
+
+    };
+};
 
 class Paciente{
     constructor(nombre,apellido,dni,f_nacimiento,doc_enf,o_social,turno){
@@ -185,5 +187,9 @@ function limpiar_campos(){
 }
 
 function informe(){
-
+    // Obtener datos de doctor
+    for (let i = 0; i < doctores.length; i++) {
+        const element = doctores[i];
+        class_doc = new Doctores(element.nombre, element.apellido,element.matricula,element.pacientes,element.especialidad)
+    }
 }
