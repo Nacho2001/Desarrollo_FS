@@ -7,24 +7,27 @@
     <title>TP Final</title>
 </head>
 <body>
-    <form id="datos_paciente"> <!-- Formulario que obtiene datos de paciente-->
-        <label>Nombre</label><br>
-        <input id="nombre"><br>
-        <label>Apellido</label><br>
-        <input id="apellido"><br>
-        <label>dni</label><br>
-        <input id="dni"><br>
-        <label>Fecha Nacimiento</label><br>
-        <input id="f_nacimiento" type="date"><br>
-        <label>Medico</label><br>
-        <select id="doc_enf">
-            <option>Seleccionar doctor/enfermero</option>
-        </select><br>
-        <label>Obra social</label><br>
-        <input id="o_social"><br>
-        <button id="boton" onclick="carga()">Cargar</button>
-    </form>
-    <div id="informe"></div>
-    <script src="main.js"></script>
+    <div class="row">
+        <div class="col-6">
+            <label>Nombre</label><br>
+            <input style="margin-bottom: 1%;" id="nombre"><br>
+            <label>Apellido</label><br>
+            <input style="margin-bottom: 1%;" id="apellido"><br>
+            <label>dni</label><br>
+            <input style="margin-bottom: 1%;" id="dni"><br>
+            <label>Fecha Nacimiento</label><br>
+            <input style="margin-bottom: 1%;" id="f_nacimiento" type="date"><br>
+            <label>Doctor</label><br>
+            <select style="margin-bottom: 1%;" id="doc_enf">
+                <option>Seleccionar doctor/enfermero</option>
+            </select><br>
+            <label>Obra social</label><br>
+            <input id="o_social"><br>
+            <button id="boton" style="margin-top: 1%;" onclick="carga()">Cargar</button>
+        </div>
+        <div id="turnos_div" class="col-6"><h4>Turnos</h4></div>
+    </div>
+    <div id="informe" class="row"></div>
+    <script src="main2.js"></script>
 </body>
 </html>
