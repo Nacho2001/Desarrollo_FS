@@ -1,0 +1,22 @@
+27/03/2023
+ReactJS, es una libreria de Javascript para el desarrollo de interfaces de usuario
+
+HTML: Estructura e informacion estática de una página
+CSS: Aplica estilo a la página
+JavaScript: Funcionalidad
+
+JSX: Es una extension de JS, facilita la creacion y utilizacion de DOM (traer un div vacio e inyectar elementos)
+DOM virtual, espacio de memoria que actua en representacion del DOM y es más liviano que un DOM tradicional
+
+Variable de Estado: Variable que modifica su valor aplicandole ciertos "factores"
+
+React posee un algoritmo para realizar comparacion entre la pagina original y la modificada y realiza los cambios 
+correspondientes. Utiliza un espacio de la memoria para detectar los cambios automáticamente.
+
+React es capaz de detectar cambios y aplicar modificaciones en tiempo real sin necesidad de actualizar la página
+Realiza una representacion virtual del ultimo estado de la página con los cambios realizados. Es decir, no modifica el 
+estado inicial de la página, sino que trabaja sobre una copia del estado inicial, y estos no se aplican al estado inicial 
+hasta que se aplique un cambio notorio.
+
+Databinding: Enlace entre 2 elementos
+Databinding unidireccional: Es el utilizado por ReactJS, es la comunicacion hacia un solo lado.

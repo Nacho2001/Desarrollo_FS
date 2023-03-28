@@ -1,0 +1,37 @@
+23/3/2023
+
+Patrón de diseño: Metodo para resolver un problema
+
+Función: Porción de código que se puede invocar en otro momento
+
+alta cohesión: No se busca que realice demasiadas tareas
+
+Bajo acoplamiento: Significa que no requiera de muchos componentes
+
+Ventaja de TypeScript: Al tratarse de un lenguaje de tipado fuerte, se tiene que declarar el tipo de dato que 
+tendrá la variable y evita que haya errores de este estilo cuando se ejecuta el programa.
+
+Las variables locales dentro de un bucle, funcion o condicional, solamente tendrán su valor dentro de ese bloque, 
+por lo tanto 2 variables pueden tener el mismo nombre, porque existen en diferentes espacios de memoria.
+Las que se declaran con "let"
+
+if(true){} siempre se accederá a esa condicional
+Se puede declarar una variable dentro de una función que sea visible fuera de ese bloque, al declararla con "var", 
+se la declara como variable global.
+
+return, hace que una función retorne un valor
+
+Lenguaje traducido // lenguaje interpretado son sinónimos
+
+Cuando se realiza un salto a una funcion, el equipo debe guardar el contexto donde se ubicaba cuando se llamó a la 
+función, cuando se llama a multiples funciones puede ocurrir una pila de llamadas y quedarme sin espacio en la memoria.
+
+Cuando no se envia un parametro a una función, en la función se puede asignar un valor por defecto: 
+function suma(a,b = 2){
+	return a+b	
+}
+console.log(suma(5,2)) // 7
+Como se envio el valor de b, no tomó el valor por defecto que tiene la función
+
+Recursión: Una función se llama a si misma
+
