@@ -1,0 +1,8 @@
+middleware: conjunto de funciones que actuan entre las peticiones y los datos que se buscan
+
+cors: Toma todas las peticiones y las muestra por pantalla, incluso muestra si hay errores.
+
+require(): Invoca un modulo instalado
+
+
+API REST: aplicacion que corre del lado del servidor, ofreciendo un servicio

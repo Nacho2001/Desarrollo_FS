@@ -1,11 +1,20 @@
 const express = require('express');
+const cors = require('cors');
 
 class Server{
-	constructor(){
+	constructor(){ // Inicializa el servidor
 		this.app = express(); // Este app, será el servidor que estará esperando peticiones
+		this.middlewares();
+		this.routes();
+	}
+
+	middlewares(){
+		// Middleware que almacena y devuelve los datos en JSON
+		this.app.use(express.json());
+		this.app.use(cors());
 	}
 	routes(){
-		this.app.use('/', require('../routes/users.js'));
+		this.app.use('/api/user', require('../routes/users.js'));
 	}
 	listen(){ // Inicia el servidor en el puerto 3000 y mostrará un mensaje por pantalla
 		this.app.listen(3000, () => {
