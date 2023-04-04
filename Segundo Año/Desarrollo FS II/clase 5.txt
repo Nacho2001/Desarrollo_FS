@@ -1,0 +1,66 @@
+03/04/2023
+
+React al igual que vue, utiliza un solo index.html y un elemento <div id="root"> donde se cargan todos 
+los componentes
+
+En JSX, se utilizan las etiquetas de HTML pero le aplica funcionalidad
+
+Flexbox, tiene una funcion muy similar a la grilla de Bootstrap, pero más flexible, por lo que la pantalla 
+se ajusta automáticamente
+
+Incluye elementos de ambos, por ejemplo:
+utilizar una condicional if para mostrar una imagen de una forma u otra.
+
+React no requiere de JSX, es recomendado porque es sencillo de mainpular
+
+ej: Declarar una variable y utilizarla:
+
+const name = "Pepe";
+const element = <h1>Hola, {name}</h1>;
+
+También permite utilizar funciones como JavaScript:
+
+formatName(){
+
+}
+
+const element = (
+    <h1>Hola, {formatName(user)}!</h1> 
+)
+
+Defincion funcion propia: No modifica nada, solamente retorna un valor
+No se puede utilizar una funcion impropia en React, es decir, no permite funciones que modifiquen el 
+estado de una variable de un componente o del sitio, por lo tanto se debe trabajar con copias de la 
+variable
+
+Camel Case:
+className, es lo mismo que escribir class en js.
+
+ejemplo2: funcion
+
+function saludo(user){
+    if (user){
+        return <h1>Hola, {user}!</h1>
+    }else{
+        return <h1>Hola extraño!</h1>
+    }
+}
+
+ejemplo 3: // Etiquetas con hijos
+const element = (
+    <div>
+        <h1>Hola mundo!</h1>
+        <h2>saludos cordiales</h2>
+    </div>
+)
+
+ejemplo 4: //Tarjeta 
+const card = function tarjeta(){
+    <div className="card">
+        <div className="card-body">
+            <input>
+        </div>
+    </div>
+}
+
+La tarjeta es de bootstrap, se puede llamar la clase en className
