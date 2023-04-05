@@ -1,0 +1,59 @@
+Los tipos de datos sirven para saber como manejar los datos y entender con lo que estoy trabajando
+
+Tener en cuenta el tipo de dato que retorna una funcion
+
+Para encontrar el tipo de dato de una variable utilizar typeof
+
+Utilidad de Const: Declara una constante, es decir un espacio de memoria que solamente va a tener un valor que no se 
+va a modificar
+
+Un metodo es lo mismo que una funcion, con la diferencia de que el metodo ya esta predefinido y este realiza operaciones
+
+parse // "Parsear" permite convertir un dato a otro tipo
+
+split: Convierte un dato en un arreglo // let a = s.split(""); de esta forma, cada vez que es encuentre con un espacio, 
+va a entender que se trata de otro elemento
+
+reverse(): Invierte el orden de los elementos de un array
+
+join(); convierte el arreglo a string y uniendo los elementos del array; si fuera join("."); une todos los elementos con "."
+
+date(): Obtiene la fecha; let hoy = new Date()
+
+eval(); evalua las operaciones dentro del código
+
+Tipo boolean: true / false
+
+Buena practica: utilizar una variable booleana en botones, si se pulso (true) ejecuta una secuencia y si no fue 
+pulsado aún (falso) no se ejecuta.
+
+instruccion switch:
+
+switch(expresion){
+case valor1: 
+	hace esto
+	[break;]
+case valor2:
+	hace lo otro
+	[break;]
+[default:
+	no hagas nada
+	[break;]]
+}
+
+=== es estricto, mira el valor y el tipo de dato, ambas cosas deben ser iguales
+
+== Solamente se fija en el valor, no en el tipo
+
+En funcion asincrona, se puede establecer que va a hacer si consigue un valor o no:
+
+base ( a => {
+	if (a){// pregunta si en undefined
+	echo "error";
+	}else{
+	echo "consegui algo";
+	}
+}
+
+"use strict": Usa un modo estricto, es util para prevenir errores en produccion
+

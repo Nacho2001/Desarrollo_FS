@@ -1,0 +1,68 @@
+Paradigma: Forma de pensar o maniplar elementos
+
+metodos: comportamiento que va a tener el objeto, comparable a los verbos
+atributos: Datos asociados a los mismos
+
+Los objetos pueden ser físicos o abstractos(procedimientos)
+
+La encapsulacion de objetos permite mantener los datos "aislados" de los demás objetos, con esto, impide que de afuera 
+se pueda modificar los datos del objeto.
+
+Ejemplo objeto 
+
+class Estudiante {
+	private nombre;
+	public edad;
+	constructor(){
+		this.edad = edad;
+		this._nombre = nombre;
+	}
+}
+
+estudiante1 = new Estudiante("nacho", 21);
+e1.nombre // nombre al ser una propiedad privada, no puede ser leida ni modificada desde afuera, solamente se puede 
+mediante un método. 
+e1.edad = 24 // las propiedades al ser publicas, se pueden modificar de esta manera
+
+En las propiedades privadas de un objetos, para poder acceder o comunicarse con esta, de hacerse mediante metodos.
+
+Los objetos que ya no son utilzados deben ser destruidos porque ocupan espacio en la memoria y recursos del equipo
+
+Variables tipo primitivo: Son los que no poseen metodos
+
+new: Sirve para hacer referencia al contructor de una clase y crear un objeto.
+
+constructor por defecto: Es el constructor que no se envia ningun argumento y devuelve valor predeterminado
+
+ej: let cumpleaños = new Date() // constructor por defecto que retornará la fecha actual
+
+Comparación: Se piensa en una clase como una fabrica de objetos, este actua como instancia de la clase
+
+Llamar a un metodo de un objeto: 
+objetoReferenciado.nombreMetodo(listaArgumentos);
+objetoReferenciado.nombreMetodo(); // sin argumentos
+
+
+Implementacion de metodos:
+
+declaracionMetodo{
+	cuerpoMetodo.
+}
+
+NOTA IMPORTANTE: El nombre de la clase SIEMPRE empieza con Mayuscula
+
+Sobrecarga de metodo:
+
+
+Referencia a un metodo o atributo dentro de la clase: "this"
+
+this.nombre // Hace referencia al mismo, ej nombre del objeto
+
+En ciertos lenguajes de programacion, en los metodos se debe indicar el tipo de dato que retorna y si no 
+devuelve nada, colocar void:
+ hablar(): boolean{} // Devuelve un booleano
+ hablar(): void{} // no devuelve nada
+
+
+Variables locales: Todas las variables que se declaren dentro del metodo, solamente existen ahí, no se pueden utilizar 
+desde afuera u otro metodo
