@@ -1,4 +1,4 @@
-let cadenas = ["striing", "32", "no borrar", "109", "final"+4,"objeto"];
+let cadenas = ["striing", "32", "no_borrar", "109", "final"+4,"objeto"];
 let cadenas2 = []
 
 for (let i = 0; i < cadenas.length; i++) {
@@ -7,9 +7,8 @@ for (let i = 0; i < cadenas.length; i++) {
     if(cadena.length >= 4){
         for (let i2 = 0; i2 < cadena.length; i2++) {
             let caracter = cadena[i2];
-            let esLetra = Boolean;
-            checkLetra(caracter, esLetra);
-            if(esLetra == false){
+            let esLetra = checkLetra(caracter);
+            if(esLetra == "n"){
                 valido = false;
                 break;
             }else{
@@ -23,16 +22,15 @@ for (let i = 0; i < cadenas.length; i++) {
 
 }
 
-function checkLetra(caracter,esLetra){
+function checkLetra(caracter){
     if(caracter == "a" | caracter == "b" | caracter == "c" | caracter == "d" | caracter == "e" | caracter == "f" |
     caracter == "g" | caracter == "h" | caracter == "i" | caracter == "j" | caracter == "k" | caracter == "l" |
     caracter == "m" | caracter == "n" | caracter == "ñ" | caracter == "o" | caracter == "p" | caracter == "q" |
     caracter == "r" | caracter == "s" | caracter == "t" | caracter == "u" | caracter == "v" | caracter == "w" |
     caracter == "x" | caracter == "y" | caracter == "z"){
-        esLetra = true;
+        return "s";
     }else{
-        esLetra = false;
+        return "n";
     }
-    return esLetra;
 }
 console.log(cadenas2)
