@@ -1,0 +1,56 @@
+10/04/2023
+
+Para los nombres de los componentes de React, la primera letra debe ser mayúscula
+
+Componenetes funcionales: Componentes creados con funciones
+// La funcion bienvenida es un componenete.
+function Bienvenida(){
+    return (<h2>Bienvenidos al curso<h2>) // Todo lo que va dentro de los parentesis es html, similar a jsx
+}
+
+// Los componentes se pueden invocar cuantas veces quiera
+function App(){
+    return (
+        <Bienvenida /> 
+    )
+}
+
+También se pueden enviar parametros a la funcion:
+
+function Bienvenida(props){ // Props actua como un array de parametros que se envian desde afuera
+    return (<h2>Bienvenidos al curso {props.materia}<h2>)
+}
+
+function App(){
+    return (
+        <Bienvenida materia="Laboratorio FS 2"/> 
+    )
+}
+
+// Compoenentes con clases:
+//importante importar la clase react:
+import React from 'react';
+class Welcome extends React.Component{
+    render(){ // Con render se crean los componentes con clases
+        return (
+            <div>
+                <h2>Bienvenidos al curso<h2>
+                <div className='card'>
+                    <div></div>
+                    <img className="card-image"/>
+                </div>
+            </div>
+        ) 
+    }
+}
+
+function App(){
+    return ( <Welcome />)
+}
+
+Una vez instalado bootstrap, referenciar la hoja de estilo en la cabecera:
+
+<link rel="stylesheet" href="node_modules/...">
+
+Para cargar elementos con animaciones, se debe cargar la libreria al inicio y <script> 
+al final del archivo. Recomendacion bootstrap.bundle.min.js
