@@ -1,0 +1,23 @@
+.primer_div{
+    background-color: yellow;
+    width: 310px;
+    height: 400px;
+    padding: 10px;
+}
+.columna1{
+    background-color: green;
+    width: 80px;
+    height: 350px;
+    display: inline-block;
+}
+.columna2{
+    background-color: orange;
+    width: 90px;
+    height: 90px;
+    display: inline-block;
+    /*margin-left: -3px;*/
+}
+.pie{
+    margin-top: 1px;
+    background-color: blue;
+}
