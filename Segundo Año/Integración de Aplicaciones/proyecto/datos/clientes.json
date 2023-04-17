@@ -1,0 +1,18 @@
+{
+    "cliente1" : {
+        "nombre" : "Juan",
+        "apellido" : "Gonzales",
+        "nroCliente" : "100",
+        "dni" : "10817512",
+        "email" : "gonzalesjuan@hotmail.com",
+        "direccion" : "Rivadavia 420"
+    },
+    "cliente2" : {
+        "nombre" : "Maria",
+        "apellido" : "Gonzales",
+        "nroCliente" : "101",
+        "dni" : "11637634",
+        "email" : "maria_gonzales@yahoo.com",
+        "direccion" : "Rivadavia 420"
+    }
+}
