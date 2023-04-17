@@ -1,0 +1,8 @@
+13/04/2023
+
+Overflow: El contenido del box se mueve hacia abajo sobrepasa el borde
+Si en el css, escribe overflow: auto; se crea un scroll automaticamente, en caso de que 
+el contenido sobrepasa el borde.
+
+Margin: Espacio fuera de la caja con el contenido de afuera.
+Padding: Espacio entre el contenido de la caja y el borde.
