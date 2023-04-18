@@ -1,5 +1,5 @@
-{
-    "articulo1" : {
+[
+    {
     "nombreProducto" : "Coca-Cola 1.5l",
     "cantidad" : 1,
     "categoria" : "bebidas",
@@ -7,7 +7,7 @@
     "marca" : "Coca-Cola",
     "codigo" : "554"
     },
-    "articulo2" : {
+    {
     "nombreProducto" : "Jugo Multifruta",
     "cantidad" : 2,
     "categoria" : "bebidas",
@@ -15,4 +15,4 @@
     "marca" : "Baggio",
     "codigo" : "750"
     }  
-}
+]
