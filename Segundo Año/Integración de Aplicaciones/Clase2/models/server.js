@@ -15,6 +15,8 @@ class Server{
 	}
 	routes(){
 		this.app.use('/api/user', require('../routes/users.js'));
+		this.app.use('/api/products', require('../routes/product_routes.js'));
+		this.app.use('/api/clients', require('../routes/client_routes.js'));
 	}
 	listen(){ // Inicia el servidor en el puerto 3000 y mostrará un mensaje por pantalla
 		this.app.listen(3000, () => {
