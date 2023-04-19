@@ -53,9 +53,9 @@ router.delete('/delete/:id', (req,res) => {
 	const id = req.params.id
 	fs.readFile(pathData, 'utf8', (err,resp) => {
 		dataFull = JSON.parse(resp);
-		data = dataFull[id];
+		dataFull[id] = null;
 		res.status(200).json({
-			data : null
+			dataFull
 		})
 	})
 })
