@@ -1,5 +1,5 @@
 class Estudiante{
-    constructor(nombre,apellido){
+    constructor(nombre,apellido, edad, dni){
         this.nombre = nombre;
         this.apellido = apellido;
     }
@@ -10,21 +10,19 @@ class Estudiante{
 }
 
 class Curso{
-    constructor(estudiante){
+    constructor(año, carrera){
         this.estudiante = estudiante
     }
     listaEstudiantes = []
-
-    crearEstudiante(){
-        new Estudiante(estudiante[0], estudiante[1])
-    }
     asignarEstudiante(){
 
     }
 }
 
-let estudiante1 = ["pepe", "argento"];
-new Curso(estudiante1);
+curso1 = new Curso("Reparacion", 2023, "Capacitación");
+est1 = new Estudiante("pepe", "argento");
+est2 = new Estudiante("lucas", "gonzales");
+
 
 /*
 1- Crear el estudiante
