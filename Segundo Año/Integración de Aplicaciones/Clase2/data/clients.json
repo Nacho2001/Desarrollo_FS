@@ -1,5 +1,5 @@
-{
-    "cliente1" : {
+[
+    {
         "nombre" : "Juan",
         "apellido" : "Gonzales",
         "nroCliente" : "100",
@@ -7,7 +7,7 @@
         "email" : "gonzalesjuan@hotmail.com",
         "direccion" : "Rivadavia 420"
     },
-    "cliente2" : {
+    {
         "nombre" : "Maria",
         "apellido" : "Gonzales",
         "nroCliente" : "101",
@@ -15,4 +15,4 @@
         "email" : "maria_gonzales@yahoo.com",
         "direccion" : "Rivadavia 420"
     }
-}
+]

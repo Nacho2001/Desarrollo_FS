@@ -3,6 +3,7 @@ const fs = require('fs'); // Accede a los archivos del sistema
 const path = require('path'); // Arbol de directorios de los archivos
 const router = Router(); // Define router
 const pathData = path.join(__dirname, '/../data/products.json'); // Obtiene ruta completa hacia el archivo JSON
+//import checkEmail from '../helps/verificarEmail';
 
 // Obtener todos los elementos
 router.get('/', (req, res) => {
@@ -17,9 +18,9 @@ router.get('/', (req, res) => {
 router.post('/addproduct/:id', (req,res) => {
 	const id = req.params.id
 	fs.readFile(pathData, 'utf8', (err, resp) => {
-		const dataClient = req.body
+		const dataProduct = req.body
 		data = JSON.parse(resp);
-		data[id] = dataClient;
+		data[id] = dataProduct;
 		res.status(201).json({
 			data
 		})
