@@ -20,7 +20,6 @@ router.post('/addclient/:id', (req,res) => {
 	fs.readFile(pathData, 'utf8', (err, resp) => {
 		const dataClient = req.body
 		data = JSON.parse(resp);
-		console.log(dataClient.email);
 		dataClient.email = checkEmail(dataClient.email)
 		data[id] = dataClient;
 		res.status(201).json({
