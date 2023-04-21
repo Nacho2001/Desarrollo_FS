@@ -3,7 +3,7 @@ const fs = require('fs'); // Accede a los archivos del sistema
 const path = require('path'); // Arbol de directorios de los archivos
 const router = Router(); // Define router
 const pathData = path.join(__dirname, '/../data/clients.json'); // Obtiene ruta completa hacia el archivo JSON
-import checkEmail from '../helps/verificarEmail';
+//import '../helps/verificarEmail.js';
 
 router.get('/', (req, res) => {
 	fs.readFile(pathData, 'utf8', (err,resp) => {
@@ -15,12 +15,13 @@ router.get('/', (req, res) => {
 })
 
 // Enviar elemento
-router.post('/addproduct/:id', (req,res) => {
+router.post('/addclient/:id', (req,res) => {
 	const id = req.params.id
 	fs.readFile(pathData, 'utf8', (err, resp) => {
 		const dataClient = req.body
 		data = JSON.parse(resp);
-		checkEmail(dataClient);
+		console.log(dataClient.email);
+		dataClient.email = checkEmail(dataClient.email)
 		data[id] = dataClient;
 		res.status(201).json({
 			data
@@ -28,7 +29,7 @@ router.post('/addproduct/:id', (req,res) => {
 	})
 })
 // Busca producto por id
-router.get('/myproduct/:id', (req, res) => {
+router.get('/myclient/:id', (req, res) => {
 	const id = req.params.id
 	fs.readFile(pathData, 'utf8', (err,resp) => {
 		dataFull = JSON.parse(resp);
@@ -61,5 +62,27 @@ router.delete('/delete/:id', (req,res) => {
 		})
 	})
 })
+function checkEmail(mail){
+    let posicionArroba = "";
+    for (let index = 0; index < mail.length; index++) {
+        const element = mail[index];
+        if(element == "@"){
+            posicionArroba = index;
+        }
+    }
+    if(posicionArroba == ""){
+        console.log("Error: No se ingreso una direccion de email válida")
+        mail = null
+    }else{
+        let dominio = mail.substring(posicionArroba+1,mail.length);
+        if(dominio == "gmail.com" | dominio == "yahoo.com.ar" | dominio == "hotmail.com"){
+            console.log("Email válido")
+        }else{
+            mail = null
+            console.log("Error: El dominio del email no es un dominio permitido (yahoo,gmail,hotmail)")
+        }
+    }
+	return mail
+}
 
 module.exports = router

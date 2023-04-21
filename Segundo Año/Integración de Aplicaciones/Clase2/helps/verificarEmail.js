@@ -1,8 +1,4 @@
-function checkEmail(objeto){
-    
-}
-
-function verificacion(mail){
+function checkEmail(mail){
     let posicionArroba = "";
     for (let index = 0; index < mail.length; index++) {
         const element = mail[index];
@@ -12,13 +8,15 @@ function verificacion(mail){
     }
     if(posicionArroba == ""){
         console.log("Error: No se ingreso una direccion de email válida")
+        mail = "inválido"
     }else{
         let dominio = mail.substring(posicionArroba+1,mail.length);
         if(dominio == "gmail.com" | dominio == "yahoo.com.ar" | dominio == "hotmail.com"){
-            console.log("El email ingresado ("+mail+") es válido!");
+            return mail;
         }else{
-            console.log("Error: El dominio de email ("+dominio+") no es válido");
+            mail = "inválido"
+            console.log("Error: El dominio del email no es un dominio permitido (yahoo,gmail,hotmail)")
         }
     }
 }
-module.exports = checkEmail;
+//module.exports = checkEmail;
