@@ -1,0 +1,7 @@
+src --- pages --> Inicio
+              --> About
+
+    --- compoenetes --> card.js
+                    --> navbar.js
+                    --> carrusel.js
+

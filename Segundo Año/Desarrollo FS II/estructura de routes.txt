@@ -1,0 +1,14 @@
+<Router>
+    HTML
+    <Routes>
+        <Route path='/' Component={nombre_componente}></Route>
+    </Routes>
+</Router>
+
+<Link to='/' Component={nombre_componente} >
+
+Definir las rutas de mayor a menor:
+
+/productos
+/about
+/
