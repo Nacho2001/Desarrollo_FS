@@ -1,7 +1,7 @@
 import Navbar from '../componentes/navbar';
 import Carousel from '../componentes/carousel';
 import Footer from '../componentes/footer';
-import Sidenav from '../componentes/sidenav/sidenav';
+import Sidenav from '../componentes/sidenav';
 import React from "react";
 
 function Inicio(){
@@ -12,7 +12,7 @@ function Inicio(){
             <Sidenav/>
             <div style={{"margin":"1% 0 0 1%"}}>
                 <h4>Muestra de artículos:</h4>
-                <div className="d-flex justify-content-start" style={{"margin-top":"30px"}}>
+                <div style={{"margin-top":"30px", "position":"fixed","left":200}}>
                     <Carousel/>
                 </div>
             </div>

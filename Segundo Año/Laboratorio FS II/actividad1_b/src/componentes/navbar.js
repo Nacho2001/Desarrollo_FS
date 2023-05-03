@@ -12,6 +12,12 @@ function Navbar(){
                     <li className="nav-item">
                         <Link to="/about" class="nav-link" aria-current="page">Acerca de</Link>
                     </li>
+                    <li className="nav-item">
+                        <Link to="/contact" class="nav-link" aria-current="page">Contacto</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/product" class="nav-link" aria-current="page">Productos</Link>
+                    </li>
                 </ul>
                 </div>
             </div>
