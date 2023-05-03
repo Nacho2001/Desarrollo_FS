@@ -17,7 +17,7 @@ class Empleado extends Persona{
         this.salarioSemanal = this.salarioXhora*this.horasTrabajadas
     }
     mostrarEmpleado(){
-        console.log("Empleado: "+this.nombre+" "+this.apellido+", dni: "+this.dni+", salario semanal: "+this.salarioSemanal)
+        console.log(`Empleado: ${this.nombre} ${this.apellido}, dni: ${this.dni}, salario semanal: ${this.salarioSemanal}`)
     }
 }
 
