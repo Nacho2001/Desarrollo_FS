@@ -1,0 +1,22 @@
+body{
+    background-color: gray;
+}
+#padre{
+    display: flex;
+    /*flex-direction: column;
+    flex-wrap: wrap-reverse;*/
+    flex-flow: row wrap;
+    /*justify-content: start;*/
+    /*align-items: baseline;  Baseline acomonda el componente dependiendo del contenido*/
+    /*align-content: flex-end;
+    /*height: 200px;*/
+}
+.hijo{
+    order: +2;
+    background-color: aqua;
+    border: 1px solid black;
+    width: 150px;
+    height: 150px;
+    margin: 5px 5px 5px 5px;
+    text-align: center;
+}
