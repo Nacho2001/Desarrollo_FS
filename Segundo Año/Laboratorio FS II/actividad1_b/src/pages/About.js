@@ -20,7 +20,7 @@ function About(){
                     Inicio: Es donde se realiza una vista rápida de productos que se ofrecen en SubGaming.<br/>
                     Acerca de: Es la página donde se encuentra actualmente, ofrece información sobre el sitio.<br/>
                     Productos: Se muestra el contenido que ofrecen las tiendas y es donde se selecciona un producto deseado<br/>
-                    Contacto: Es donde aparece información sobre contacto del autor del SubGaming y un formulario para enviar un mensaje o consulta
+                    Contacto: Es donde aparece un formulario para enviar un mensaje o consulta al autor de SubGaming
                     <li style={{"font-weight":"bold"}}>Productos de qué tiendas se ven en SubGaming?</li>
                     Las tiendas incluidas en esta página son las que se muestran en el panel a la derecha y solamente sucursales de 
                     ciertas localidades hasta una próxima expansión.

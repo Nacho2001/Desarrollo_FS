@@ -17,8 +17,8 @@ function Carousel(){
                 Pc Banghó Gamer GM Carbide Core i3
             </div>
             <div className="carousel-item">
-                <img src={gabinete3} className="d-block w-70" alt="gabinete3" width="500px" height="350px"/>
-                Gabinete Gamer Iqual Cm-2801 Templado Fuente
+                <img src={gabinete3} className="d-block w-70" alt="gabinete3" style={{"margin-left":"25%"}} width="250px" height="350px"/>
+                Gabinete Gamer IQUAL CM-2802
             </div>
             <div className="carousel-item">
                 <img src={silla1} className="d-block w-70" style={{"margin-left":"25%"}} alt="gabinete3" width="250px" height="350px"/>

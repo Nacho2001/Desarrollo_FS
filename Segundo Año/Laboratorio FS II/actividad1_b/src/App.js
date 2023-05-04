@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Router>
-        <Productos/>
+        <Inicio/>
         <Routes>
           <Route path='/contact' Component={Contacto}></Route>
           <Route path='/product' Component={Productos}></Route>

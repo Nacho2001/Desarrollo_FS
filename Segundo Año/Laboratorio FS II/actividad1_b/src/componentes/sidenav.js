@@ -10,6 +10,7 @@ function Sidenav(){
                     <li><a href="https://www.fravega.com">Frávega</a></li>
                     <li><a href="https://www.garbarino.com/">Garbarino</a></li>
                     <li><a href="https://www.megatone.net/">Megatone</a></li>
+                    <li><a href="https://www.casadelaudio.com/">Casa del Audio</a></li>
                     <li>Cappelletti Informática SRL</li>
                 </ul>
                 <h4 className="text-center">Sucursales asociadas</h4>
