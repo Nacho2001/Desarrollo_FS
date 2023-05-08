@@ -12,6 +12,9 @@ class Persona{
     imprimirPersona(){
         console.log(`Nombre: ${this.nombre}, Apellidos: ${this.apellidos}, DNI: ${this.dni}, Estado Civil: ${this.estadoCivil},`)
     }
+    presentaDNI(){
+        return this.dni;
+    }
 }
 
 class Estudiante extends Persona{
@@ -84,7 +87,8 @@ class Centro extends Persona{
         this.rol = rol;
     }
     alta(){
-        let persona = new Persona(this.nombre, this.apellidos, this.estadoCivil, this.dni)
+        let persona = new Persona(this.nombre, this.apellidos, this.estadoCivil, this.dni);
+        Personas.push(persona);
         switch (this.rol){
             case "estudiante":
                 this.alumnos.push(persona);
@@ -98,11 +102,14 @@ class Centro extends Persona{
         }
     }
     baja(){// Consultar sobre el arreglo Personas
-
+        for (let i = 0; i < Personas.length; i++) {
+            const elemento = Personas[i];
+            
+        }
     }
 }
 
-Personas = [];
+let Personas = [];
 //Crea un estudiante
 let alumno = new Estudiante("Adam", "Sandler", 44332211, "Casado","Actuación");
 // Nuevo Profesor
