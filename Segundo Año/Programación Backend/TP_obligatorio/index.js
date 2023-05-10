@@ -12,11 +12,17 @@ class Persona{
     imprimirPersona(){
         console.log(`Nombre: ${this.nombre}, Apellidos: ${this.apellidos}, DNI: ${this.dni}, Estado Civil: ${this.estadoCivil},`)
     }
+    tipoClase(){
+        return 'Persona';
+    }
+    obtenerDNI(){
+        return this.dni;
+    }
 }
 
 class Estudiante extends Persona{
     constructor(nombre, apellidos, estadoCivil, dni,curso){
-        super(nombre, apellidos, estadoCivil, dni)
+        super(nombre, apellidos, estadoCivil, dni,tipoClase)
         this.curso = curso
     };
     reasignacion(nuevoCurso){
@@ -27,11 +33,14 @@ class Estudiante extends Persona{
         super.imprimirPersona()
         console.log(`Curso: ${this.curso}`)
     }
+    tipoClase(){
+        return 'Estudiante';
+    }
 }
 
 class Empleados extends Persona{
     constructor(nombre, apellidos, estadoCivil, dni, añoIncorporacion, nroDespacho){
-        super(nombre, apellidos, estadoCivil, dni);
+        super(nombre, apellidos, estadoCivil, dni,tipoClase);
         this.añoIncorporacion = añoIncorporacion;
         this.nroDespacho = nroDespacho;
     }
@@ -47,7 +56,7 @@ class Empleados extends Persona{
 
 class Docente extends Empleados{
     constructor(nombre, apellidos, estadoCivil, dni, añoIncorporacion, nroDespacho,departamento){
-        super(nombre, apellidos, estadoCivil, dni, añoIncorporacion, nroDespacho);
+        super(nombre, apellidos, estadoCivil, dni, añoIncorporacion, nroDespacho, tipoClase);
         this.departamento = departamento;
     }
     cambioDepartamento(nuevoDepartamento){
@@ -58,11 +67,14 @@ class Docente extends Empleados{
         super.imprimirEmpleado()
         console.log(`Departamento: ${this.departamento}`)
     }
+    tipoClase(){
+        return 'Docente'
+    }
 }
 
 class Personal extends Empleados{
     constructor(nombre, apellidos, estadoCivil, dni, añoIncorporacion, nroDespacho,seccion){
-        super(nombre, apellidos, estadoCivil, dni, añoIncorporacion, nroDespacho);
+        super(nombre, apellidos, estadoCivil, dni, añoIncorporacion, nroDespacho,tipoClase);
         this.seccion = seccion;
     }
     traslado(nuevaSeccion){
@@ -73,36 +85,75 @@ class Personal extends Empleados{
         super.imprimirEmpleado()
         console.log(`Sección: ${this.seccion}`)
     }
+    tipoClase(){
+        return 'Personal_servicio'
+    }
 }
 
-class Centro extends Persona{
-    constructor(nombre,apellidos, estadoCivil, dni, rol){
-        super(nombre, apellidos, estadoCivil, dni);
+class Centro{
+    constructor(){
+        this.personas = [];
         this.alumnos = [];
         this.profesores = [];
         this.personalServicio = [];
-        this.rol = rol;
     }
-    alta(){
-        let persona = new Persona(this.nombre, this.apellidos, this.estadoCivil, this.dni)
-        switch (this.rol){
-            case "estudiante":
-                this.alumnos.push(persona);
+    alta(persona){
+        this.personas.push(persona)
+        switch (persona.tipoClase) {
+            case 'Estudiante':
+                this.alumnos.push(persona)
                 break;
-            case "personal":
-                this.personalServicio.push(persona);
+            case 'Docente':
+                this.profesores.push(persona)
                 break;
-            case "profesores":
-                this.profesores.push(persona);
+            case 'Personal_servicio':
+                this.personalServicio.push(persona)
                 break;
         }
     }
-    baja(){// Consultar sobre el arreglo Personas
+    baja(identificacion){// Consultar sobre el arreglo Personas
+        for (let index = 0; index < this.personas.length; index++) {
+            const persona = Personas[index];
+            let dni = persona.obtenerDNI()
+            if(dni == identificacion){
+                Personas.splice(index)
+            }
+        }
+        switch (persona.tipoClase) {
+            case 'Estudiante':
+                for (let index = 0; index < this.alumnos.length; index++) {
+                    const estudiante = this.alumnos[index];
+                    let dni = estudiante.obtenerDNI()
+                    if(dni == identificacion){
+                        this.alumnos.splice(index)
+                    }
+                }
+                break;
+            case 'Docente':
+                for (let index = 0; index < this.profesores.length; index++) {
+                    const profesor = this.preofesores[index];
+                    let dni = profesor.obtenerDNI()
+                    if(dni == identificacion){
+                        this.profesores.splice(index)
+                    }
+                }
+                break;
+            case 'Personal_servicio':
+                for (let index = 0; index < this.personalServicio.length; index++) {
+                    const profesor = this.personalServicio[index];
+                    let dni = profesor.obtenerDNI()
+                    if(dni == identificacion){
+                        this.personalServicio.splice(index)
+                    }
+                }
+                break;
+        }
+    }
+    imprimirPersonas(){
 
     }
 }
-
-Personas = [];
+let centro1 = new Centro()
 //Crea un estudiante
 let alumno = new Estudiante("Adam", "Sandler", 44332211, "Casado","Actuación");
 // Nuevo Profesor
