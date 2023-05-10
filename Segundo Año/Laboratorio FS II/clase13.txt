@@ -1,0 +1,40 @@
+Investigar useState, hooks de react, como se usan y para que. Y el ciclo de vida 
+de un componente funcional de React.
+
+Ejemplo:
+
+import {useState} from 'react'
+
+function Counter(){
+    const [count,setCount] = useState(0) // Definirlo siempre como constante
+
+    return (
+        <div>
+            <p>Contador: {count}</p>
+            <button onClick={() => setCount(count+1)}>Aumentar</button>
+        </div>
+    )
+}
+
+Componente de clase:
+
+import {Component} from 'react'
+
+classs Counter extends Component {
+    contructor(){
+
+    }
+}
+
+Hooks: Es una api de React que permite obtener el estado y otras caracteristicas en los 
+componentes de React.
+Hooks significa gancho, es porque engancha los componentes funcionales a las caracteristicas de 
+React.
+
+El hook useState se utiliza para crear variables de estado, es decir que tiene un valor dinamico.
+Al cambiar de estado, solamente se vuelve a cargar el componente y no toda la pagina.
+Eventos existentes:
+- onPause
+- onClick
+- onMouse
+
