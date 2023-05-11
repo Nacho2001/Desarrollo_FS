@@ -12,14 +12,10 @@ class Persona{
     imprimirPersona(){
         console.log(`Nombre: ${this.nombre}, Apellidos: ${this.apellidos}, DNI: ${this.dni}, Estado Civil: ${this.estadoCivil},`)
     }
-<<<<<<< HEAD
     tipoClase(){
         return 'Persona';
     }
     obtenerDNI(){
-=======
-    presentaDNI(){
->>>>>>> 4a66b7448b5927f90ab5af0fddb3bcdea5c9d111
         return this.dni;
     }
 }
@@ -101,20 +97,11 @@ class Centro{
         this.profesores = [];
         this.personalServicio = [];
     }
-<<<<<<< HEAD
     alta(persona){
         this.personas.push(persona)
         switch (persona.tipoClase) {
             case 'Estudiante':
                 this.alumnos.push(persona)
-=======
-    alta(){
-        let persona = new Persona(this.nombre, this.apellidos, this.estadoCivil, this.dni);
-        Personas.push(persona);
-        switch (this.rol){
-            case "estudiante":
-                this.alumnos.push(persona);
->>>>>>> 4a66b7448b5927f90ab5af0fddb3bcdea5c9d111
                 break;
             case 'Docente':
                 this.profesores.push(persona)
@@ -124,7 +111,6 @@ class Centro{
                 break;
         }
     }
-<<<<<<< HEAD
     baja(identificacion){// Consultar sobre el arreglo Personas
         for (let index = 0; index < this.personas.length; index++) {
             const persona = Personas[index];
@@ -168,17 +154,6 @@ class Centro{
     }
 }
 let centro1 = new Centro()
-=======
-    baja(){// Consultar sobre el arreglo Personas
-        for (let i = 0; i < Personas.length; i++) {
-            const elemento = Personas[i];
-            
-        }
-    }
-}
-
-let Personas = [];
->>>>>>> 4a66b7448b5927f90ab5af0fddb3bcdea5c9d111
 //Crea un estudiante
 let alumno = new Estudiante("Adam", "Sandler", 44332211, "Casado","Actuación");
 // Nuevo Profesor
