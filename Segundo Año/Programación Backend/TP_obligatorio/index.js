@@ -149,8 +149,10 @@ class Centro{
                 break;
         }
     }
-    imprimirPersonas(){
-
+    imprimirPersonas(documento){
+        for (let i = 0; i < this.personas.length; i++) {
+            const unaPersona = this.personas[i];
+        }
     }
 }
 let centro1 = new Centro()
