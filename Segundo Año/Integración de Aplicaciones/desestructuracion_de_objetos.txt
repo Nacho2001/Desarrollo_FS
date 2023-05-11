@@ -1,0 +1,10 @@
+data {
+    nombre: "name",
+    apellido: "surname"
+}
+
+conversion de atributo a variable = 
+let nombre = data.nombre
+
+traer todos los atributos a variables = 
+let {id,nombre,apellido} = data
