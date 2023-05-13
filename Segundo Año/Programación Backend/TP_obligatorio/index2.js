@@ -93,23 +93,9 @@ class Personal extends Empleados{
 class Centro{
     constructor(){
         this.personas = [];
-        this.alumnos = [];
-        this.profesores = [];
-        this.personalServicio = [];
     }
     alta(persona){
         this.personas.push(persona)
-        switch (persona.tipoClase) {
-            case 'Estudiante':
-                this.alumnos.push(persona)
-                break;
-            case 'Docente':
-                this.profesores.push(persona)
-                break;
-            case 'Personal_servicio':
-                this.personalServicio.push(persona)
-                break;
-        }
     }
     baja(identificacion){// Consultar sobre el arreglo Personas
         for (let i = 0; i < this.personas.length; i++) {
@@ -117,35 +103,6 @@ class Centro{
             let dni = unaPersona.obtenerDNI()
             if(dni == identificacion){
                 this.personas.splice(i,1)
-                switch (unaPersona.tipoClase()) {
-                    case 'Estudiante':
-                        for (let index = 0; index < this.alumnos.length; index++) {
-                            const estudiante = this.alumnos[index];
-                            let dni = estudiante.obtenerDNI()
-                            if(dni == identificacion){
-                                this.alumnos.splice(index)
-                            }
-                        }
-                        break;
-                    case 'Docente':
-                        for (let index = 0; index < this.profesores.length; index++) {
-                            const profesor = this.preofesores[index];
-                            let dni = profesor.obtenerDNI()
-                            if(dni == identificacion){
-                                this.profesores.splice(index)
-                            }
-                        }
-                        break;
-                    case 'Personal_servicio':
-                        for (let index = 0; index < this.personalServicio.length; index++) {
-                            const profesor = this.personalServicio[index];
-                            let dni = profesor.obtenerDNI()
-                            if(dni == identificacion){
-                                this.personalServicio.splice(index)
-                            }
-                        }
-                        break;
-                }
             }
         }
     }
