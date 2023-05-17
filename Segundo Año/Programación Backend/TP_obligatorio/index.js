@@ -21,8 +21,8 @@ class Persona{ // Clase persona, crea el objeto persona
 }
 
 class Estudiante extends Persona{ // Crea el objeto estudiante
-    constructor(nombre, apellidos, estadoCivil, dni,curso, tipoClase){  // Define el curso de cada estudiante, los otros datos son heredados de Persona
-        super(nombre, apellidos, estadoCivil, dni,tipoClase)
+    constructor(nombre, apellidos, estadoCivil, dni,curso){  // Define el curso de cada estudiante, los otros datos son heredados de Persona
+        super(nombre, apellidos, estadoCivil, dni)
         this.curso = curso
     };
     reasignacion(nuevoCurso){ // Para asignar un nuevo curso, se reemplaza el actual por uno nuevo que se envia como parámetro
@@ -39,8 +39,8 @@ class Estudiante extends Persona{ // Crea el objeto estudiante
 }
 
 class Empleados extends Persona{ // Esta clase registra los datos que deben saberse de un empleado, heredando algunos de Persona
-    constructor(nombre, apellidos, estadoCivil, dni, añoIncorporacion, nroDespacho,tipoClase){
-        super(nombre, apellidos, estadoCivil, dni,tipoClase);
+    constructor(nombre, apellidos, estadoCivil, dni, añoIncorporacion, nroDespacho){
+        super(nombre, apellidos, estadoCivil, dni);
         this.añoIncorporacion = añoIncorporacion;
         this.nroDespacho = nroDespacho;
         this.sueldo = 20000 // 20000 es el salario básico de los empleados
