@@ -41,3 +41,28 @@ exports.getUserById = async(req,res) => {
         })
     }
 }
+
+// Post de usuarios
+exports.addUser = async (req,res) => {
+    // Obtiene el usuario enviado en el body del request
+    const user = req.body;
+    try {
+        const user = await usuarioModel.addUser(user)
+        if(user.lenght<1){
+            res.status(407).json({
+                success:false,
+                msg:'No se logró insertar el usuario en la base de datos'
+            })
+
+            res.status(200).json({
+                success:true,
+                message: "Usuario agregado exitosamente"
+            })
+        }
+    } catch (error) {
+        res.status(500).json({
+            sucess:false,
+            message: 'Ocurrio un error insertando el usuario'
+        })
+    }
+}
