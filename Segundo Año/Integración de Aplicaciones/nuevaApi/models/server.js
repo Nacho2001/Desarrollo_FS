@@ -5,13 +5,13 @@ const morgan = require('morgan');
 class Server {
     constructor(){
         this.app = express();
-        this.routes();
         this.middlewares();
+        this.routes();
     }
     routes(){
-        this.app.use('/api/usuarios', require('./../routes/usuariosRoute'))
-        this.app.use('/api/clientes', require('./../routes/clientesRoute'))
-        this.app.use('/api/productos', require('./../routes/productosRoute'))
+        this.app.use('/api/usuarios', require('./../routes/usuariosRoute'));
+        //this.app.use('/api/clientes', require('./../routes/clientesRoute'));
+        //this.app.use('/api/productos', require('./../routes/productosRoute'));
     }
     middlewares(){
         this.app.use(express.json());

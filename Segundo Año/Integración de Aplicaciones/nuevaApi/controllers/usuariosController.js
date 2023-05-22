@@ -45,24 +45,54 @@ exports.getUserById = async(req,res) => {
 // Post de usuarios
 exports.addUser = async (req,res) => {
     // Obtiene el usuario enviado en el body del request
-    const user = req.body;
+    const User = req.body;
     try {
-        const user = await usuarioModel.addUser(user)
+        const user = await usuarioModel.addUser(User)
         if(user.lenght<1){
             res.status(407).json({
                 success:false,
                 msg:'No se logró insertar el usuario en la base de datos'
             })
-
-            res.status(200).json({
-                success:true,
-                message: "Usuario agregado exitosamente"
-            })
         }
+        res.status(200).json({
+            success:true,
+            message: "Usuario agregado exitosamente"
+        })
     } catch (error) {
+        console.log(error)
         res.status(500).json({
             sucess:false,
             message: 'Ocurrio un error insertando el usuario'
+        })
+    }
+}
+
+exports.updateUser = async (req,res) =>{
+    const userData = req.body
+    const idUser = req.params.id
+    const user = {
+        id,
+        ...userData
+    }
+    console.log(user)
+
+    try {
+        const listaActualizada = await usuarioModel.updateUser(user);
+        if(listaActualizada<1){
+            res.status(404).json({
+                success:false,
+                msg:"Datos no actualizados"
+            })
+        }
+
+        res.status(200).json({
+            success:true,
+            data:listaActualizada
+        })
+    } catch (error) {
+        res.status(500).json({
+            sucess:false,
+            message: 'Ocurrio un error actualizando el usuario'
         })
     }
 }

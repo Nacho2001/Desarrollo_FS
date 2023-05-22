@@ -18,6 +18,13 @@ exports.getUserById = async (id) => {
 }
 
 exports.addUser = async (user) => {
-    const [rows,fields] = await db.ececute("insert into usuarios (username, pasword, email, rol, activo) values ?", [user])
+    const [rows,fields] = await db.execute("insert into usuarios (username, password, email, rol, activo) values (?,?,?,?)", [user.username,user.password,user.email,user.rol,user.activo])
     return rows;
+}
+
+exports.updateUser = async (user) => {
+    console.log('modelo')
+    console.log(user);
+    const [rows, fields] = await db.execute('update usuario set username = ?, password = ?, email = ?, rol = ?, activo = ? where id = ?',[user.username,user.password,user.email,user.rol,user.activo,user.id])
+    return rows
 }

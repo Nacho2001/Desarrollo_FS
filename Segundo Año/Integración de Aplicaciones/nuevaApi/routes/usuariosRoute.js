@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const usuariosController = require('./../controllers/usuariosController');
+const { updateUser } = require('../models/usuariosModel');
 // Defino las rutas y derivo al controlador correspondiente
 
 router.get('/', usuariosController.getUsuarios);
 router.get('/:id',usuariosController.getUserById);
-router.post('/adduser', usuariosController.addUser);
+router.post('/', usuariosController.addUser);
+router.put('/:id',usuariosController.updateUser);
 module.exports = router;
