@@ -18,7 +18,7 @@ exports.getUserById = async (id) => {
 }
 
 exports.addUser = async (user) => {
-    const [rows,fields] = await db.execute("insert into usuarios (username, password, email, rol, activo) values (?,?,?,?)", [user.username,user.password,user.email,user.rol,user.activo])
+    const [rows,fields] = await db.execute('insert into usuarios (username, password, email, rol, activo) values (?,?,?,?,?)', [user.username,user.password,user.email,user.rol,user.activo])
     return rows;
 }
 
