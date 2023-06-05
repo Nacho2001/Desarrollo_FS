@@ -7,7 +7,7 @@ function Contador(){
             <div className="card-body">
                 <button className="btn btn-primary" onClick={() => setCounter(contador+1)}>Pulsame!</button>
                 <button className="btn btn-danger" style={{"margin-left":"5px"}}onClick={() => setCounter(contador-1)}>Bajar</button>
-                <button className="btn btn-warning" style={{"margin-left":"5px"}}onClick={() => setCounter(contador == 0)}>Restablecer</button>
+                <button className="btn btn-warning" style={{"margin-left":"5px"}}onClick={() => setCounter(contador === 0)}>Restablecer</button>
             </div>
         </div>
     );
