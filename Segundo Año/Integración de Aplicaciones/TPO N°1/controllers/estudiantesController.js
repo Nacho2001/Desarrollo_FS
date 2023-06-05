@@ -23,7 +23,7 @@ exports.getStudents = async (req,res) => {
 exports.getStudentByID = async (req,res) => {
     try { // Ejecuta el metodo para buscar al estudiante que coincida con el id escrito
         id = req.params.id
-        const student = await estudiantesModel.getStudentByID(id)
+        const student = await estudiantesModel.getStudentsByID(id)
         // Si no obtuvo respuesta de la consulta realizada, se considera que no encontró una coincidencia
         if (student==""){  
             res.status(404).json({ // Si es así, devuelve un código de error y un mensaje 
@@ -37,6 +37,7 @@ exports.getStudentByID = async (req,res) => {
             })
         }
     } catch (error) { // Si ocurrió otro error, se lo muestra en lugar de la respuesta esperada
+        console.log(error)
         res.status(500).json({
             sucess:false,
             message:`Error al obtener datos del estudiante:
@@ -64,6 +65,7 @@ exports.addStudent = async (req,res) => {
         }
 
     } catch (error) {
+        console.log(error)
         res.status(500).json({ // Si no fue así, se podrá ver el error en pantalla
             sucess:false,
             message:`Ocurrió un error al insertar datos:
@@ -88,10 +90,10 @@ exports.removeStudent = async (req,res) => {
             res.status(200).json({ // Si no hubo problemas, devuelve el mensaje de exito al usuario
                 success:true,
                 message:`Estudiante eliminado exitosamente!`,
-                data: borrado
             })
         }
     } catch (error) { // Si no pudo realizar el procedimiento anterior, también muestra un error
+        console.log(error)
         res.status(500).json({
             sucess:false,
             message:`Ocurrió un error al borrar estudiante: 
@@ -148,6 +150,7 @@ exports.getCoursesOfStudent = async (req,res) => {
             })
         }
     } catch (error) { // Si no logra conexión o tiene problema con el método, envia un error 500 y la descripción de lo que falló
+        console.log(error)
         res.status(500).json({
             sucess:false,
             message:`Error al obtener los cursos del estudiante:

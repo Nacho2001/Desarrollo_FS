@@ -7,12 +7,13 @@ const profesoresController = require('../controllers/profesoresController');
 // Rutas:
 
 // Ver todos los profesores de la base
-router.get('/profesores',profesoresController.getProfessors)
+router.get('/',profesoresController.getProfessors)
 // solicitar un unico profesor (por ID)
-router.get('/profesores/:id',profesoresController.getProfessorByID)
+router.get('/:id',profesoresController.getProfessorByID)
 // Añadir profesor
-router.post('/profesores',profesoresController.addProfessor)
+router.post('/',profesoresController.addProfessor)
 // Actualizar datos de un profesor
-router.put('/profesores/:id',profesoresController.updateProfessor)
+router.put('/:id',profesoresController.updateProfessor)
 // Eliminar profesor
-router.delete('/profesores/:id',profesoresController.removeProfessor)
+router.delete('/:id',profesoresController.removeProfessor)
+module.exports = router;

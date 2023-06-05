@@ -4,7 +4,7 @@ const db = require('../config/db');
 // Archivo con consultas a realizar en "cursos"
 
 // Obtener todos los cursos
-exports.getCourse = async () => {
+exports.getCourses = async () => {
     const [rows,fields] = await db.execute("select * from cursos");
     return rows;
 }
@@ -17,13 +17,13 @@ exports.getCourseByID = async (id) => {
 
 // Añadir curso
 exports.addCourse = async (course) => {
-    const [rows,fields] = await db.execute(`insert into cursos(nombre, descripcion) values = ("${course.nombre}","${course.descripcion}")`)
+    const [rows,fields] = await db.execute(`insert into cursos(nombre, descripcion) values ("${course.nombre}","${course.descripcion}")`)
     return rows;
 }
 
 // Eliminar curso específico
 exports.removeCourse = async (id) => {
-    const [rows,fields] = await db.execute("delete * from cursos where id = ?", [id]);
+    const [rows,fields] = await db.execute("delete from cursos where id = ?", [id]);
     return rows;
 }
 

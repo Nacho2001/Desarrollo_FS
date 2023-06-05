@@ -19,10 +19,10 @@ exports.getProfessors = async (req,res) => {
 }
 
 // Obtener un unico profesor por nro de ID
-exports.getCoursesByID = async (req,res) => {
+exports.getProfessorByID = async (req,res) => {
     try { // Ejecuta el metodo para buscar al profesor que coincida con el id
         id = req.params.id
-        const course = await cursosModel.getCourseByID(id)
+        const course = await profesoresModel.getProfessorByID(id)
          // Si no obtuvo respuesta de la consulta realizada, se considera que no encontró una coincidencia
         if (course==""){
             res.status(404).json({ // Si es así, devuelve un código de error y un mensaje 
@@ -87,7 +87,6 @@ exports.removeProfessor = async (req,res) => {
             res.status(200).json({
                 success:true,
                 message:`Profesor eliminado exitosamente!`,
-                data: borrado
             })
         }
     } catch (error) { // Si no pudo realizar el procedimiento anterior, también muestra un error

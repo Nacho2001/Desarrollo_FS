@@ -17,18 +17,18 @@ exports.getProfessorByID = async (id) => {
 
 // Añadir profesor
 exports.addProfessor = async (professor) => {
-    const [rows,fields] = await db.execute(`insert into profesores(nombre, especialidad, email) values = ("${professor.nombre}","${professor.especialidad}","${professor.email}")`)
+    const [rows,fields] = await db.execute(`insert into profesores(nombre, especialidad, email) values ("${professor.nombre}","${professor.especialidad}","${professor.email}")`)
     return rows;
 }
 
 // Eliminar profesor con id determinado
 exports.removeProfessor = async (id) => {
-    const [rows,fields] = await db.execute("delete * from profesores where id = ?", [id]);
+    const [rows,fields] = await db.execute("delete from profesores where id = ?", [id]);
     return rows;
 }
 
 // Editar profesor
 exports.updateProfessor = async(professor) => {
-    const [rows, fields] = await db.execute("update profesores set nombre = ?, especialidad = ?, email = ? where id = ?", [professor.nombre,professor.especialidad,professor.especialidad,professor.id]);
+    const [rows, fields] = await db.execute("update profesores set nombre = ?, especialidad = ?, email = ? where id = ?", [professor.nombre,professor.especialidad,professor.email,professor.id]);
     return rows;
 }

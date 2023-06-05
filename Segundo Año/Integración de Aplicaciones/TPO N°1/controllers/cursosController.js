@@ -87,7 +87,6 @@ exports.removeCourse = async (req,res) => {
             res.status(200).json({
                 success:true,
                 message:`Curso eliminado exitosamente!`,
-                data: borrado
             })
         }
     } catch (error) { // Si no pudo realizar el procedimiento anterior, también muestra un error

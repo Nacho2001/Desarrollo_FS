@@ -7,14 +7,15 @@ const estudiantesController = require('../controllers/estudiantesController');
 // Rutas:
 
 // Ver todos los estudiantes de la base
-router.get('/estudiantes',estudiantesController.getStudents)
+router.get('/',estudiantesController.getStudents)
 // solicitar un unico estudiante (por ID)
-router.get('/estudiantes/:id',estudiantesController.getStudentByID)
+router.get('/:id',estudiantesController.getStudentByID)
 // Añadir estudiante
-router.post('/estudiantes',estudiantesController.addStudent)
+router.post('/',estudiantesController.addStudent)
 // Actualizar datos de estudiante
-router.put('/estudiantes/:id',estudiantesController.updateStudent)
+router.put('/:id',estudiantesController.updateStudent)
 // Eliminar un estudiante
-router.delete('/estudiantes/:id',estudiantesController.removeStudent)
+router.delete('/:id',estudiantesController.removeStudent)
 // Ver cursos de un estudiante
-router.get('/estudiantes/:id/cursos',estudiantesController.getCoursesOfStudent)
+router.get('/:id/cursos',estudiantesController.getCoursesOfStudent)
+module.exports = router;

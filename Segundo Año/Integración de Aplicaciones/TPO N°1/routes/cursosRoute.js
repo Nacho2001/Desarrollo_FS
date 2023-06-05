@@ -6,18 +6,19 @@ const cursosController = require('../controllers/cursosController');
 
 //Rutas:
 // Obtener todos los cursos
-router.get('/cursos',cursosController.getCourses)
+router.get('/',cursosController.getCourses)
 //Obtener un unico curso
-router.get('/cursos/:id',cursosController.getCoursesByID)
+router.get('/:id',cursosController.getCoursesByID)
 // Añadir curso
-router.post('/cursos',cursosController.addCourse)
+router.post('/',cursosController.addCourse)
 // actualizar curso
-router.put('/cursos/:id',cursosController.updateCourse)
+router.put('/:id',cursosController.updateCourse)
 // Borrar curso
-router.delete('/cursos/:id',cursosController.removeCourse)
+router.delete('/:id',cursosController.removeCourse)
 // Obtener todos los estudiantes de un curso
-router.get('/cursos/:id/estudiantes',cursosController.getStudentsCourse)
+router.get('/:id/estudiantes',cursosController.getStudentsCourse)
 // Añadir estudiante a un curso
-router.post('/cursos/:id/estudiantes/:estudianteId',cursosController.addStudentToCourse)
+router.post('/:id/estudiantes/:estudianteId',cursosController.addStudentToCourse)
 // Borrar estudiante de un curso
-router.delete('/cursos/:id/estudiantes/:estudianteId',cursosController.removeStudentCourse)
+router.delete('/:id/estudiantes/:estudianteId',cursosController.removeStudentCourse)
+module.exports = router;
