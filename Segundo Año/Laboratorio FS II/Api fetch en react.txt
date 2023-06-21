@@ -1,0 +1,51 @@
+Fetching es la funcion en JavaScript que permite obtener informacion desde una api,
+ en realidad se trata de una interfaz que la obtiene mediante URL.
+
+componentDidMount: Cuando el componente se monta de forma nativa
+
+Primero, se realiza la llamada AJAX con mount y luego, se actualiza con el useState
+
+this.setState: Se utiliza en los componentes de clase para modificar el estado del mismo
+
+item.map: sirve para mapear y crear un elemento para cada item solicitado
+
+Llamada por compoenete funcional:
+
+function MyComponent(){
+	const [error,setError] = useState(null); // Crea las variables con su valor por defecto
+	const [isLoaded, setIsLoaded] = useState(false);
+	const [items, setItems] = useState([]);
+}
+
+	useEffect(() => { // Aca se resuelve la ineroperabilidad y se realiza la llamada
+			fetch("url")
+			.then(res => res.json())
+			.then(
+			(result) => {
+				setIsloaded(true);
+				setItems(result);	
+			},
+			(error) => {
+			setIsLoaded(true);
+				setError(error);
+		}
+	)
+}, []) Los corchetes son para evitar que se forme un bucle infinito, con esto se ejecuta 1 sola vez
+
+if (error) {
+	return <div>Error: {error.message}</div>
+} else if (!isLoaded){
+	return <div>Loading...</div>;
+} else {
+	return (
+	<ul>
+		{items.map(item => (
+			<li key={item.id}>
+				{item.name} {item.price}
+			</li>
+		))}
+	</ul>
+	);
+}
+}
+

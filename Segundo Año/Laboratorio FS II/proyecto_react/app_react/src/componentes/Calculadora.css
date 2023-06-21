@@ -1,0 +1,17 @@
+.campo {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+input {
+    margin: 10px
+}
+label {
+    color: white
+}
+
+button {
+    margin: 10px
+}

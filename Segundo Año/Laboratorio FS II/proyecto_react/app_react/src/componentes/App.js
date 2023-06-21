@@ -2,12 +2,12 @@ import React from 'react';
 import './App.css';
 import {BrowserRouter as Router,Routes,Route,Link} from 'react-router-dom';
 import Inicio from './Inicio';
-
+import Calculadora from './calculadora';
 function App() {
   return (
     <>
-    <Router>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <Router >
+      <nav className="navbar navbar-expand-lg navbar-dark bg-success" style={{"margin-bottom": "10px"}}>
         <Link to="/" className='navbar-brand' style={{"margin-left":"1%"}}>Inicio</Link>
         <button class="navbar-toggler" type="button">
           <span class="navbar-toggler-icon"></span>
@@ -22,10 +22,11 @@ function App() {
       </nav>
         <Routes>
           <Route path='/' element={<Inicio/>} />
+          <Route path='/calculadora' element={<Calculadora/>}/>
         </Routes>
     </Router>
     </>
-  );
+  )
 
 }
 

@@ -1,0 +1,21 @@
+Se refiere al metodo de ordenar o trabajar los componentes de react.
+
+Tipos de patrones de diseño:
+
+	Inheritance: Es herencia, se refiere al uso de componentes de clases.
+
+	Composition: Composición, se refiere a la combinacion de componentes, es un componente compuesto. 
+
+	Refactorizacion: Se refiere a la división de componentes en otros más pequeños que se pueden utilizar 
+	en otros o de forma singular. Nota, utilizar más props para programar en react, para facilitar la 
+	reutilización de los mismos.
+
+	Especialización: ... 
+
+Desventajas de componentes de clases:
+- Son muy extensos
+- Dificiles de mantener
+
+Custom hooks: Extrae la logica de un componente y lo hace reutilizable
+Nota: Tampoco es conveniente crear demasiados componentes, porque del lado del cliente, 
+la página se vuelve pesada.
