@@ -3,6 +3,7 @@ import './App.css';
 import {BrowserRouter as Router,Routes,Route,Link} from 'react-router-dom';
 import Inicio from './Inicio';
 import Calculadora from './calculadora';
+import Api from './Api';
 function App() {
   return (
     <>
@@ -17,12 +18,16 @@ function App() {
             <li class="nav-item active">
               <Link to="/calculadora" className='nav-link'>Calculadora</Link>
             </li>
+            <li class="nav-item active">
+              <Link to="/api" className='nav-link'>Api</Link>
+            </li>
           </ul>
         </div>
       </nav>
         <Routes>
           <Route path='/' element={<Inicio/>} />
           <Route path='/calculadora' element={<Calculadora/>}/>
+          <Route path='/api' element={<Api/>}/>
         </Routes>
     </Router>
     </>
