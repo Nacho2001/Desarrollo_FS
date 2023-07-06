@@ -5,13 +5,25 @@ const db = require('../config/db');
 
 // Obtener todos los profesores registrados
 exports.getProfessors = async () => {
-    const [rows,fields] = await db.execute("select * from profesores");
+    const [rows,fields] = await db.execute("select id,nombre,especialidad from profesores");
+    return rows;
+}
+
+//Obtener email de profesores
+exports.getEmail = async () => {
+    const [rows,fields] = await db.execute("select email from profesores");
     return rows;
 }
 
 // Obtener un profesor por id
 exports.getProfessorByID = async (id) => {
-    const [rows, fields] = await db.execute("select * from profesores where id = ?", [id]);
+    const [rows, fields] = await db.execute("select id,nombre,especialidad from profesores where id = ?", [id]);
+    return rows;
+}
+
+//Obtener email de unico profesor
+exports.getEmailByID = async (id) => {
+    const [rows,fields] = await db.execute("select email from profesores where id = ?", [id]);
     return rows;
 }
 
