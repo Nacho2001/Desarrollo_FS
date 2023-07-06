@@ -4,10 +4,10 @@ const profesoresModel = require('../models/profesoresModel.js')
 // Obtiene el listado de profesores
 exports.getProfessors = async (req,res) => {
     try { // Ejecuta el metodo del model para obtener la lista, si no tuvo errores la muestra en pantalla
-        const courses = await profesoresModel.getProfessors()
+        const professors = await profesoresModel.getProfessors()
         res.status(200).json({
             sucess:true,
-            data: courses
+            data: professors
         })
     } catch (error) { // En cambio, si algo ocurrió devolverá un mensaje y el error ocurrido
         res.status(500).json({
@@ -22,7 +22,7 @@ exports.getProfessors = async (req,res) => {
 exports.getProfessorByID = async (req,res) => {
     try { // Ejecuta el metodo para buscar al profesor que coincida con el id
         id = req.params.id
-        const course = await profesoresModel.getProfessorByID(id)
+        const professor = await profesoresModel.getProfessorByID(id)
          // Si no obtuvo respuesta de la consulta realizada, se considera que no encontró una coincidencia
         if (course==""){
             res.status(404).json({ // Si es así, devuelve un código de error y un mensaje 
@@ -32,7 +32,7 @@ exports.getProfessorByID = async (req,res) => {
         } else {
             res.status(200).json({ // Si hubo coincidencia de ID, la muestra
                 sucess:true,
-                data: course
+                data: professor
             })
         }
     } catch (error) {  // Si ocurrió otro error, se lo muestra en lugar de la respuesta esperada
