@@ -1,5 +1,7 @@
 // Invocar el model de usuarios
+const { encriptacion } = require("../middlewares/encriptar")
 const usuariosModel = require("../models/usuariosModel")
+
 
 // Obtener lista de usuarios
 exports.getUsers = async (req,res) => {
@@ -45,6 +47,8 @@ exports.getUserById = async (req,res) => {
 
 // Añadir usuario
 exports.addUser = async (req,res) => {
+    req.body.contraseña = encriptacion(req.body.contraseña)
+    console.log(req.body.contraseña)
     const User = req.body
     try {
         const user = await usuariosModel.addUser(User)

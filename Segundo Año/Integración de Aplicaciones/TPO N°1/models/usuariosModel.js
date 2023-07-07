@@ -13,7 +13,7 @@ exports.getUserbyId = async (id) => {
 
 // Insertar usuario
 exports.addUser = async (user) => {
-    const [rows, fields] = await db.execute(`insert into usuarios(nombre, password) values ("${user.name}","${user.password}")`)
+    const [rows, fields] = await db.execute(`insert into usuarios(nombre, contraseña) values ("${user.nombre}","${user.contraseña}")`)
     return rows;
 }
 
@@ -25,6 +25,6 @@ exports.deleteUser = async (id) => {
 
 // Editar usuario
 exports.updateUser = async (user) => {
-    const [rows,fields] = await db.execute(`update usuarios set nombre = "${user.name}", password = "${user.password}" where id = "${user.id}"`)
+    const [rows,fields] = await db.execute(`update usuarios set nombre = "${user.nombre}", contraseña = "${user.contraseña}" where id = "${user.id}"`)
     return rows;
 }

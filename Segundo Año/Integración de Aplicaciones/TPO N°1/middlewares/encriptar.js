@@ -1,9 +1,8 @@
-const bcrypt = require("bycript");
+const bcrypt = require("bcryptjs");
 
-function encriptar(value){
-    const salt = bcrypt.genSyncSalt(seed_lenght=6)
-    value = bcrypt.hashSync(value,salt)
+function encriptacion(value){
+    value = bcrypt.hashSync(value,6)
     return value;
 }
 
-module.exports = {encriptar}
+module.exports = {encriptacion}
