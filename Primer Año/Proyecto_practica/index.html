@@ -4,15 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <!--<link rel="stylesheet" href="bootstrap/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <title>RECLAMEX</title>
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
 </head>
-<body>
-    <div class="Success">
-        <h1>Proyecto de Los Chimiqueques</h1>
-        <button type="button" class="btn btn-warning">warning</button>
+<body >
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!--Barra de navegacion-->
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">RECLAMEX</a> <!--Referencia al index, en esta pagina solo refresca la pagina-->
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">Informacion y contacto</a> <!-- Sitio de informacion en la barra-->
+        </li>
+      </ul>
     </div>
-    
+  </div>
+</nav>
+  <div class="row col-12 text-center"> <!--Columna que contiene los botones-->
+    <a style="margin-top: 2%" href="accion.html"> <!-- Boton hacia el reclamo alumbrado-->
+      <button class="btn btn-lg btn-primary col-sm-11 col-md-3" type="button">Alumbrado</button>
+    </a>
+    <a style="margin-top: 2%;" href="accion.html"> <!-- Boton hacia reclamo de bacheo-->
+      <button class="btn btn-lg btn-primary col-sm-11 col-md-3" type="button">Bacheo</button>
+    </a>
+    <a style="margin-top: 2%;" href="accion.html"> <!-- Boton de acceso a Recolecion de ramas-->
+      <button class="btn btn-lg btn-primary col-sm-11 col-md-3" type="button">Recoleccion de Ramas</button>
+    </a>
+    <a style="margin-top: 2%;" href="accion.html"><!-- Boton hacia recoleccion de residuos-->
+      <button class="btn btn-lg btn-primary col-sm-11 col-md-3" type="button">Recoleccion de Residuos</button>
+    </a>
+    <a style="margin-top: 2%;" href="accion.html"> <!--Boton de manteniemiento-->
+      <button class="btn btn-lg btn-primary col-sm-11 col-md-3" type="button">Manteniemiento de calles</button>
+    </a>
+    <a style="margin-top: 2%;" href="accion.html"> <!--Boton de reclamo sin categoria-->
+      <button class="btn btn-lg btn-primary col-sm-11 col-md-3" type="button">Otros</button>
+    </a>
+  </div>
 </body>
+
 </html>
