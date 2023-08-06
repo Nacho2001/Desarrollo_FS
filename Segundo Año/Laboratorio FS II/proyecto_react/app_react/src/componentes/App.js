@@ -3,7 +3,7 @@ import './App.css';
 import {BrowserRouter as Router,Routes,Route,Link} from 'react-router-dom';
 import Inicio from './Inicio';
 import Calculadora from './calculadora';
-import Api from './Api';
+import Api from './api/Api';
 function App() {
   return (
     <>

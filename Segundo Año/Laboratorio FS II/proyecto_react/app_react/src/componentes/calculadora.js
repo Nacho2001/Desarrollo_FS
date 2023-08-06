@@ -45,15 +45,15 @@ export default function Calculadora(){
             <form onSubmit={enviarOperacion}>
                 <div className="campo">
                     <label>Ingresar primer número</label>
-                    <input onChange={handleInputChange} name="nro1"/>
+                    <input onChange={handleInputChange} name="nro1" className="form-control"/>
                 </div>
                 <div className="campo">
                     <label>Ingresar segundo valor</label>
-                    <input onChange={handleInputChange} name="nro2"/>
+                    <input onChange={handleInputChange} name="nro2" className="form-control"/>
                 </div>
                 <div className="campo">
                     <label>Seleccione la operación</label>
-                    <select onChange={handleInputChange} name="operacion">
+                    <select onChange={handleInputChange} name="operacion" className="form-select">
                         <option value={""}>Elegir operacion</option>
                         <option value={"suma"}>Suma</option>
                         <option value={"resta"}>Resta</option>
@@ -62,7 +62,7 @@ export default function Calculadora(){
                     </select>
                 </div>
                 <div className="campo">
-                    <button type="submit">Calcular</button>
+                    <button type="submit" className="btn btn-primary">Calcular</button>
                     <label>Resultado: {result}</label>
                 </div>
             </form>
