@@ -1,17 +1,6 @@
-import { useState } from "react";
-import React, { useEffect } from "react";
+import React from "react";
 
-
-export default function PokeCardRed(){
-    let listaRoja=[984,985,986,987,988,989,1005,1007,1009]
-    const [error,setError] = useState(null);
-    const [items, setItems] = useState([]);
-    listaRoja.forEach(pokemon => {
-        fetch(`https://pokeapi.co/api/v2/pokemon/${props.id}`)
-        .then(res = res.json())
-        .then((result) => { setItems(result) },
-        (error) => {setError(error)} )
-    });
+export default function PokeCardRed(props){
     return (
         <div className="card mb-3 bg-danger" style={{"max-width":" 540px"}}>
             <div className="row">

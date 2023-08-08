@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function PokeCardBlue(){
-    let listaAzul=[990,991,992,993,994,995,1006,1008,1010]
     return (
         <div className="card mb-3 bg-primary" style={{"max-width":" 540px"}}>
             <div className="row">
