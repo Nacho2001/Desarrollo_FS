@@ -1,0 +1,20 @@
+Principios solid:
+
+1- Principio de resonsabilidad unica: Se refiere a utilizar clases o modulos que realicen una unica tarea y no 
+se encarge de otras que no le corresponden y dificulten la solucion de problemas.
+
+2- Principio de abierto-cerrado: Las clases no deben poder modificarse, solamente se debe permitir que se 
+extiendan, es decir, en lugar de crear más metodos escpecificos en las clases padres, realizarlos en clases 
+hijas.
+
+3- Principio de sustictucion de Liskov: Significa tener la posibilidad de que una clase hija modfique un metodo de 
+la clase padre solamente cuando se la invoque, es decir, sustituir el metodo heredado con el metodo de la clase 
+hija para casos determinados (cuando se utilice la clase hija). 
+
+4- Principio de segregación de interfaz: Cuando se crea una interfaz, la clases que la implementan deben utilizar 
+TODOS los metodos que esta contiene, por lo tanto, es importante que la interfaz solamente tenga metodos que se 
+puedan aplicar de forma genérica y no para casos escpecificos. De este modo, se asegura que las clases utilizaran 
+todos los metodos de la interfaz y haya errores en el código.
+
+5- Principio de inversion de dependencias: Significa evitar las depencias a implentaciones específicas, en su 
+lugar que las clases apunten a implentaciones variables o abstractas.
