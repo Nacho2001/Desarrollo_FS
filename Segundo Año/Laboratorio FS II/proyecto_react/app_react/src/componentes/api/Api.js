@@ -8,9 +8,10 @@ export default function Api(){
     return (
         <div className="ms-3">
         <h3 className="text-light">Pokémon Paradojas</h3>
-        {listaRoja.forEach(pkid => {
-            <PokeCardRed pkid={pkid} />
-        })}
+        {/*listaRoja.forEach(pkid => {
+            return <PokeCardRed pkid={pkid} />
+        })*/}
+        <PokeCardRed pkid={984} />
         {/*<PokeCardBlue/>*/}
         </div>
     )

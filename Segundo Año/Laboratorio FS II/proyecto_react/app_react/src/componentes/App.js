@@ -4,6 +4,7 @@ import {BrowserRouter as Router,Routes,Route,Link} from 'react-router-dom';
 import Inicio from './Inicio';
 import Calculadora from './calculadora';
 import Api from './api/Api';
+import Notas from './Notas';
 function App() {
   return (
     <>
@@ -21,6 +22,9 @@ function App() {
             <li class="nav-item active">
               <Link to="/api" className='nav-link'>Api</Link>
             </li>
+            <li class="nav-item active">
+              <Link to="/notas" className='nav-link'>Notas</Link>
+            </li>
           </ul>
         </div>
       </nav>
@@ -28,6 +32,7 @@ function App() {
           <Route path='/' element={<Inicio/>} />
           <Route path='/calculadora' element={<Calculadora/>}/>
           <Route path='/api' element={<Api/>}/>
+          <Route path="/notas" element={<Notas/>}/>
         </Routes>
     </Router>
     </>
