@@ -1,0 +1,20 @@
+Interfaz: Similar a una clase pero solamente declara los metodos y obliga a las clases hijas a utilizar los metodos declarados.
+Implementacion:
+interfaz pago(){
+}
+class Paypay implements pago{
+}
+Principios solid:
+
+
+-Principio de responsabilidad unica: Cada clase / modulo se encarga de una unica tarea. Cada tarea debe ser realizada por una unica clase. Con este principio se busca que una clase no tenga mucha dependencia de otra (bajo acoplamiento) y que solo se ocupe de una unica tarea (alta cohesión)
+Ejemplo de clase con multiples responsabilidades: Clase usuario que obtiene los datos del mismo, envia un email y guarda en base de datos. 
+
+-Principio abierto-cerrado: Significa que una clase no pueda modificarse pero que pueda extenderse, es decir crear clases derivadas de la misma
+
+-Principios de sustitucion de Liskov: significa sobreescribir un metodo heredado, modificando su valor en la clase hija
+
+-Principio de segregacion de interfaz: Muchas clases específicas en lugar de una genérica. Esto implica que una clase no herede metodos no relacionados con la misma, que la clase padre contenga los metodos genericos aplicables a las clases hijas
+
+-Principio de inversion de dependencias: Significa no acoplar las clases, similar al anterior
+

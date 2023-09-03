@@ -1,0 +1,7 @@
+Jira, plataforma para scrum (mucho detalle)
+no se puede combinar más de un codigo
+Sistema crítico: Sistema que no puede tener fallas.
+
+Testeos de caja blanca y caja negra.
+
+utilizar mas switch case en lugar de ifelse

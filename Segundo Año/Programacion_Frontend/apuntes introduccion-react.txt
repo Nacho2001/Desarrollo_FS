@@ -1,0 +1,33 @@
+Historia:
+Antes se utilizaba HTML, CSS y JavaScript para crear una pagina web y la funcionalidad del 
+lado del servidor se lo hacia con PHP ya que la máquina no interpretaba JS.
+
+Con NodeJS, la pc interpreta JS y no require php.
+
+Con Angular los coponentes se crean con clases, en React se utilizan tanto componentes de clase 
+como componentes funcionales
+
+JSX es una extensión de la sintaxis de JS y es lo que se utiliza para escribir componentes en 
+React.
+Un componente es una funcion que retorna JSX.
+ventajas de los componentes:
+reutilizacion del codigo,
+separacion de conceptos, separa la interfaz de la logica,
+encapsula la logica compleja, fecilita el testing pudiendo evaluar el 
+componente solo.
+
+VirtualDOM: Se trata de una estructura que contiene todos los elementos, dicho de otra forma, 
+es como un div vacio en el que luego se colocan todos los componentes.
+Funciona como un arbol jerarquico: El virtualDOM se guarda en caché y solamente renderiza los elementos 
+modificados y no toda la pagina, lo que le da mayor velocidad.
+
+Al modificar un componente, se realiza una comparacion entre el el virtualDOM y el DOM real.
+
+Vite: Es la herramienta de construcción y testeo de JS, de gran velocidad.
+
+Prefetching: Tecnica que anticipa los recursos que va a utilizar el usuario y los descarga antes de tiempo
+
+Splitting de codigo: Divide el codigo completo en pedazos de codigo y va presentando esos fragmentos 
+cuando el usuario los requiere para evitar consumir recursos innecesarios.
+
+

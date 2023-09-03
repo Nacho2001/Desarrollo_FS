@@ -1,0 +1,48 @@
+Clausulas espciales:
+Between y not between
+
+Sentencia in: Permite realizar selecciones que contengan un parametro especificado
+Sentencia like: Se utiliza para buscar datos que contengan datos similares al especificado (% [comodin], _ [un solo caracter diferente])
+
+Operadores logicos:
+and y or 
+
+Fechas: 
+Now() : retorna fecha y hora actual "yyyy-hh-dd hh:mm:ss"
+current date(): retorna fecha actual
+current time(): retorna la hora actual
+date_format(): Permite modificar el formato de fecha
+
+datediff(): Retorna diferencia entre 2 fechas[datediff(fecha1, fecha2)]
+year(): retorna el año de una fecha determinada year('2018/06/12')
+
+Orden de salida:
+desc: Orden descendente
+asc: Orden ascendente
+
+funciones de agregado/agrupamiento
+count(): contar la cantidad de valores de un campo determinado
+sum(): Retorna la suma de valores de un campo especifico
+min(): Retorna el minimo de valores de un campo especifico
+max(): Retorna el maximo de valores de un campo especifico
+avg(): Retorna el promedio de valores del campo especificado
+
+group by:
+Agrupa informacion de acuerdo a un criterio comun
+
+having:
+Aplica condiciones al agrupamiento realizado donde no se puede utilizar el where
+
+Nota: Lo que se utilza en el select debe estar en el group by
+
+Producto cartesiano: select * from tabla1,tabla2
+Multiplica todo con todo. Cuidado con esta consulta
+
+Join
+Inner join: Devuelve los registros que coincidan
+Left join: Mantiene los registros de la tabla izquierda y los que coiniciden de la tabla derecha
+Right join: Mantiene los registros de la tabla derecha y los que coiniciden de la tabla izquierda 
+Cross join: Realiza el producto cartesiano ya que cruza todo con todo
+
+Generalidad: Se crea un grupo generalizado cuando las entidades comparten atrubutos
+Entidad debil: no posee un atributo que pueda ser clave candidata y depende de otra entidad
