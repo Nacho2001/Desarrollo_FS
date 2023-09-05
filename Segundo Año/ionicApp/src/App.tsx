@@ -7,7 +7,9 @@ import Home from './pages/Home';
 import '@ionic/react/css/core.css';
 
 // Autenicacion de firebase
-import { initializeApp } from 'firebase/app';
+const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');
+const { getFirestore, Timestamp, FieldValue, Filter } = require('firebase-admin/firestore');
+//import { initializeApp } from 'firebase/app';
 const firebaseConfig = {
   apiKey: "AIzaSyBYO4G0DcptvDQEUGMgNp5ElyJScJpn4wI",
   authDomain: "testingfirebase-eabc9.firebaseapp.com",
@@ -18,13 +20,19 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+/*initializeApp({
+  credential: applicationDefault()
+});*/
+
+const db = getFirestore();
 /* Basic CSS for apps built with Ionic */
 import '@ionic/react/css/normalize.css';
 import '@ionic/react/css/structure.css';
 import '@ionic/react/css/typography.css';
 
+/*
 // importar autenticacion por google
-import { getAuth, signInWithCredential, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 const provider = new GoogleAuthProvider();
 const auth = getAuth();
 signInWithPopup(auth, provider)
@@ -32,9 +40,9 @@ signInWithPopup(auth, provider)
   //Realiza la autenticacion
   const credential = GoogleAuthProvider.credentialFromResult(result);
   // Token obtenido de google luego del logueo
-  /*const token = credential.accessToken;
+  const token = credential.accessToken;
   // Informacion del usuario logueado
-  const user = result.user;*/
+  console.log(result.user.email);
 }).catch((error) => {
   // Handle Errors here.
   const errorCode = error.code;
@@ -44,7 +52,7 @@ signInWithPopup(auth, provider)
   // The AuthCredential type that was used.
   const credential = GoogleAuthProvider.credentialFromError(error);
   // ...
-});
+});*/
 /* Theme variables */
 import './theme/variables.css';
 
