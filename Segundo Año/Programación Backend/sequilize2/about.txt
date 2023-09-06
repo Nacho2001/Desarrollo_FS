@@ -1,0 +1,7 @@
+// .env Se utiliza para las variables de entorno
+
+// Services se utiliza cuando se quiere conectar a una api externa
+
+// No es seguro utilizar los datos de la base en el archivo db.js porque 
+// pueden ser leidos desde afuera
+
