@@ -6,6 +6,7 @@ const sequelize = require('./config/db');
 
 const userRoutes = require('./routes/userRoute');
 
+const cors = require('cors');
 //Configuracion de la base de datos
 sequelize.authenticate()
 .then(() => {
@@ -19,8 +20,11 @@ sequelize.authenticate()
 app.use(cors());
 app.use(morgan());
 
+app.use(express.json());
+app.use(cors());
 // Configuracion de rutas
 app.use('/api', userRoutes);
+
 
 // Inicio en puerto determinado
 const PORT = 3000;

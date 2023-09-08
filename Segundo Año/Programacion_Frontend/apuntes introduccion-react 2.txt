@@ -1,0 +1,21 @@
+Metodos de aplicar estilos en React:
+
+- Se puede utilizar css normal pero no aprovecha todo el potencial de react
+importando el archivo css e invocando las clases en los componentes
+//Esto puede causar un conflicto con otra clase, por eso es mejor utilzarlos modular
+
+- Css con modulo, permite repetir los nombres de las clases
+
+- Estilo en linea, Crea los estilos en el mismo JS
+
+- Estilo en componente: Define los estilos antes de definir el componente y luego se aplican automaticamente
+
+- css-in-js: es muy similar al anterior pero lo realiza mediante una libreria
+
+
+Otra sintaxis de if
+${props => props.title == "Saludo" ? "blue" : "gray"}
+// En este caso, si en title viene "Saludo" se muestra el elemento en azul,
+// En cambio, si no viene nada, lo muestra en gris
+
+Estado: Valor que tienen los objetos en un momento determinado
