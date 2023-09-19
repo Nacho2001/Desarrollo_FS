@@ -9,7 +9,7 @@ const sequelize = require('./config/db');
 // Trae el archivo con las rutas 
 const rutasUsuarios = require('./routes/rutasUsuario');
 
-const cors = require('cors');
+
 // Autenticion a la base
 sequelize.authenticate()
 .then(() => {

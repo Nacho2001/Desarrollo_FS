@@ -1,6 +1,6 @@
 // Estiende la clase model ya existente en Sequelize
-const {Model, DataTypes} = require("sequelize");
-
+const {Sequelize, Model, DataTypes} = require("sequelize");
+const sequelize = new Sequelize();
 // La clase usuario hereda los metodos de Model
 class Usuario extends Model{};
 
