@@ -1,7 +1,7 @@
 // Importacion de librerias
 const express = require('express');
 const app = express();
-const cors = require("cors");
+const cors = require('cors');
 
 // Obtiene los datos de acceso a la base
 const sequelize = require('./config/db');
@@ -20,9 +20,8 @@ sequelize.authenticate()
 })
 
 // Llamado a los middlewares
-app.use(cors());
 app.use(express.json());
-
+app.use(cors());
 // Configuracion de rutas
 app.use('/usuarios', rutasUsuarios);
 
