@@ -23,7 +23,7 @@ exports.crearUsuario = async(req,res) => {
         const usuario = await Usuario.create(req.body);
         res.status(201).json({ // Si tuvo exito, devuelve un mensaje con el codigo 201
             estado:"Ok",
-            mensaje:`Usuario ${usuario} creado con exito!`
+            mensaje:`Usuario ${usuario.username} creado con exito!`
         })
     } catch (error) { // Si falló, muestra el error por terminal y un mensaje con la notificación
         console.error(error);
@@ -67,7 +67,7 @@ exports.borrarUsuario = async (req,res) => {
         })
         res.status(200).json({ // Si lo pudo eliminar, devuleve un ok y el mensaje de operación exitosa
             estado:"Ok",
-            message:`Usuario ${usuario} eliminado`
+            message:`Usuario ${usuario.username} eliminado`
         })
     } catch(error) { // Si falló devuelve error en "estado" y los detalles del mismo por consola
         console.error(error);
@@ -86,10 +86,14 @@ exports.actulizarUsuario = async (req,res) => {
     // Para luego crear el objeto usuario listo para lanzar con el update
     const usuario = { userId, ...dataUsuario }
     try { // Utiliza el metodo update con la informacion actualizada donde el id coincida con el del usuario que se queiere corregir
-        const actualizacionUsuario = await Usuario.update({ usuario }, {
+        const actualizacionUsuario = await Usuario.update({ ...usuario }, {
             where: { 
                 id:userId
             }
+        })
+        res.status(200).json({
+            estado:"OK",
+            mensaje:"Usuario actualizado"
         })
     } catch (error) { // Igual que las consultas anteriores, si falla retorna el error 500 y el mensaje por terminal
         console.error(error);

@@ -19,3 +19,5 @@ router.delete('/:id', controladorUsuario.borrarUsuario);
 
 // Actualizar usuario
 router.put('/:id', controladorUsuario.actulizarUsuario);
+
+module.exports = router
