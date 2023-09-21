@@ -25,7 +25,7 @@ app.use(cors());
 // Configuracion de rutas
 app.use('/usuarios', rutasUsuarios);
 
-// Incio por puerto 4000
+// Incio por puerto 5000
 const PORT = 5000;
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en puerto ${PORT}`)
