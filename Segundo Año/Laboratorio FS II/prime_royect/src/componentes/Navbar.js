@@ -1,43 +1,29 @@
 import React from "react";
 import { Menubar } from "primereact/menubar";
-import { BrowserRouter as Router, Routes, Route,Link } from 'react-router-dom';
-import 'primeicons/primeicons.css';
-import DexApp from "../pages/DexApp";
-import Habilidades from "../pages/Habilidades";
-import Regiones from "../pages/Regiones";
-import Personajes from "../pages/Personajes";
+import { BrowserRouter as Link } from 'react-router-dom';
+import { Image } from 'primereact/image';
 
 const Navbar = () => {
     const habilidadesLink = <Link to="/habilidades">Habilidades</Link>
     const regionesLink = <Link to="/regiones">Regiones</Link>
     const personajesLink = <Link to="/personajes">Personajes</Link>
     const dexAppLink = <Link to="/">DexApp</Link>
-    const logo = <img/>
+    const logo = <Image src="iconos/pokeball-icon.png" alt="" height="20" width="20"/>
     const elementos = [{
-        label: dexAppLink,
-        icon: ""
+        icon: logo,
+        label: dexAppLink
     },{
         label: habilidadesLink,
-        icon: PrimeIcons.STAR_FILL
+        icon: 'pi pi-start-fill'
     },{
         label: regionesLink,
-        icon:''
+        icon:'pi pi-map'
     },{
         label: personajesLink,
-        icon: PrimeIcons.USER
+        icon: 'pi pi-fw pi-users'
     }]
     return (
-        <>
-            <Router>
-                <Menubar model={elementos}/>
-                <Routes>
-                    <Route path="/" element={<DexApp/>}/>
-                    <Route path="/habilidades" element={<Habilidades/>}/>
-                    <Route path="/regiones" element={<Regiones/>}/>
-                    <Route path="/personajes" element={<Personajes/>}/>
-                </Routes>
-            </Router>
-        </>
+        <Menubar model={elementos}/>
     )
 }
 
