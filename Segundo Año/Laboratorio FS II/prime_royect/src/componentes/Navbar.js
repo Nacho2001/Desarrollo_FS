@@ -1,7 +1,7 @@
 import React from "react";
 import { Menubar } from "primereact/menubar";
 import { BrowserRouter as Router, Routes, Route,Link } from 'react-router-dom';
-import { PrimeIcons } from "primereact/api";
+import 'primeicons/primeicons.css';
 import DexApp from "../pages/DexApp";
 import Habilidades from "../pages/Habilidades";
 import Regiones from "../pages/Regiones";
@@ -11,9 +11,10 @@ const Navbar = () => {
     const habilidadesLink = <Link to="/habilidades">Habilidades</Link>
     const regionesLink = <Link to="/regiones">Regiones</Link>
     const personajesLink = <Link to="/personajes">Personajes</Link>
+    const dexAppLink = <Link to="/">DexApp</Link>
     const logo = <img/>
     const elementos = [{
-        label: 'DexApp',
+        label: dexAppLink,
         icon: ""
     },{
         label: habilidadesLink,
