@@ -1,29 +1,25 @@
 import React from "react";
 import { Menubar } from "primereact/menubar";
-import { BrowserRouter as Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Image } from 'primereact/image';
+import pokeballIcon from './iconos/pokeball-icon.png';
+import DexApp from '../pages/DexApp';
 
 const Navbar = () => {
-    const habilidadesLink = <Link to="/habilidades">Habilidades</Link>
-    const regionesLink = <Link to="/regiones">Regiones</Link>
-    const personajesLink = <Link to="/personajes">Personajes</Link>
     const dexAppLink = <Link to="/">DexApp</Link>
-    const logo = <Image src="iconos/pokeball-icon.png" alt="" height="20" width="20"/>
+    const logo = <Image src={pokeballIcon} alt="" height="20" width="20"/>
     const elementos = [{
         icon: logo,
         label: dexAppLink
-    },{
-        label: habilidadesLink,
-        icon: 'pi pi-start-fill'
-    },{
-        label: regionesLink,
-        icon:'pi pi-map'
-    },{
-        label: personajesLink,
-        icon: 'pi pi-fw pi-users'
     }]
     return (
-        <Menubar model={elementos}/>
+        <Router>
+            <Menubar model={elementos}/>
+            <Routes>
+                <Route path="/" element={<DexApp/>}/>
+            </Routes>
+        </Router>
+        
     )
 }
 
