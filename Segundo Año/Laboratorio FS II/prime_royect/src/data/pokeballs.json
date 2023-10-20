@@ -1,163 +1,163 @@
 {
-    "pokeballs":{
-        "PokeBall":{
+    "pokeballs":[
+        {
             "id":1,
-            "nombre":"Poke Bola",
+            "nombre":"Poke Ball / Poke Bola",
             "imagen":"",
-            "descripcion":"Se trta de un dispositivo que se utiliza para capturar Pókemon. Es la PokeBola más comun presente en todas las generaciones",
+            "descripcion":"Se trata de un dispositivo que se utiliza para capturar Pókemon. Es la PokeBola más comun presente en todas las generaciones",
             "ratio_captura":1
         },
-        "SuperBall":{
+        {
             "id":2,
-            "nombre":"Bola Super",
+            "nombre":"Super Ball / Bola Super",
             "imagen":"",
             "descripcion":"Versión mejorada de la Poke bola tradicional, tiene mayor indice de éxito que la Poke Bola común. También esta presente en todas las generaciones",
             "ratio_captura":1.5
         },
-        "UltraBall":{
+        {
             "id":3,
-            "nombre":"Bola Ultra",
+            "nombre":"Ultra Ball / Bola Ultra",
             "imagen":"",
             "descripcion":"Es una de las Poke bolas más eficaces de uso general, siendo más eficaz que la Bola Super, al igual que las anteriores también esta presente desde la primera generación y solo se pueden obtener a partir de un punto avanzado en las partidas",
             "ratio_captura":2
         },
-        "MasterBall":{
+        {
             "id":4,
-            "nombre":"Bola Maestra",
+            "nombre":"Master Ball / Bola Maestra",
             "descripcion":"Es la Poke Bola más eficaz de todas, ya que nunca falla. Sin embargo, es muy dificil de obtener y normalmente se consigue una sola en cada juego, salvo algunos casos que permiten obtener otra",
             "ratio_captura":255
         },
-        "SafariBall":{
+        {
             "id":5,
-            "nombre":"Bola Safari",
+            "nombre":"Safari Ball / Bola Safari",
             "descripcion":"Se trata de un tipo de Poke Bola que solamente se puede utilizar zonas determinadas (Zona Safari / Gran Pantano) y solo esta presente en juegos determinados",
             "ratio_captura":1.5
         },
-        "NivelBall":{
+        {
             "id":6,
-            "nombre":"Bola Nivel",
+            "nombre":"Nivel Ball / Bola Nivel",
             "descripcion":"Poke bola que aumenta su eficiencia mientras más alto sea el nivel del Pokémon del entrenador frente al Pokémon salvaje",
             "ratio_captura":"Variado"
         },
-        "CeboBall":{
+        {
             "id":7,
-            "nombre":"Bola Cebo",
+            "nombre":"Cebo Ball / Bola Cebo",
             "descripcion":"Poke Bola especial para capturar Pokémon que se hayan encontrado con una caña",
             "ratio_captura":8
         },
-        "PesoBall":{
+        {
             "id":8,
-            "nombre":"Bola Peso",
+            "nombre":"Peso Ball / Bola Peso",
             "descripcion":"Poke Bola especial para capturar Pokémon de mucho peso",
             "ratio_captura":"Si el peso supera los 108kg, el ratio captura puede llegar hasta 40"
         },
-        "AmorBall":{
+        {
             "id":9,
-            "nombre":"Bola Amor",
+            "nombre":"Amor Ball / Bola Amor",
             "descripcion":"Poke Bola que se utiliza para capturar Pokémon de la misma especie que el Pokémon del jugador, pero del sexo opuesto",
             "ratio_captura":8
         },
-        "AmigoBall":{
+        {
             "id":10,
-            "nombre":"Bola Amigo",
+            "nombre":"Amigo Ball / Bola Amigo",
             "descripcion":"Poke Bola que aumenta bastante la amistad del Pokémon capturado con el entrenador",
             "ratio_captura":1
         },
-        "CompetiBall":{
+        {
             "id":11,
-            "nombre":"Bola Competi",
+            "nombre":"Competi Ball / Bola Competi",
             "descripcion":"Poke Bola utilizable únicamente en el concurso de captura de bichos, en Johto",
             "ratio_captura":1
         },
-        "LujoBall":{
+        {
             "id":12,
-            "nombre":"Bola Lujo",
+            "nombre":"Lujo Ball / Bola Lujo",
             "descripcion":"Poke Bola lujosa que facilita el aumento de amistad del Pókemon capturado con esta",
             "ratio_captura":1
         },
-        "NidoBall":{
+        {
             "id":13,
-            "nombre":"Bola Nido",
+            "nombre":"Nido Ball / Bola Nido",
             "descripcion":"Esta Poke Bola se utiliza para capturar Pokémon de nivel bajo, teniendo mayor eficacia con Pokémon de nivel inferior a 30",
             "ratio_captura":"Variado"
         },
-        "HonorBall":{
+        {
             "id":14,
-            "nombre":"Bola Honor",
+            "nombre":"Honor Ball / Bola Honor",
             "descripcion":"Poke Bola que se obtiene luego de comprar 10 Poke Bolas comunes en las tiendas de los juegos, la diferencia con una Poke Bola común es solamente el color",
             "ratio_captura":1
         },
-        "MallaBall":{
+        {
             "id":15,
-            "nombre":"Bola Malla",
+            "nombre":"Malla Ball / Bola Malla",
             "descripcion":"Esta Poke Bola aumenta su efectividad con Pokémon de tipo Agua o Bicho, con los otros no presenta ningun aumento",
             "ratio_captura":3.5
         },
-        "TurnoBall":{
+        {
             "id":16,
-            "nombre":"Bola Turno",
+            "nombre":"Turno Ball / Bola Turno",
             "descripcion":"Poke Bola que aumenta su indice de éxito con cada turno del combate, si el combate se extiende mucho, su efectividad es mayor",
             "ratio_captura":"Variado"
         },
-        "BuceoBall":{
+        {
             "id":17,
-            "nombre":"Bola Buceo",
+            "nombre":"Buceo Ball / Bola Buceo",
             "descripcion":"Poke Bola especial para capturar Pokémon que se hayan encontrado utilizando Surf, Buceo o pescando",
             "ratio_captura":3.5
         },
-        "AcopioBall":{
+        {
             "id":18,
-            "nombre":"Bola Acopio",
+            "nombre":"Acopio Ball / Bola Acopio",
             "descripcion":"Poke Bola que se utiliza para capturar Pokémon cuya especie ya se haya registrado previamente",
             "ratio_captura":3.5
         },
-        "SanaBall":{
+        {
             "id":19,
-            "nombre":"Bola Cura",
+            "nombre":"Sana Ball / Bola Cura",
             "descripcion":"Poke Bola que restaura por completo la salud del Pokémon capturado con esta",
             "ratio_captura":1
         },
-        "OcasoBall":{
+        {
             "id":20,
-            "nombre":"Bola Ocaso",
+            "nombre":"Ocaso Ball / Bola Ocaso",
             "descripcion":"Poke Bola especial para capturar Pokémon de noche o en sitios oscuros como cuevas",
             "ratio_captura":3.5
         },
-        "VelozBall":{
+        {
             "id":21,
-            "nombre":"Bola Veloz",
+            "nombre":"Veloz Ball / Bola Veloz",
             "descripcion":"Poke Bola que aumenta su efectividad, si se utiliza en el primer turno de un combate",
             "ratio_captura":5
         },
-        "ParqueBall":{
+        {
             "id":22,
-            "nombre":"Bola Parque",
+            "nombre":"Parque Ball / Bola Parque",
             "descripcion":"Poke Bola utilizada para capturar Pokémon enviados al Parque Compi, no es posible utilizarlas en otro sitio",
             "ratio_captura":"Captura asegurada"
         }, 
-        "GloriaBall":{
+        {
             "id":23,
-            "nombre":"Bola Gloria",
+            "nombre":"Gloria Ball / Bola Gloria",
             "descripcion":"En esta Poke Bola se reciben los Pokémon de Regalo Misterioso, por lo que no es posible utlizarlas legalmente para capturar Pokémon",
             "ratio_captura":1
         },
-        "EnsueñoBall":{
+        {
             "id":24,
-            "nombre":"Bola Ensueño",
+            "nombre":"Ensueño Ball / Bola Ensueño",
             "descripcion":"Poke Bola antes utilizada para capturar Pokémon provenientes de Dream World en Zona Nexo, actualmente se utilizan para capturar Pokémon dormidos en combate",
             "ratio_captura":4
         },
-        "EnteBall":{
+        {
             "id":25,
-            "nombre":"Bola Ente",
+            "nombre":"Ente Ball / Bola Ente",
             "descripcion":"Poke Bola utilizada para capturar Ultraentres, con otras especies presenta menos efectividad",
             "ratio_captura":5
         },
-        "ExtrañaBall":{
+        {
             "id":26,
-            "nombre":"Bola Extraña",
+            "nombre":"Extraña Ball / Bola Extraña",
             "descripcion":"Poke Bola en la que transforman las Poke Bolas de Pokémon transferidos de juegos de diferentes puntos de tiempo. Ej: Sinnoh a Hisui o Hisui a Paldea",
             "ratio_captura":1
         }
-    }
+    ]
 }
