@@ -1,11 +1,13 @@
 import data from '../data/pokeballs.json';
-import TarjetaBola from '../componentes/Card';
+import TarjetaBola from '../componentes/TarjetaBola';
 
 const Pokeballs = () => {
-    console.log(data);
+    const pokeballs = data.pokeballs
     return (
         <>
-            <TarjetaBola props={data}/>
+        {
+            pokeballs.map(pokeball =>  <TarjetaBola props={pokeball}/> )
+        }
         </>
     )
 }

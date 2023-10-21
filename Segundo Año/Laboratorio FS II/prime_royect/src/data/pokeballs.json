@@ -158,6 +158,18 @@
             "nombre":"Extraña Ball / Bola Extraña",
             "descripcion":"Poke Bola en la que transforman las Poke Bolas de Pokémon transferidos de juegos de diferentes puntos de tiempo. Ej: Sinnoh a Hisui o Hisui a Paldea",
             "ratio_captura":1
+        },
+        {
+            "id":27,
+            "nombre":"Rapid Ball / Bola Rápida",
+            "descripcion":"Poke Bola que aumenta su indice de captura si se utiliza con Pokémon de velocidad alta",
+            "ratio_captura":4
+        },
+        {
+            "id":28,
+            "nombre":"Luna Ball / Bola Lunar",
+            "descripcion":"Poke Bola fabricada a partir de bonguris amarillos, se utiliza para capturar Pokémon que evolucionan con un Piedra Lunar",
+            "ratio_captura":4
         }
     ]
 }
