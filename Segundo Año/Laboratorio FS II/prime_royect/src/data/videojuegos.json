@@ -46,7 +46,7 @@
             "consola":"Game Boy Color",
             "año_lanzamiento":1999,
             "generación":"II",
-            "region":"Johto"
+            "region":"Johto / Kanto"
         },
         {
             "id":7,
@@ -54,7 +54,7 @@
             "consola":"Game Boy Color",
             "año_lanzamiento":1999,
             "generación":"II",
-            "region":"Johto"
+            "region":"Johto / Kanto"
         },
         {
             "id":8,
@@ -62,7 +62,7 @@
             "consola":"Game Boy Color",
             "año_lanzamiento":2000,
             "generación":"II",
-            "region":"Johto"
+            "region":"Johto / Kanto"
         },
         {
             "id":9,
@@ -86,7 +86,7 @@
             "consola":"Game Boy Advance",
             "año_lanzamiento":2004,
             "generación":"III",
-            "region":"Kanto"
+            "region":"Kanto / Archi7"
         },
         {
             "id":12,
@@ -94,7 +94,7 @@
             "consola":"Game Boy Advance",
             "año_lanzamiento":2004,
             "generación":"III",
-            "region":"Kanto"
+            "region":"Kanto / Archi7"
         },
         {
             "id":13,
@@ -134,7 +134,7 @@
             "consola":"Nintendo DS",
             "año_lanzamiento":2009,
             "generación":"IV",
-            "region":"Johto"
+            "region":"Johto / Kanto"
         },
         {
             "id":18,
@@ -142,7 +142,7 @@
             "consola":"Nintendo DS",
             "año_lanzamiento":2009,
             "generación":"IV",
-            "region":"Johto"
+            "region":"Johto / Kanto"
         },
         {
             "id":19,
@@ -326,7 +326,7 @@
             "consola":"Nintendo Switch",
             "año_lanzamiento":2023,
             "generación":"IX",
-            "region":"Paldea"
+            "region":"Paldea / Noroteo"
         }
     ]
 }

@@ -1,6 +1,5 @@
 import { Card } from 'primereact/card';
 import { useState } from "react";
-import { Image } from 'primereact/image';
 import 'primeflex/primeflex.css';
         
 const TarjetaBola = (dataParse) => {
