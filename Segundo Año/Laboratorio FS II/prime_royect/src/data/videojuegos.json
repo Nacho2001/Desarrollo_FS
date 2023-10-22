@@ -1,0 +1,332 @@
+{
+    "videojuegos":[
+        {
+            "id":1,
+            "nombre":"Pokémon Rojo",
+            "consola":"Game Boy",
+            "año_lanzamiento":1996,
+            "generación":"I",
+            "region":"Kanto"
+        },
+        {
+            "id":2,
+            "nombre":"Pokémon Verde",
+            "consola":"Game Boy",
+            "año_lanzamiento":1996,
+            "generación":"I",
+            "region":"Kanto"
+        },
+        {
+            "id":3,
+            "nombre":"Pokémon Rojo (Versión Occidental)",
+            "consola":"Game Boy",
+            "año_lanzamiento":1996,
+            "generación":"I",
+            "region":"Kanto"
+        },
+        {
+            "id":4,
+            "nombre":"Pokémon Azul (Versión Occidental)",
+            "consola":"Game Boy",
+            "año_lanzamiento":1996,
+            "generación":"I",
+            "region":"Kanto"
+        },
+        {
+            "id":5,
+            "nombre":"Pokémon Amarillo",
+            "consola":"Game Boy",
+            "año_lanzamiento":1998,
+            "generación":"I",
+            "region":"Kanto"
+        },
+        {
+            "id":6,
+            "nombre":"Pokémon Oro",
+            "consola":"Game Boy Color",
+            "año_lanzamiento":1999,
+            "generación":"II",
+            "region":"Johto"
+        },
+        {
+            "id":7,
+            "nombre":"Pokémon Plata",
+            "consola":"Game Boy Color",
+            "año_lanzamiento":1999,
+            "generación":"II",
+            "region":"Johto"
+        },
+        {
+            "id":8,
+            "nombre":"Pokémon Cristal",
+            "consola":"Game Boy Color",
+            "año_lanzamiento":2000,
+            "generación":"II",
+            "region":"Johto"
+        },
+        {
+            "id":9,
+            "nombre":"Pokémon Rubí",
+            "consola":"Game Boy Advance",
+            "año_lanzamiento":2002,
+            "generación":"III",
+            "region":"Hoenn"
+        },
+        {
+            "id":10,
+            "nombre":"Pokémon Zafiro",
+            "consola":"Game Boy Advance",
+            "año_lanzamiento":2002,
+            "generación":"III",
+            "region":"Hoenn"
+        },
+        {
+            "id":11,
+            "nombre":"Pokémon Rojo Fuego",
+            "consola":"Game Boy Advance",
+            "año_lanzamiento":2004,
+            "generación":"III",
+            "region":"Kanto"
+        },
+        {
+            "id":12,
+            "nombre":"Pokémon Verde Hoja",
+            "consola":"Game Boy Advance",
+            "año_lanzamiento":2004,
+            "generación":"III",
+            "region":"Kanto"
+        },
+        {
+            "id":13,
+            "nombre":"Pokémon Esmeralda",
+            "consola":"Game Boy Advance",
+            "año_lanzamiento":2004,
+            "generación":"III",
+            "region":"Hoenn"
+        },
+        {
+            "id":14,
+            "nombre":"Pokémon Diamante",
+            "consola":"Nintendo DS",
+            "año_lanzamiento":2006,
+            "generación":"IV",
+            "region":"Sinnoh"
+        },
+        {
+            "id":15,
+            "nombre":"Pokémon Perla",
+            "consola":"Nintendo DS",
+            "año_lanzamiento":2006,
+            "generación":"IV",
+            "region":"Sinnoh"
+        },
+        {
+            "id":16,
+            "nombre":"Pokémon Platino",
+            "consola":"Nintendo DS",
+            "año_lanzamiento":2008,
+            "generación":"IV",
+            "region":"Sinnoh"
+        },
+        {
+            "id":17,
+            "nombre":"Pokémon Oro HeartGold",
+            "consola":"Nintendo DS",
+            "año_lanzamiento":2009,
+            "generación":"IV",
+            "region":"Johto"
+        },
+        {
+            "id":18,
+            "nombre":"Pokémon Plata SoulSilver",
+            "consola":"Nintendo DS",
+            "año_lanzamiento":2009,
+            "generación":"IV",
+            "region":"Johto"
+        },
+        {
+            "id":19,
+            "nombre":"Pokémon Negro",
+            "consola":"Nintendo DS",
+            "año_lanzamiento":2010,
+            "generación":"V",
+            "region":"Teselia"
+        },
+        {
+            "id":20,
+            "nombre":"Pokémon Blanco",
+            "consola":"Nintendo DS",
+            "año_lanzamiento":2010,
+            "generación":"V",
+            "region":"Teselia"
+        },
+        {
+            "id":21,
+            "nombre":"Pokémon Negro 2",
+            "consola":"Nintendo DS",
+            "año_lanzamiento":2012,
+            "generación":"V",
+            "region":"Teselia"
+        },
+        {
+            "id":22,
+            "nombre":"Pokémon Blanco 2",
+            "consola":"Nintendo DS",
+            "año_lanzamiento":2012,
+            "generación":"V",
+            "region":"Teselia"
+        },
+        {
+            "id":23,
+            "nombre":"Pokémon X",
+            "consola":"Nintendo 3DS",
+            "año_lanzamiento":2013,
+            "generación":"VI",
+            "region":"Kalos"
+        },
+        {
+            "id":24,
+            "nombre":"Pokémon Y",
+            "consola":"Nintendo 3DS",
+            "año_lanzamiento":2013,
+            "generación":"VI",
+            "region":"Kalos"
+        },
+        {
+            "id":25,
+            "nombre":"Pokémon Rubí Omega",
+            "consola":"Nintendo 3DS",
+            "año_lanzamiento":2014,
+            "generación":"VI",
+            "region":"Hoenn"
+        },
+        {
+            "id":26,
+            "nombre":"Pokémon Zafiro Alfa",
+            "consola":"Nintendo 3DS",
+            "año_lanzamiento":2014,
+            "generación":"VI",
+            "region":"Hoenn"
+        },
+        {
+            "id":27,
+            "nombre":"Pokémon Sol",
+            "consola":"Nintendo 3DS",
+            "año_lanzamiento":2016,
+            "generación":"VII",
+            "region":"Alola"
+        },
+        {
+            "id":28,
+            "nombre":"Pokémon Luna",
+            "consola":"Nintendo 3DS",
+            "año_lanzamiento":2016,
+            "generación":"VII",
+            "region":"Alola"
+        },
+        {
+            "id":29,
+            "nombre":"Pokémon Ultrasol",
+            "consola":"Nintendo 3DS",
+            "año_lanzamiento":2017,
+            "generación":"VII",
+            "region":"Alola"
+        },
+        {
+            "id":30,
+            "nombre":"Pokémon Ultraluna",
+            "consola":"Nintendo 3DS",
+            "año_lanzamiento":2017,
+            "generación":"VII",
+            "region":"Alola"
+        },
+        {
+            "id":31,
+            "nombre":"Pokémon: Let's Go, Pikachu!",
+            "consola":"Nintendo Switch",
+            "año_lanzamiento":2018,
+            "generación":"VII",
+            "region":"Kanto"
+        },
+        {
+            "id":32,
+            "nombre":"Pokémon: Let's Go, Eevee!",
+            "consola":"Nintendo Switch",
+            "año_lanzamiento":2018,
+            "generación":"VII",
+            "region":"Kanto"
+        },
+        {
+            "id":33,
+            "nombre":"Pokémon Espada",
+            "consola":"Nintendo Switch",
+            "año_lanzamiento":2019,
+            "generación":"VIII",
+            "region":"Galar"
+        },
+        {
+            "id":34,
+            "nombre":"Pokémon Escudo",
+            "consola":"Nintendo Switch",
+            "año_lanzamiento":2019,
+            "generación":"VIII",
+            "region":"Galar"
+        },
+        {
+            "id":35,
+            "nombre":"Pokémon Espada y Escudo: Pase de Expansión",
+            "consola":"Nintendo Switch",
+            "año_lanzamiento":2020,
+            "generación":"VIII",
+            "region":"Galar"
+        },
+        {
+            "id":36,
+            "nombre":"Pokémon Diamante Brillante",
+            "consola":"Nintendo Switch",
+            "año_lanzamiento":2021,
+            "generación":"VIII",
+            "region":"Sinnoh"
+        },
+        {
+            "id":37,
+            "nombre":"Pokémon Perla Reluciente",
+            "consola":"Nintendo Switch",
+            "año_lanzamiento":2021,
+            "generación":"VIII",
+            "region":"Sinnoh"
+        },
+        {
+            "id":38,
+            "nombre":"Leyendas Pokémon: Arceus",
+            "consola":"Nintendo Switch",
+            "año_lanzamiento":2022,
+            "generación":"VIII",
+            "region":"Hisui"
+        },
+        {
+            "id":39,
+            "nombre":"Pokémon Escarlata",
+            "consola":"Nintendo Switch",
+            "año_lanzamiento":2022,
+            "generación":"IX",
+            "region":"Paldea"
+        },
+        {
+            "id":40,
+            "nombre":"Pokémon Púrpura",
+            "consola":"Nintendo Switch",
+            "año_lanzamiento":2022,
+            "generación":"IX",
+            "region":"Paldea"
+        },
+        {
+            "id":41,
+            "nombre":"Pokémon Escarlata y Púrpura: El tesoro oculto del Área Cero",
+            "consola":"Nintendo Switch",
+            "año_lanzamiento":2023,
+            "generación":"IX",
+            "region":"Paldea"
+        }
+    ]
+}

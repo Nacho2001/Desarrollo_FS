@@ -3,21 +3,18 @@
         {
             "id":1,
             "nombre":"Poke Ball / Poke Bola",
-            "imagen":"",
             "descripcion":"Se trata de un dispositivo que se utiliza para capturar Pókemon. Es la PokeBola más comun presente en todas las generaciones",
             "ratio_captura":1
         },
         {
             "id":2,
             "nombre":"Super Ball / Bola Super",
-            "imagen":"",
             "descripcion":"Versión mejorada de la Poke bola tradicional, tiene mayor indice de éxito que la Poke Bola común. También esta presente en todas las generaciones",
             "ratio_captura":1.5
         },
         {
             "id":3,
             "nombre":"Ultra Ball / Bola Ultra",
-            "imagen":"",
             "descripcion":"Es una de las Poke bolas más eficaces de uso general, siendo más eficaz que la Bola Super, al igual que las anteriores también esta presente desde la primera generación y solo se pueden obtener a partir de un punto avanzado en las partidas",
             "ratio_captura":2
         },
