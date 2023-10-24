@@ -1,0 +1,122 @@
+{
+    "regiones":[
+        {
+            "id":1,
+            "nombre":"Kanto",
+            "generacion":"I",
+            "descripcion":"Kanto es una región del mundo Pokémon situada al este de Johto y al sur de Sinnoh. Su paisaje está inspirado en la zona de Japón del mismo nombre, la región de Kantō",
+            "iniciales":"Bulbasaur, Squirtle, Charmander",
+            "profesor":"Profesor Oak",
+            "villanos":"Team Rocket",
+            "legendarios_insignia":"Mew, Mewtwo"
+        },{
+            "id":2,
+            "nombre":"Johto",
+            "generacion":"II",
+            "descripcion":"Johto es una región del mundo Pokémon ubicada al oeste de Kanto. Esta región esta inspirada la región de Kinki y el oeste de la región de Tōkai (Japón).",
+            "iniciales":"Chikorita, Totodile, Cyndaquil",
+            "profesor":"Profesor Elm",
+            "villanos":"Team Rocket",
+            "legendarios_insignia":"Lugia, Ho-oh"
+        },
+        {
+            "id":3,
+            "nombre":"Hoenn",
+            "generacion":"III",
+            "descripcion":"Hoenn es la región donde se desarrolla la historia de los videojuegos Rubí, Zafiro, Esmeralda y sus remakes. Esta basada en la tercera isla más grande de Japón: Kyūshū",
+            "iniciales":"Treecko, Mudkip, Torchic",
+            "profesor":"Profesor Abedul",
+            "villanos":"Equipo Aqua / Equipo Magma",
+            "legendarios_insignia":"Groudon, Kyogre, Rayquaza"
+        },
+        {
+            "id":4,
+            "nombre":"Sinnoh",
+            "generacion":"IV",
+            "descripcion":"Sinnoh es la región correspondiente a la cuarta generación, se ubica al norte de Kanto, Johto y Hoenn. Esta inspirada en la isla japonesa Hokkaidō.",
+            "iniciales":"Turtwig, Piplup, Chimchar",
+            "profesor":"Profesor Serbal",
+            "villanos":"Equipo Galaxia",
+            "legendarios_insignia": "Dialga, Palkia, Giratina"
+        },
+        {
+            "id":5,
+            "nombre":"Teselia",
+            "generacion":"V",
+            "descripcion":"Teselia es la región de los videojuegos de quinta generacion, más alejada de las regiones anteriores. Esta basada en Nueva York y parte de Nueva Jersey",
+            "iniciales":"Snivy, Oshwott, Tepig",
+            "profesor":"Profesora Encina",
+            "villanos":"Equipo Plasma",
+            "legendarios_insignia":"Reshiram, Zekrom, Kyurem"
+        },
+        {
+            "id":6,
+            "nombre":"Kalos",
+            "generacion":"VI",
+            "descripcion":"En Kalos se desarrollan los videojuegos X e Y, de sexta generación. Esta inspirada en Francia y es reconocida por los jugadores por introducir la Megaevolución.",
+            "iniciales":"Chespin, Froakie, Fennekin",
+            "profesor":"Profesor Ciprés",
+            "villanos":"Team Flare",
+            "legendarios_insignia": "Xerneas, Yveltal, Zygarde"
+        },
+        {
+            "id":7,
+            "nombre":"Alola",
+            "generacion":"VII",
+            "descripcion":"Alola es un archipiélago de 4 islas naturales, inspirada de Hawái. En esta se lleva a cabo la historia de los juegos de séptima generación. Es reconocida por presentar los Movimientos Z.",
+            "iniciales":"Rowlet, Popplio, Litten",
+            "profesor":"Profesor Kukui",
+            "villanos":"Team Skull / Fundación Æther / Team Rainbow Rocket",
+            "legendarios_insignia": "Solgaleo, Lunala, Necrozma"
+        },
+        {
+            "id":8,
+            "nombre":"Galar",
+            "generacion":"VIII",
+            "descripcion":"Galar es una región de la octava generación, basada en el Reino Unido. Su mecánica destacada son los factores Dinamax y Gigamax",
+            "iniciales":"Scorbunny, Sobble, Grookey",
+            "profesor":"Profesora Magnolia / Profesora Sonia",
+            "villanos":"Team Yell / Macrocosmos",
+            "legendarios_insignia": "Zacian, Zamazenta, Eternatus"
+        },
+        {
+            "id":9,
+            "nombre":"Paldea",
+            "generacion":"IX",
+            "descripcion":"Galar es una región de la novena generación, basada en España. Al igual que las últimas generaciones, posee una mecánica característica para los combates, la Teracristalización.",
+            "iniciales":"Sprigatito, Quaxly, Fuecoco",
+            "profesor":"Profesora Albora / Profesor Turo",
+            "villanos":"Team Star",
+            "legendarios_insignia": "Koraidon, Miraidon"
+        },{
+            "id":10,
+            "nombre":"Archi7",
+            "generacion":"III",
+            "descripcion":"Archi7, se trata de un arhipiélago compuesto por varias islas, solamente presente en Rojo Fuego, Verde Hoja y Esmeralda, al sur de Kanto. ",
+            "iniciales":"No se entregan Pokémon Iniciales característicos en Archi7",
+            "profesor":"No hay un profesor Pokémon presente en el Archi7",
+            "villanos":"Team Rocket",
+            "legendarios_insignia": "Aunque no posee Pokémon legendarios característicos, se encuentran Pokémon de otras regiones: Moltes, Deoxys, Lugia, Ho-oh"
+        },
+        {
+            "id":11,
+            "nombre":"Hisui",
+            "generacion":"VIII",
+            "descripcion":"Hisui, se trata de la región Sinnoh en el pasado, presente solamente el Leyendas Pokémon: Arceus. Es una región llena de naturaleza con algunas poblaciones y ruinas antiguas. Presenta algunas diferencias en el estilo de combate y captura de Pokémon, presentando un nuevo desafio para los jugadores.",
+            "iniciales":"Rowlet, Oshawott, Cyndaquil",
+            "profesor":"Profesor Lavender",
+            "villanos":"Tres Malezas / Volus",
+            "legendarios_insignia": "Dialga, Palkia, Giratina, Arceus"
+        },
+        {
+            "id":12,
+            "nombre":"Noroteo",
+            "generacion":"IX",
+            "descripcion":"Noroteo es una comarca situada en territorio desconocido en el Oriente, más allá de la región de Paldea, solamente presente en la expansión 'La máscara turquesa'",
+            "iniciales":"No se entregan Pokémon Iniciales característicos en Noroteo",
+            "profesor":"No hay un profesor Pokémon presente en Noroteo",
+            "villanos":"Compatrones / Ogros Omnisos",
+            "legendarios_insignia": "Okidogi, Munkidori, Fezandipiti, Oguerpon"
+        }
+    ]
+}
