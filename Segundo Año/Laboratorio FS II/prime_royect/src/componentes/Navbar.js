@@ -7,14 +7,14 @@ import DexApp from '../pages/DexApp';
 
 const Navbar = () => {
     const dexAppLink = <Link to="/">DexApp</Link>
-    const logo = <Image src={pokeballIcon} alt="" height="20" width="20"/>
+    const logo = <img src={pokeballIcon} style={{"width":"50px","height":"50px"}}/>
     const elementos = [{
         icon: logo,
         label: dexAppLink
     }]
     return (
         <Router>
-            <Menubar model={elementos}/>
+            <Menubar start={logo}/>
             <Routes>
                 <Route path="/" element={<DexApp/>}/>
             </Routes>

@@ -4,7 +4,6 @@ import 'primeflex/primeflex.css';
 
 const TarjetaVideojuegos = (data) => {
     const videojuego = data.props;
-    console.log(videojuego);
     const [imagen,setImagen] = useState("");
     const header = (
         <>

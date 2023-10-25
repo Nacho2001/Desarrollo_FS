@@ -1,16 +1,12 @@
 import { Card } from 'primereact/card';
 import 'primeflex/primeflex.css';
 import { useState } from 'react';
-import { Carousel } from 'primereact/carousel';
 const TarjetaRegion = (data) => {
     const region = data.props
     const [mapa1, setMapa1] = useState("");
-    const [mapa2, setMapa2] = useState("");
     function ObtenerMapas(){
         import (`../data/mapas/${region.id}/mapa.png`)
         .then((mapa1) => {setMapa1(mapa1.default)})
-        import (`../data/mapas/${region.id}/mapa_v.png`)
-        .then((mapa2) => {setMapa2(mapa2.default)})
     }
     ObtenerMapas();
     const titulo = (
@@ -18,19 +14,13 @@ const TarjetaRegion = (data) => {
             <label>{region.nombre}</label>
         </span>
     )
-    const itemsCarousel = [mapa1,mapa2];
-    const mapa = (imagen) => {
-        return (
-            <img alt="" src={imagen} width="100%" height="100%"/>
-        )
-    }
     return (
         <Card title={titulo} className="mt-4">
-            <div className="flex sm:flex-column md:flex-column lg:flex-row flex-column">
-                <div style={{"width":"100%","height":"80%"}} className="align-items-center">
-                    <Carousel value={itemsCarousel} itemTemplate={mapa} circular autoplayInterval={3000}/>
+            <div className="flex md:flex-row xl:flex-row flex-column">
+                <div className="md:w-6 xl:w-4">
+                    <img alt="" src={mapa1} className="w-12 md:w-11 xl:w-11"/>
                 </div>
-                <div className='flex flex-column'>
+                <div className='flex flex-column md:w-6 xl:w-6'>
                     <p><b>Descripción:</b> {region.descripcion}</p>
                     <p className="-mt-1"><b>Generación:</b> {region.generacion}</p>
                     <p className="-mt-1"><b>Pokémon Iniciales:</b> {region.iniciales}</p>
