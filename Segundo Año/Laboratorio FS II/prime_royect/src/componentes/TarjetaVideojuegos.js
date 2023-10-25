@@ -20,7 +20,7 @@ const TarjetaVideojuegos = (data) => {
     return (
         <div className='card m-2 w-20rem'>
             <Card header={header} title={titulo}>
-                <div><b>Año de lanzamiento</b>: {videojuego.año_lanzamiento}</div>
+                <div><b>Año de lanzamiento:</b> {videojuego.año_lanzamiento}</div>
                 <div><b>Consola:</b> {videojuego.consola}</div>
                 <div><b>Generación:</b> {videojuego.generación}</div>
                 <div><b>Región de la historia:</b> {videojuego.region}</div>
