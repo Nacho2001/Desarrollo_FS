@@ -9,15 +9,32 @@ import Pokeballs from '../pages/Pokeballs';
 import 'primeicons/primeicons.css';
 import DexNavLogo from '../componentes/iconos/DexNavLogo';
 
+
 const Inicio = () => {
     const logoXl = ( <Link to="/"><DexNavLogo/></Link> )
-    const logoXs = <img src={pokeballIcon} alt="" width="20" height="20"/>
-    const starIcon = <i className="pi pi-star-fill"></i>
-    const mapIcon = <i className="pi pi-map"></i>
     const dexAppLink = <Link to="/">DexApp</Link>
-    const videojuegosLink = <Link to="/videojuegos">{starIcon} Videojuegos</Link>
-    const regionesLink = <Link to="/regiones">{mapIcon} Regiones</Link>
-    const pokeballsLink = <Link to="/pokeballs">{logoXs}<span>Pokeballs</span></Link>
+    const videojuegosLink = (
+        <Link to="/videojuegos">
+            <i className="pi pi-star-fill mr-1" style={{ fontSize: '1.3rem' }}></i>
+            <span>Videojuegos</span>
+        </Link>
+        )
+    const regionesLink = (
+        <div>
+            <Link to="/regiones">
+                <i className="pi pi-map mr-1" style={{ fontSize: '1.3rem' }}></i>
+                <span>Regiones</span>
+            </Link>
+        </div>
+    )
+    const pokeballsLink = (
+        <Link to="/pokeballs">
+            <div className="">
+                <img src={pokeballIcon} alt="" width="30" height="30"/>
+                <div>Pokeballs</div>
+            </div>
+        </Link>
+    )
     const itemsSideBar = [{label:videojuegosLink},{label:regionesLink},{label:pokeballsLink}]
     const elementosNavBar = [{
         icon: logoXl,
