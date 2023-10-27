@@ -36,21 +36,20 @@ const Inicio = () => {
         </Link>
     )
     const itemsSideBar = [{label:videojuegosLink},{label:regionesLink},{label:pokeballsLink}]
-    const elementosNavBar = [{
-        icon: logoXl,
-        label: dexAppLink
-    }]
-
     return (
         <Router>
             <NavBar props={logoXl}/>
-            <Menu style={{"width":"14%", "height":"100%"}} model={itemsSideBar}/>
-            <Routes>
-                <Route path="/" element={<DexApp/>}/>
-                <Route path="/videojuegos" element={<Videojuegos/>}/>
-                <Route path="/regiones" element={<Regiones/>}/>
-                <Route path="/pokeballs" element={<Pokeballs/>}/>
-            </Routes>
+            <div className="flex flex-row">
+                <Menu style={{"width":"14%", "height":"100%"}} model={itemsSideBar}/>
+                <div className='flex flex-column'>
+                    <Routes>
+                        <Route path="/" element={<DexApp/>}/>
+                        <Route path="/videojuegos" element={<Videojuegos/>}/>
+                        <Route path="/regiones" element={<Regiones/>}/>
+                        <Route path="/pokeballs" element={<Pokeballs/>}/>
+                    </Routes>
+                </div>
+            </div>
         </Router>
     )
 }
