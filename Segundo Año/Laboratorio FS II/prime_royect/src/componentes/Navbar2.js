@@ -3,8 +3,8 @@ import "primeflex/primeflex.css";
 
 const NavBar = (logoXl) => {
     return (
-        <Card className="w-12 align-items-center" style={{"height":"60px"}}>
-            <div className="-mt-5">{logoXl.props}</div>
+        <Card className="w-12 absolute sticky top-0 align-items-center" style={{"height":"60px"}}>
+            <div className="-mt-5 flex flex-row">{logoXl.props}</div>
         </Card>
     )
 }

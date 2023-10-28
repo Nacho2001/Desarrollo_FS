@@ -13,7 +13,7 @@ const TarjetaBola = (dataParse) => {
     const titulo = (
         <span>
             <label>{pokeball.nombre}</label>
-            <img src={image} width='60px' height='60px' style={{"margin-bottom":"-20px"}}/>
+            <img src={image} width='60px' height='60px' style={{"marginBottom":"-20px"}}/>
         </span>
     )
     return (
