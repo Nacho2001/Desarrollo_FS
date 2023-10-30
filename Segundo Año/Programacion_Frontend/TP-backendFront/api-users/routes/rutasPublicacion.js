@@ -19,4 +19,7 @@ router.delete('/:id', controladorPost.borrarPublicacion);
 // actualizar publicacion
 router.put('/:id', controladorPost.actualizarPublicacion);
 
+// Obtener publicaciones de un usuario
+router.get('/usuarios/:usuario', controladorPost.obtenerPublicacionDeUsuario);
+
 module.exports = router

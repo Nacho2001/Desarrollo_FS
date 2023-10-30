@@ -104,3 +104,33 @@ exports.actualizarPublicacion = async (req,res) => {
     }
 
 }
+
+// Obtener publicacion de un usuario especifico
+exports.obtenerPublicacionDeUsuario = async (req,res) => {
+    const usuario = req.params.usuario;
+    try {
+        const publicaciones = await Publicaciones.findAll({
+            where: {
+                usuario: usuario
+            }
+        })
+        if (publicaciones == null) {
+            res.status(404).json({
+                estado:"error",
+                mensaje:`No hay publicaciones del usuario ${usuario}`
+            })
+        } else {
+            res.status(200).json({
+                estado:"ok",
+                mensaje:`Publicaciones de ${usuario} obtenidas`,
+                publicaciones
+            })   
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            estado:"error",
+            mensaje:`Ocurrió un error al obtener publicaciones: ${error}`
+        })
+    }
+}
