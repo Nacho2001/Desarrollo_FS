@@ -5,7 +5,7 @@ const Home: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <ToolbarInicio/>
+        {/*<ToolbarInicio/>*/}
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
