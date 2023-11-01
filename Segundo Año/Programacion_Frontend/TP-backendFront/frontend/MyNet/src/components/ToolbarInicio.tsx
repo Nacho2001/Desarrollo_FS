@@ -1,10 +1,9 @@
 import { IonButtons, IonButton,IonTitle, IonToolbar, IonIcon, IonLabel } from "@ionic/react";
 import { exitOutline, globeOutline, albumsOutline,peopleCircleOutline, chatbubblesOutline } from 'ionicons/icons';
 const ToolbarInicio: React.FC = () => {
-    return (
+    return ( // Ancho de pantalla inferior a 600px cambiar a barra inferior
         <>
             <IonToolbar>
-                
                 <IonButtons slot="start">
                 <IonTitle>MyNet</IonTitle>
                     <IonButton href="/">

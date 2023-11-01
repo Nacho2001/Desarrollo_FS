@@ -1,8 +1,10 @@
 import {useEffect, useState} from 'react';
 import axios from 'axios';
-import { IonPage, IonLabel, IonContent } from '@ionic/react';
+import { IonPage, IonLabel, IonContent, IonList } from '@ionic/react';
+import UserItem from '../components/UserItem';
 const Usuarios: React.FC = () => {
-    const [usuarios,setUsuarios] = useState([]);
+    //const [usuarios,setUsuarios] = useState([]);
+    let usuarios: Object[] = []
     const callbackUsuarios = async () => {
         try {
             const resp = await axios.get("http://localhost:5000/usuarios")
@@ -15,17 +17,22 @@ const Usuarios: React.FC = () => {
     useEffect(() => {
         const obtenerUsuarios = async () => {
             let users = await callbackUsuarios();
-            users.map((user: never) => (
+            users.map((user: Object) => (
                 usuarios.push(user)
             ))
         }
-        
-        //obtenerUsuarios();
+        obtenerUsuarios();
     }, [])
     return (
         <IonPage>
             <IonContent>
-                <IonLabel>Contenido</IonLabel>
+                <IonList>
+                    {   
+                        /*usuarios.map(user => (
+                            <UserItem user={user}/>
+                        ))*/
+                    }
+                </IonList>
             </IonContent>
         </IonPage>
     )
