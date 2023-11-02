@@ -2,7 +2,7 @@ import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
-import ToolbarInicio from './components/Toolbarinicio';
+import ToolbarInicio from './components/ToolbarInicio';
 import Publicaciones from './pages/Publicaciones';
 import Usuarios from './pages/Usuarios';
 import Chat from './pages/Chat';
@@ -30,6 +30,7 @@ setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
+    <div>
     <ToolbarInicio/>
     <IonReactRouter>
       <IonRouterOutlet>
@@ -50,6 +51,7 @@ const App: React.FC = () => (
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>
+    </div>
   </IonApp>
 );
 

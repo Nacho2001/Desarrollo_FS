@@ -2,36 +2,28 @@ import {useEffect, useState} from 'react';
 import axios from 'axios';
 import { IonPage, IonLabel, IonContent, IonList } from '@ionic/react';
 import UserItem from '../components/UserItem';
+import { obtenerUsuarios } from '../callback';
 const Usuarios: React.FC = () => {
-    //const [usuarios,setUsuarios] = useState([]);
-    let usuarios: Object[] = []
-    const callbackUsuarios = async () => {
-        try {
-            const resp = await axios.get("http://localhost:5000/usuarios")
-            let listado = resp.data.usuarios;
-            return listado;
-        } catch (error) {
-            console.error(error)
-        }
-    }
+    const [usuarios,setUsuarios] = useState([]);
     useEffect(() => {
-        const obtenerUsuarios = async () => {
-            let users = await callbackUsuarios();
-            users.map((user: Object) => (
-                usuarios.push(user)
-            ))
+        const getUsers = async () => {
+            setUsuarios(await obtenerUsuarios());
         }
-        obtenerUsuarios();
+        getUsers();
     }, [])
     return (
         <IonPage>
             <IonContent>
                 <IonList>
-                    {   
-                        /*usuarios.map(user => (
-                            <UserItem user={user}/>
-                        ))*/
-                    }
+                    <div>
+                        <li id="listado">
+                            {
+                                usuarios.map((usuario:any) => (
+                                    <ul>{usuario['username']}</ul>
+                                ))
+                            }
+                        </li>
+                    </div>
                 </IonList>
             </IonContent>
         </IonPage>
