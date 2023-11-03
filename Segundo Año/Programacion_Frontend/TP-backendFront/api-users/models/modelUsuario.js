@@ -24,6 +24,10 @@ Usuario.init({ // Se definen las tablas que tendrá la base de datos y aplica re
         type:DataTypes.STRING, // Tipo cadena de caracteres
         allowNull:false, // Es obligatorio
         unique:true // El valor no puede repetirse
+    },
+    rol:{
+        type:DataTypes.STRING,
+        allowNull:false
     }},
     {
     sequelize,

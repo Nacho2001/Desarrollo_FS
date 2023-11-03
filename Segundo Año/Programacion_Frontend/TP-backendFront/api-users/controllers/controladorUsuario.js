@@ -37,16 +37,17 @@ exports.crearUsuario = async(req,res) => {
 exports.obtenerUsuarioUnico = async (req,res) => {
     try { // Busca en la BD un usuario por la clave primaria, en este caso, el id
         const usuario = await Usuario.findByPk(req.params.id);
-        if (usuario == ""){
+        if (usuario == null){
             res.status(404).json({
                 estado:"error",
                 mensaje:"No se ha encontrado el usuario solicitado"
             })
+        } else {
+            res.status(200).json({ // Si tuvo exito, devuelve el usuario solicitado
+                estado: "Ok",
+                usuario
+            })
         }
-        res.status(200).json({ // Si tuvo exito, devuelve el usuario solicitado
-            estado: "Ok",
-            usuario
-        })
     } catch (error) { // sino, obtiene el mensaje de error
         console.error(error);
         res.status(500).json({
