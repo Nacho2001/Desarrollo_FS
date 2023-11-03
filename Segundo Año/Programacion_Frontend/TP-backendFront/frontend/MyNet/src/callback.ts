@@ -14,7 +14,6 @@ export const obtenerUsuarioUnicio = async(id:number) => {
     try {
         const resp = await axios.get("http://localhost:5000/usuarios/"+id)
         const usuario = resp.data.usuario;
-        console.log(usuario)
         return usuario;
     } catch (error) {
         console.error(error);
@@ -40,7 +39,6 @@ export const deleteUser = async (id:number) => {
 export const updateUser = async (id:number, username:string, password:string, email:string, rol:string) => {
     try {
         const resp = await axios.put(`http://localhost:5000/usuarios/${id}`, {username, password, email, rol})
-        console.error(resp);
     } catch (error) {
         console.error(error);
     }
