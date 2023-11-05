@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import { IonPage, IonButton, IonContent, IonList } from '@ionic/react';
+import { IonPage, IonButton, IonContent, IonList, IonToolbar, IonTitle } from '@ionic/react';
 import { obtenerUsuarios, obtenerUsuarioUnicio, createUser, deleteUser, updateUser } from '../callback';
 const Usuarios: React.FC = () => {
     const [usuarios,setUsuarios] = useState([]);
@@ -24,6 +24,10 @@ const Usuarios: React.FC = () => {
     }
     return (
         <IonPage>
+            <IonToolbar>
+                <IonTitle slot="start">MyNet</IonTitle>
+                <IonTitle>Lista de Usuarios</IonTitle>
+            </IonToolbar>
             <IonContent>
                 <IonList>
                     <div>

@@ -1,8 +1,8 @@
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect, Route } from 'react-router';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
+import NavBar from './components/MyNetRouter';
 import Home from './pages/Home';
-import ToolbarInicio from './components/ToolbarInicio';
 import Publicaciones from './pages/Publicaciones';
 import Usuarios from './pages/Usuarios';
 import Chat from './pages/Chat';
@@ -24,34 +24,14 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import MyNetRouter from './components/MyNetRouter';
 
 
 setupIonicReact();
-
+let menu = "Home";
 const App: React.FC = () => (
   <IonApp>
-    <div>
-    <ToolbarInicio/>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route exact path="/posts">
-          <Publicaciones />
-        </Route>
-        <Route exact path="/usuarios">
-          <Usuarios />
-        </Route>
-        <Route exact path="/chat">
-          <Chat />
-        </Route>
-        <Route exact path="/">
-          <Redirect to="/home" />
-        </Route>
-      </IonRouterOutlet>
-    </IonReactRouter>
-    </div>
+    <MyNetRouter/>
   </IonApp>
 );
 
