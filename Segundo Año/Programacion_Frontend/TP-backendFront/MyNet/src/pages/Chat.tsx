@@ -1,11 +1,12 @@
-import { IonToolbar, IonTitle } from "@ionic/react";
+import { IonToolbar, IonTitle,IonHeader } from "@ionic/react";
 const Chat: React.FC = () => {
     return (
         <>
-            <IonToolbar>
-                <IonTitle slot="start">MyNet</IonTitle>
-                <IonTitle>Chat</IonTitle>
-            </IonToolbar>
+            <IonHeader>
+                <IonToolbar>
+                    <IonTitle slot="start">Chat</IonTitle>
+                </IonToolbar>
+            </IonHeader>
         </>
     )
 }

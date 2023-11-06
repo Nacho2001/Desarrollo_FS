@@ -1,7 +1,14 @@
-import { IonContent, IonHeader, IonToolbar, IonTitle} from '@ionic/react';
-
-
+import React, {useEffect, useState} from 'react';
+import { IonContent, IonHeader, IonToolbar, IonTitle, IonCard} from '@ionic/react';
+import { getPosts } from '../callback';
 const Home: React.FC = () => {
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    const verPublicaciones = async() => {
+      setPosts(await getPosts())
+    }
+    verPublicaciones();
+  }, [])
   return (
     <>
       <IonHeader>
@@ -10,6 +17,13 @@ const Home: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent>
+        {
+          posts.map((post:Object) => (
+            <IonCard>
+              
+            </IonCard>
+          ))
+        }
       </IonContent>
     </>
   );

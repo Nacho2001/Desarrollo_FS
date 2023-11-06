@@ -25,6 +25,9 @@ Usuario.init({ // Se definen las tablas que tendrá la base de datos y aplica re
         allowNull:false, // Es obligatorio
         unique:true // El valor no puede repetirse
     },
+    avatar:{
+        type:DataTypes.STRING
+    },
     rol:{
         type:DataTypes.STRING,
         allowNull:false

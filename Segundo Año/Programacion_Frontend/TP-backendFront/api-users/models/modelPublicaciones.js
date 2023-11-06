@@ -13,6 +13,9 @@ Publicaciones.init({
         type:DataTypes.STRING,
         allowNull:false
     },
+    imagen:{
+        type:DataTypes.STRING
+    },
     cuerpo:{
         type:DataTypes.STRING,
         allowNull:false
