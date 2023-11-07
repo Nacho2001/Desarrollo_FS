@@ -1,5 +1,17 @@
+import {useState, useEffect} from 'react';
 import { IonToolbar, IonTitle, IonContent, IonHeader } from '@ionic/react';
+import { getUserPosts } from '../callback';
+
 const Publicaciones: React.FC = () => {
+    const [user,setUser] = useState("");
+    const [posts,setPosts] = useState([]);
+    useEffect(() => {
+        const obtenerPosts = async (user:string) => {
+            setPosts(await getUserPosts(user));
+        }
+        obtenerPosts(user);
+    })
+
     return (
         <>
             <IonHeader>

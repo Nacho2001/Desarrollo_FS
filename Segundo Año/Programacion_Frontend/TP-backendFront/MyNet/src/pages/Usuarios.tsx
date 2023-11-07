@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
-import { IonButton, IonContent, IonList, IonToolbar, IonTitle, IonHeader, IonCard, IonCardContent, IonItem, IonLabel, IonIcon } from '@ionic/react';
+import { IonContent, IonList, IonToolbar, IonTitle, IonHeader, IonCard, IonCardContent} from '@ionic/react';
 import { obtenerUsuarios, obtenerUsuarioUnicio, createUser, deleteUser, updateUser } from '../callback';
-import { personOutline } from 'ionicons/icons';
+import ItemUsuario from '../components/ItemUsuario';
 const Usuarios: React.FC = () => {
     const [usuarios,setUsuarios] = useState([]);
     const [usuarioSingle, setUsuarioSingle] = useState([]);
@@ -11,14 +11,7 @@ const Usuarios: React.FC = () => {
         }
         getUsers()
     }, [])
-    interface usuario{
-        id:number,
-        username:string,
-        email:string,
-        imagen:string,
-        rol:string
-    }
-    const obtenerUsuario = async (id:any) => {
+    const obtenerUsuario = async (id:number) => {
         setUsuarioSingle(await obtenerUsuarioUnicio(id));
     }
     const crearUsuario = async (username:string, password:string, email:string) => {
@@ -30,18 +23,7 @@ const Usuarios: React.FC = () => {
     const actualizarUsuario = async (id:number, username:string, password:string, email:string, rol:string) => {
         await updateUser(id,username,password,email,rol);
     }
-    const AvatarUsuario = (props:any) => {
-        let avatar = props['imagen'];
-        if (avatar == null || avatar == undefined) {
-            return (
-                <IonIcon icon={personOutline} size="large"></IonIcon>
-            )
-        } else {
-            return (
-                <img src={avatar.imagen} ></img>
-            )
-        }
-    }
+
     return (
         <>
             <IonHeader>
@@ -57,19 +39,13 @@ const Usuarios: React.FC = () => {
                     "marginRight":"3%"
                 }}>
                     <IonCardContent>
-                    <IonList>
-                    {
-                        usuarios.map((usuario:usuario) => (
-                            <IonItem key={usuario['id']} style={{"marginBottom":"1%"}}>
-                                <AvatarUsuario avatar={usuario['imagen']}/>
-                                <div style={{"marginLeft":"20px"}}>
-                                    <IonLabel>{usuario['username']}</IonLabel>
-                                    <IonLabel>{usuario['email']}</IonLabel>
-                                </div>
-                            </IonItem>
-                        ))
-                    }
-                </IonList>
+                        <IonList>
+                        {
+                            usuarios.map((usuario) => (
+                                <ItemUsuario usuario={usuario}/>
+                            ))
+                        }
+                        </IonList>
                     </IonCardContent>
                 </IonCard>
             </IonContent>

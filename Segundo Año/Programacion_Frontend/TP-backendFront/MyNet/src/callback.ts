@@ -58,10 +58,21 @@ export const getUniquePost = async (id:number) => {
     try {
         const resp = await axios.get("http://localhost:5000/publicaciones"+id)
         const post = resp.data.publicacion
+        return post
     } catch (error) {
         console.error(error);
     }
 }
+
+export const getUserPosts = async (user:string) => {
+    try {
+        const resp = await axios.get(`http://localhost:5000/publicaciones/usuarios/${user}`);
+        const posts = resp.data.publicaciones
+        return posts;
+    } catch (error) {
+        console.error(error);
+    }
+} 
 
 export const addPost = async (titulo:string,cuerpo:string,usuario:string,fecha:Date) => {
     try {

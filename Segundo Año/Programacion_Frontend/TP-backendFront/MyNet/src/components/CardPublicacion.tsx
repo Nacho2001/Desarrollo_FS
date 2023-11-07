@@ -1,21 +1,8 @@
 import { IonCard, IonCardHeader, IonCardSubtitle, IonIcon, IonCardTitle, IonCardContent } from "@ionic/react";
+import { propsPublicacion, imagenPublicacion } from "../interfaces";
 
-interface publicacion{
-    id:number,
-    titulo:string,
-    cuerpo:string,
-    imagen:string,
-    usuario:string,
-    fecha:string
-}
-interface props{
-    publicacion:publicacion
-}
 
-interface imagen{
-    imagen:string
-}
-const ImagenPost = (props:imagen) => {
+const ImagenPost = (props:imagenPublicacion) => {
     let imagen = props['imagen']
     if (imagen == "" || imagen == null || imagen == undefined) {
         return (
@@ -27,7 +14,7 @@ const ImagenPost = (props:imagen) => {
         )
     }
 }
-const CardPublicacion = (props:props) => {
+const CardPublicacion = (props:propsPublicacion) => {
     let post = props['publicacion']
     return (
         <IonCard>
