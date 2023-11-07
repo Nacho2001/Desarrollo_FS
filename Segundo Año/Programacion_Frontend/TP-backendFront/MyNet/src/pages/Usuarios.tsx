@@ -7,10 +7,17 @@ const Usuarios: React.FC = () => {
     const [usuarioSingle, setUsuarioSingle] = useState([]);
     useEffect(() => {
         const getUsers = async () => {
-            setUsuarios(await obtenerUsuarios());
+            setUsuarios(await obtenerUsuarios())
         }
         getUsers()
     }, [])
+    interface usuario{
+        id:number,
+        username:string,
+        email:string,
+        imagen:string,
+        rol:string
+    }
     const obtenerUsuario = async (id:any) => {
         setUsuarioSingle(await obtenerUsuarioUnicio(id));
     }
@@ -23,11 +30,16 @@ const Usuarios: React.FC = () => {
     const actualizarUsuario = async (id:number, username:string, password:string, email:string, rol:string) => {
         await updateUser(id,username,password,email,rol);
     }
-    const AvatarUsuario = (avatar:any) => {
-        if (avatar == null) {
-            <IonIcon icon={personOutline} size="large"></IonIcon>
+    const AvatarUsuario = (props:any) => {
+        let avatar = props['imagen'];
+        if (avatar == null || avatar == undefined) {
+            return (
+                <IonIcon icon={personOutline} size="large"></IonIcon>
+            )
         } else {
-            <img src="${}"></img>
+            return (
+                <img src={avatar.imagen} ></img>
+            )
         }
     }
     return (
@@ -47,11 +59,13 @@ const Usuarios: React.FC = () => {
                     <IonCardContent>
                     <IonList>
                     {
-                        usuarios.map((usuario:any) => (
-                            <IonItem key={usuario.id}>
-                                <AvatarUser avatar={usuario.avatar}/>
-                                <IonLabel>{usuario['username']}</IonLabel>
-                                <IonLabel>{usuario['email']}</IonLabel>
+                        usuarios.map((usuario:usuario) => (
+                            <IonItem key={usuario['id']} style={{"marginBottom":"1%"}}>
+                                <AvatarUsuario avatar={usuario['imagen']}/>
+                                <div style={{"marginLeft":"20px"}}>
+                                    <IonLabel>{usuario['username']}</IonLabel>
+                                    <IonLabel>{usuario['email']}</IonLabel>
+                                </div>
                             </IonItem>
                         ))
                     }

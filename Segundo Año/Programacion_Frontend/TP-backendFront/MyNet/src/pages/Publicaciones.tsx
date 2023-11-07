@@ -1,4 +1,4 @@
-import { IonToolbar, IonTitle, IonPage, IonContent, IonHeader } from '@ionic/react';
+import { IonToolbar, IonTitle, IonContent, IonHeader } from '@ionic/react';
 const Publicaciones: React.FC = () => {
     return (
         <>
@@ -7,6 +7,9 @@ const Publicaciones: React.FC = () => {
                     <IonTitle>Mi Muro</IonTitle>
                 </IonToolbar>
             </IonHeader>
+            <IonContent>
+               {/* Invocar callback de publicaciones y acomodar las tarjetas */} 
+            </IonContent>
         </>
     )
 }

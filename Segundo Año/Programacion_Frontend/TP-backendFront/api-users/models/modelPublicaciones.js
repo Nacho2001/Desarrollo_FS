@@ -14,7 +14,8 @@ Publicaciones.init({
         allowNull:false
     },
     imagen:{
-        type:DataTypes.STRING
+        type:DataTypes.STRING,
+        allowNull:true
     },
     cuerpo:{
         type:DataTypes.STRING,
@@ -25,7 +26,7 @@ Publicaciones.init({
         allowNull:false
     },
     fecha:{
-        type:DataTypes.DATE,
+        type:DataTypes.DATEONLY,
         allowNull:false
     }
 },
