@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import { IonContent, IonHeader, IonToolbar, IonTitle, IonCard} from '@ionic/react';
+import { IonContent, IonHeader, IonToolbar, IonTitle } from '@ionic/react';
 import { getPosts } from '../callback';
 import CardPublicacion from '../components/CardPublicacion';
+
 const Home: React.FC = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {

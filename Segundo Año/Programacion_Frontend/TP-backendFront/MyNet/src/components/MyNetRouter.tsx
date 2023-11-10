@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import Publicaciones from "../pages/Publicaciones";
 import Usuarios from "../pages/Usuarios";
 import Chat from "../pages/Chat";
+import Login from "../pages/Login";
 import { exitOutline, globeOutline, albumsOutline,peopleCircleOutline, chatbubblesOutline } from 'ionicons/icons';
 import { IonReactRouter } from "@ionic/react-router";
 const MyNetRouter:React.FC = () => {
@@ -12,6 +13,7 @@ const MyNetRouter:React.FC = () => {
             <IonTabs>
                 <IonRouterOutlet>
                     <Redirect exact path="/" to="/home"/>
+                    <Route path="/login" render={() => <Login/>} exact={true}/>
                     <Route path="/home" render={() => <Home/>} exact={true}/>
                     <Route path="/posts" render={() => <Publicaciones/>} exact={true}/>
                     <Route path="/usuarios" render={() => <Usuarios/>} exact={true}/>
@@ -33,6 +35,10 @@ const MyNetRouter:React.FC = () => {
                     <IonTabButton tab="usuarios" href="/usuarios">
                         <IonIcon icon={peopleCircleOutline}/>
                         <IonLabel>Usuarios</IonLabel>
+                    </IonTabButton>
+                    <IonTabButton tab="logout" href="/login">
+                        <IonIcon icon={exitOutline}/>
+                        <IonLabel>Logout</IonLabel>
                     </IonTabButton>
                     <IonTabButton tab="salir" href="">
                         <IonIcon icon={exitOutline}/>

@@ -26,3 +26,13 @@ export interface propsPublicacion{
 export interface imagenPublicacion{
     imagen:string
 }
+
+export interface label{
+    titulo:string,
+    tipo:any,
+    placeholder:string
+}
+
+export interface propsLabel{
+    info:label
+}

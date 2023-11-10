@@ -1,4 +1,4 @@
-import { IonCard, IonCardHeader, IonCardSubtitle, IonIcon, IonCardTitle, IonCardContent } from "@ionic/react";
+import { IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent } from "@ionic/react";
 import { propsPublicacion, imagenPublicacion } from "../interfaces";
 
 
