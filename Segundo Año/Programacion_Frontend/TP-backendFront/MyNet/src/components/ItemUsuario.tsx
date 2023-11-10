@@ -1,6 +1,6 @@
 import { IonItem, IonLabel } from "@ionic/react";
 import { propsUsuario } from "../interfaces";
-import AvatarUsuario from "./Avatarusuario";
+import AvatarUsuario from "./AvatarUsuario";
 
 const ItemUsuario = (props:propsUsuario) => {
     let usuario = props['usuario'];
