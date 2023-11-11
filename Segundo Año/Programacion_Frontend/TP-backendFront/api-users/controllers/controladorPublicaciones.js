@@ -1,4 +1,5 @@
 const Publicaciones = require("../models/modelPublicaciones");
+const { Op } = require('sequelize');
 
 // Obtener Publicaciones
 exports.obtenerPublicaciones = async (req,res) => {
@@ -131,6 +132,78 @@ exports.obtenerPublicacionDeUsuario = async (req,res) => {
         res.status(500).json({
             estado:"error",
             mensaje:`Ocurrió un error al obtener publicaciones: ${error}`
+        })
+    }
+}
+
+// Obtener publicaciones entre fechas
+exports.obtenerPostsEntrefechas = async (req,res) => {
+    const fecha1 = req.params.fecha1;
+    const fecha2 = req.params.fecha2;
+    try {
+        const publicaciones = await Publicaciones.findAll({
+            where: {
+                fecha:{
+                    [Op.between]:[fecha1,fecha2]
+                }
+            }
+        })
+        if (publicaciones == null) {
+            res.status(404).json({
+                estado:"Error",
+                mensaje:"No hay publicaciones entre las fechas ingresadas"
+            })
+        } else {
+            res.status(200).json({
+                estado:"Ok",
+                mensaje:"Publicaciones obtenidas",
+                publicaciones
+            })
+        }
+    } catch (error) {
+        console.error(error)
+        res.status(500).json({
+            estado:"Error",
+            mensaje:`Error: ${error}`
+        })
+    }
+}
+
+// Obtener Publicaciones de usuario entre fechas
+exports.obtenerPostsUsuariosEntrefechas = async () => {
+    const usuario = req.params.usuario;
+    const fecha1 = req.params.fecha1;
+    const fecha2 = req.params.fecha2;
+    try {
+        const publicaciones = await Publicaciones.findAll({
+            where:{
+                [Op.and]:[{usuario:usuario}, {fecha:{[Op.between]:[fecha1,fecha2]}}]
+            }
+        })
+        if (publicaciones == null) {
+            res.status(404).json({
+                estado:"Error",
+                mensaje:`Usuario ${usuario} no tiene publicaciones entre las fechas seleccionadas`
+            })
+        } else {
+            if (fecha1 > fecha2) {
+                res.status(400).json({
+                    estado:"Error",
+                    mensaje:"Error: La primera fecha debe ser anterior a la segunda"
+                })
+            } else {
+                res.status(200).json({
+                    estado:"Ok",
+                    mensaje:"Publicaciones obtenidas",
+                    publicaciones
+                })
+            }
+        }
+    } catch (error) {
+        console.error(error)
+        res.status(500).json({
+            estado:"Error",
+            mensaje:`Error: ${error}`
         })
     }
 }

@@ -22,4 +22,10 @@ router.put('/:id', controladorPost.actualizarPublicacion);
 // Obtener publicaciones de un usuario
 router.get('/usuarios/:usuario', controladorPost.obtenerPublicacionDeUsuario);
 
+// Obtener publicaciones entre fechas
+router.get('/:fecha1/:fecha2', controladorPost.obtenerPostsEntrefechas);
+
+// buscar publicaciones de un usuario entre fechas
+router.get('/usuarios/:usuario/:fecha1/:fecha2', controladorPost.obtenerPostsUsuariosEntrefechas);
+
 module.exports = router
