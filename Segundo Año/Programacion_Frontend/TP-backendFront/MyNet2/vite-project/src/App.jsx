@@ -1,12 +1,13 @@
 import 'primeicons/primeicons.css';
 import "primeflex/primeflex.css";
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import Muro from './pages/Muro';
 import Usuarios from './pages/Usuarios';
 import Chat from './pages/Chat';
-import {TabMenu} from "primereact/TabMenu";
 import { useState } from "react";
 import { Menubar } from 'primereact/menubar';
+import LogIn from './pages/LogIn';
 
 const App = () => {
   const [pageActiva, setPageActiva] = useState("Home");
@@ -32,10 +33,16 @@ const App = () => {
     }
   }
   return (
-    <div className="card">
-      <Menubar model={items2} className="w-full"/>
-      {renderizar()}
-    </div>
+    <Router>
+      <div className="card">
+        <Menubar model={items2} className="w-full"/>
+        {renderizar()}
+      </div>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/login' element={<LogIn/>}/>
+      </Routes>
+    </Router>
   )
 }
 

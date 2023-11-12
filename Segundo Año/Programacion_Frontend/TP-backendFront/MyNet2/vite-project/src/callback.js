@@ -10,10 +10,11 @@ export const obtenerUsuarios =  async () => {
     }
 }
 
-export const obtenerUsuarioUnicio = async(id) => {
+export const obtenerUsuarioUnicio = async(username) => {
     try {
-        const resp = await axios.get("http://localhost:5000/usuarios/"+id)
-        const usuario = resp.data.usuario;
+        const resp = await axios.get(`http://localhost:5000/usuarios/${username}`)
+        // La respesta del servidor es un array, por lo tanto, se extrae el usuario desde la posición 0.
+        const usuario = resp.data.usuarioBuscado[0];
         return usuario;
     } catch (error) {
         console.error(error);
@@ -99,3 +100,19 @@ export const updatePost = async (id, titulo, cuerpo, usuario, fecha) => {
 }
 
 // Obtener publicaciones filtradas por fecha
+export const getPostsBetweenDates = async (fecha1, fecha2) => {
+    try {
+        await axios.get(`http://localhost:5000/publicaciones/${fecha1}/${fecha2}`)
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+// Busca las publicaciones de un usuario especifico, entre las fecha seleccionadas
+export const getUserPostsBetweenDates = async (usuario,fecha1,fecha2) => {
+    try {
+        await axios.get(`http://localhost5000/usuarios/${usuario}/${fecha1}/${fecha2}`)
+    } catch (error) {
+        console.error(error)
+    }
+}

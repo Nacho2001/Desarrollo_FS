@@ -11,8 +11,8 @@ router.get('/', controladorUsuario.obtenerUsuarios);
 // Crear usuario nuevo
 router.post('/', controladorUsuario.crearUsuario);
 
-// Obtener usuario por ID
-router.get('/:id', controladorUsuario.obtenerUsuarioUnico);
+// Obtener usuario por Username
+router.get('/:usuario', controladorUsuario.obtenerUsuarioUnico);
 
 // Borrar usuario
 router.delete('/:id', controladorUsuario.borrarUsuario);
