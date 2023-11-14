@@ -1,16 +1,16 @@
 import { Card } from 'primereact/card';
 const CardPublicacion = (props) => {
     let post = props.post
-    console.log(post)
     const header = () => (
-        <img alt="" src={props.imagen} />
+        <img alt="" src={post.imagen} />
     )
+    const subtitle = `${post.usuario}, ${post.fecha}`
     return (
-        {/*<div className="card flex">
-            <Card title={props.title} header={header}>
-                <p>{props.cuerpo}</p>
+        <div key={post.id} className="card flex">
+            <Card title={post.titulo} subTitle={subtitle} header={header}>
+                {post.cuerpo}
             </Card>
-        </div>*/}
+        </div>
     )
 }
 

@@ -13,7 +13,7 @@ const App = () => {
   const [pageActiva, setPageActiva] = useState("Home");
   const items2 = [
     {label:'Home', icon:'pi pi-home', command:() => {setPageActiva("Home")}},
-    {label:'Muro', icon:'pi pi-bookmark', command:() => {setPageActiva("Muro"); console.log(pageActiva)}},
+    {label:'Muro', icon:'pi pi-bookmark', command:() => {setPageActiva("Muro")}},
     {label:'Usuarios', icon:'pi pi-users', command:() => {setPageActiva("Usuarios")}},
     {label:'Chat', icon:'pi pi-comment', command:() => {setPageActiva("Chat")}},
     {label:'Salir', icon:'pi pi-sign-out'}

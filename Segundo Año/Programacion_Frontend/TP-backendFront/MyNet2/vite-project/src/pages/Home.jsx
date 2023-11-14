@@ -10,7 +10,6 @@ const Home = () => {
         }
         getPublicaciones();
     }, [])
-    console.log(publicaciones)
     return (
         <>
             <h2>MyNet</h2>
