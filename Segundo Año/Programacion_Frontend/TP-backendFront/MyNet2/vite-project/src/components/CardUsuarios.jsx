@@ -1,8 +1,15 @@
-import {Card} from 'primereact/card';
+import AvatarUsuario from './AvatarUsuario';
+
 const CardUsuarios = (props) => {
+    const usuario = props.usuario;
+    console.log(usuario.imagen)
     return (
-        <div className="card flex">
-            
+        <div className="card flex mt-5">
+            <AvatarUsuario props={usuario.imagen}/>
+            <div className='flex flex-column ml-2'>
+                <b>{usuario.username}</b>
+                <p className="-mt-1">{usuario.email}</p> 
+            </div>           
         </div>
     )
 }
