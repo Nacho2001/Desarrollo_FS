@@ -1,10 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-export default configureStore({
-    reducer: {}
-})
-
-const setCredenciales = (username, password) => ({
+export const setCredenciales = (username, password) => ({
     type:'CREDENCIALES',
     payload: {username, password}
 })
@@ -16,4 +12,17 @@ const estadoInicial = {
     }
 }
 
-// Completar reducer
+ const usuarioReducer = (state = estadoInicial, action) => {
+    switch(action.type) {
+        case 'CREDENCIALES':
+            console.log(state.credencialesUsuario)
+        default:
+            return state;
+    }
+}
+
+export default configureStore({
+    reducer: {
+        credencialesUsuario: usuarioReducer
+    }
+})

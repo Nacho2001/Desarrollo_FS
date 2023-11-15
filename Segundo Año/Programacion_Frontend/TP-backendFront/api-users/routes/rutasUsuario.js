@@ -9,18 +9,18 @@ const checkJWT = require('../middlewares/verificacionJwt');
 // Define rutas a las consultas del controller
 
 // Obtener usuarios
-router.get('/', checkJWT.verificacion, controladorUsuario.obtenerUsuarios);
+router.get('/', controladorUsuario.obtenerUsuarios);
 
 // Crear usuario nuevo
-router.post('/', checkJWT.verificacion, controladorUsuario.crearUsuario);
+router.post('/', controladorUsuario.crearUsuario);
 
 // Obtener usuario por Username
-router.get('/:usuario', checkJWT.verificacion, controladorUsuario.obtenerUsuarioUnico);
+router.get('/:usuario', controladorUsuario.obtenerUsuarioUnico);
 
 // Borrar usuario
-router.delete('/:id', checkJWT.verificacion, controladorUsuario.borrarUsuario);
+router.delete('/:id', controladorUsuario.borrarUsuario);
 
 // Actualizar usuario
-router.put('/:id', checkJWT.verificacion, controladorUsuario.actulizarUsuario);
+router.put('/:id', controladorUsuario.actulizarUsuario);
 
 module.exports = router

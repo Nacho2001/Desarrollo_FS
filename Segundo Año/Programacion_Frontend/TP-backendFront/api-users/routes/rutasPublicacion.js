@@ -8,27 +8,27 @@ const checkJWT = require('../middlewares/verificacionJwt');
 // Rutas de publicaciones
 
 // Obtener publicaciones
-router.get('/', checkJWT.verificacion, controladorPost.obtenerPublicaciones);
+router.get('/', controladorPost.obtenerPublicaciones);
 
 // Añadir publicacion
-router.post('/', checkJWT.verificacion, controladorPost.crearPublicacion);
+router.post('/', controladorPost.crearPublicacion);
 
 // obtener unica publicacion
-router.get('/:id', checkJWT.verificacion, controladorPost.obtenerPublicacionUnica);
+router.get('/:id', controladorPost.obtenerPublicacionUnica);
 
 // Borrar publicacion
-router.delete('/:id', checkJWT.verificacion, controladorPost.borrarPublicacion);
+router.delete('/:id', controladorPost.borrarPublicacion);
 
 // actualizar publicacion
-router.put('/:id', checkJWT.verificacion, controladorPost.actualizarPublicacion);
+router.put('/:id',  controladorPost.actualizarPublicacion);
 
 // Obtener publicaciones de un usuario
-router.get('/usuarios/:usuario', checkJWT.verificacion, controladorPost.obtenerPublicacionDeUsuario);
+router.get('/usuarios/:usuario', controladorPost.obtenerPublicacionDeUsuario);
 
 // Obtener publicaciones entre fechas
-router.get('/:fecha1/:fecha2', checkJWT.verificacion, controladorPost.obtenerPostsEntrefechas);
+router.get('/:fecha1/:fecha2', controladorPost.obtenerPostsEntrefechas);
 
 // buscar publicaciones de un usuario entre fechas
-router.get('/usuarios/:usuario/:fecha1/:fecha2', checkJWT.verificacion, controladorPost.obtenerPostsUsuariosEntrefechas);
+router.get('/usuarios/:usuario/:fecha1/:fecha2', controladorPost.obtenerPostsUsuariosEntrefechas);
 
 module.exports = router

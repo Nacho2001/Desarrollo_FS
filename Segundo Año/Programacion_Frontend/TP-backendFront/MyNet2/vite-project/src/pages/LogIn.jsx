@@ -2,8 +2,11 @@ import {useState} from 'react';
 import {InputText} from 'primereact/inputtext';
 import {Button} from 'primereact/button';
 import { autenticar, obtenerUsuarioUnicio } from '../callback';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCredenciales } from '../store';
 
 const LogIn = () => {
+    const datosUsuario = useSelector((state) => state.credencialesUsuario);
     const [userData, setUserData] = useState({
         username:"",
         password:""
@@ -23,7 +26,9 @@ const LogIn = () => {
     }
     const verificacion2 = async (event) => {
         event.preventDefault();
-        console.log(username,password);
+        // Pasa las credenciales ingresadas a los estados globales
+        dispatch(setCredenciales(userData.username, userData.password))
+        console.log(datosUsuario)
         //let auth = await autenticar(username, password);
         //console.log(auth);
     }

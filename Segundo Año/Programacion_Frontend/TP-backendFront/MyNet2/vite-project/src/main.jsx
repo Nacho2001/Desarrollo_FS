@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux';
-import store from '../Reducer';
+import store from './store';
 import "primereact/resources/themes/bootstrap4-dark-blue/theme.css";
 import {PrimeReactProvider} from 'primereact/api';
 import App from './App';
