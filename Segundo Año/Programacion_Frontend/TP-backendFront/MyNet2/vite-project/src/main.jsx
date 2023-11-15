@@ -1,15 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import store from '../Reducer';
 import "primereact/resources/themes/bootstrap4-dark-blue/theme.css";
 import {PrimeReactProvider} from 'primereact/api';
+import App from './App';
 
-const store = createStore()
 ReactDOM.createRoot(document.getElementById('root')).render(
   <PrimeReactProvider>
-    <Provider>
+    <Provider store={store} >
       <App />
     </Provider>
   </PrimeReactProvider>,
