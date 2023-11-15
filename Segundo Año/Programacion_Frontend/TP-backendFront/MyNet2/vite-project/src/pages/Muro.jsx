@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { getUserPosts } from "../callback";
-import { CardPublicacion } from '../components/CardPublicacion'
+import  CardPublicacion from '../components/CardPublicacion'
 const Muro = () => {
     const [misPost, setMisPost] = useState([]);
     useEffect(() => {

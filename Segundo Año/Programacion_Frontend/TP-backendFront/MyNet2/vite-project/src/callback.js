@@ -1,5 +1,13 @@
 import axios from 'axios';
 
+
+export const autenticar = async (username, password) => {
+    try {
+        await axios.post("http://localhost:5000/login", {username, password})
+    } catch (error) {
+        console.error(error);
+    }
+}
 export const obtenerUsuarios =  async () => {
     try {
         const resp =  await axios.get("http://localhost:5000/usuarios");

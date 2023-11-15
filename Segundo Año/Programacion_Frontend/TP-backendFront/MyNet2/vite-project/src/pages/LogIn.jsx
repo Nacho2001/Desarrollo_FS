@@ -1,27 +1,27 @@
 import {useState} from 'react';
 import {InputText} from 'primereact/inputtext';
 import {Button} from 'primereact/button';
-import { obtenerUsuarioUnicio } from '../callback';
+import { autenticar, obtenerUsuarioUnicio } from '../callback';
 
-const LogIn = () => {
-    const [userData, setUserData] = useState({
-        username:"",
-        password:""
-    })
+const LogIn = (props) => {
+    let username = props.credenciales.username;
+    let password = props.credenciales.password;
+
     const [error, setError] = useState("");
     const [inputClass, setInputClass] = useState({
         usernameInput:"",
         passwordInput:""
     })
     const setDatosFormulario = (event) => {
-        setUserData({
+        /*setUserData({
             ...userData,
             [event.target.name] : event.target.value
-        })
+        })*/
+        event.target.name = event.target.value
     }
     const verificacion = async (event) => {
         event.preventDefault()
-        let response = await obtenerUsuarioUnicio(userData.username);
+        let response = await obtenerUsuarioUnicio(username);
         if (response == undefined) {
             setError("Error: No existe el usuario ingresado")
             setInputClass({
@@ -29,7 +29,7 @@ const LogIn = () => {
                 passwordInput:""
             })
         } else {
-            if (userData.password != response.password) {
+            if (password != password) {
                 setError("Error: La contraseña es incorrecta"),
                 setInputClass({
                     usernameInput:"",
@@ -40,10 +40,15 @@ const LogIn = () => {
             }
         }
     }
+    const verificacion2 = async (event) => {
+        event.preventDefault();
+        let auth = await autenticar(username, password);
+        console.log(auth);
+    }
     return (
         <div className="justify-content-center">
             <h1>MyNet</h1>
-            <form className='flex flex-column w-7 md:w-4 lg:w-2 xl:w-2' onSubmit={verificacion}>
+            <form className='flex flex-column w-7 md:w-4 lg:w-2 xl:w-2' onSubmit={verificacion2}>
                 <label className='mb-1'>Nombre de usuario</label>
                 <InputText name="username" className={inputClass.usernameInput} onChange={(event) => {setDatosFormulario(event)}}/>
                 <label className='mt-2 mb-1'>Contraseña</label>

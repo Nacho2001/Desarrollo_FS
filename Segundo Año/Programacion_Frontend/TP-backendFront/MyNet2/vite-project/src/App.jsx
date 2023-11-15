@@ -1,6 +1,6 @@
 import 'primeicons/primeicons.css';
 import "primeflex/primeflex.css";
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Muro from './pages/Muro';
 import Usuarios from './pages/Usuarios';
@@ -10,6 +10,10 @@ import { Menubar } from 'primereact/menubar';
 import LogIn from './pages/LogIn';
 
 const App = () => {
+  const [userData, setUserData] = useState({
+    username:"",
+    password:""
+})
   const [pageActiva, setPageActiva] = useState("Home");
   const items2 = [
     {label:'Home', icon:'pi pi-home', command:() => {setPageActiva("Home")}},
@@ -32,12 +36,24 @@ const App = () => {
         return <Home/>;
     }
   }
+
+  const checkLogin = () => {
+    if (userData.username == "") {
+      return (
+        <LogIn credenciales={userData}/>
+      )
+    } else { 
+      return (
+        <div>
+          <Menubar model={items2} className="w-full"/>
+          {renderizar()}
+        </div>
+      )
+    }
+  }
   return (
     <Router>
-      <div className="card">
-        <Menubar model={items2} className="w-full"/>
-        {renderizar()}
-      </div>
+      {checkLogin()}
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/login' element={<LogIn/>}/>

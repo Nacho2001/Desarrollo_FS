@@ -10,7 +10,7 @@ const sequelize = require('./config/db');
 // Trae el archivo con las rutas 
 const rutasUsuarios = require('./routes/rutasUsuario');
 const rutasPublicaciones = require('./routes/rutasPublicacion');
-
+const rutaAutenticacion = require('./routes/rutaAutenticacion');
 // Autenticion a la base
 sequelize.authenticate()
 .then(() => {
@@ -26,6 +26,7 @@ app.use(cors());
 // Configuracion de rutas
 app.use('/usuarios', rutasUsuarios);
 app.use('/publicaciones',rutasPublicaciones);
+app.use('/login', rutaAutenticacion)
 
 // Incio por puerto 5000
 const PORT = 5000;
