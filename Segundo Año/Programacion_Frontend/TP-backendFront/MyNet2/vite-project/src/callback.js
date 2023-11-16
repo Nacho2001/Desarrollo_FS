@@ -5,7 +5,7 @@ export const autenticar = async (username, password) => {
     try {
         await axios.post("http://localhost:5000/login", {username, password})
     } catch (error) {
-        console.error(error);
+        return error
     }
 }
 export const obtenerUsuarios =  async () => {

@@ -1,23 +1,29 @@
 const jwt = require('jsonwebtoken');
-const controladorUsuario = require("./controladorUsuario")
+const Usuario = require('../models/modelUsuario');
 
 exports.autenticacion = async (req,res) => {
-    const {username, password} = req.body
+    const username = req.body.username;
+    const password = req.body.password;
     try {
         // Busca el usuario ingresado en la base de datos
-        const usuario = await controladorUsuario.obtenerUsuarioUnico(username)
+        const usuario = await Usuario.findAll({
+            where: {
+                username: username
+            }
+        });
         // Si no existe, retorna un error "Credenciales incorrectas"
-        if (!usuario){
+        if (usuario == [] || usuario == "" | usuario == undefined){
             res.status(401).json({
                 estado:"Error",
                 mensaje:"Nombre de Usuario o Contraseña incorrectos"
             })
         } else {
             // Verifica la contraseña del usuario, si no es igual tambien retorna un error
-            if (usuario.password != password){
+            let claveGuardada = usuario[0].dataValues.password
+            if (claveGuardada != password){
                 res.status(401).json({
                     estado:"Error",
-                    mensaje:"Nombre de Usuario o Contraseña incorrectos"
+                    mensaje:"Clave erronea Gil!"
                 })
             } else {
                 // Crea el token para el cliente si las credenciales son correctas

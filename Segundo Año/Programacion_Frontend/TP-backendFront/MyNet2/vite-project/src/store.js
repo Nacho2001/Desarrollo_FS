@@ -15,7 +15,9 @@ const estadoInicial = {
  const usuarioReducer = (state = estadoInicial, action) => {
     switch(action.type) {
         case 'CREDENCIALES':
-            console.log(state.credencialesUsuario)
+            return {
+                credencialesUsuario: action.payload
+            }
         default:
             return state;
     }

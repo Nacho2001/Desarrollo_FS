@@ -13,11 +13,11 @@ const Home = () => {
     return (
         <>
             <h2>MyNet</h2>
-            <ul>
+            <div>
                 {publicaciones.map((post) => (
                     <CardPublicacion post={post}/>
                 ))}
-            </ul>
+            </div>
         </>
     )
 }

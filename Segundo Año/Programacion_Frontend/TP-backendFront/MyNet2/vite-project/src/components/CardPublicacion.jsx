@@ -6,7 +6,7 @@ const CardPublicacion = (props) => {
     )
     const subtitle = `${post.usuario}, ${post.fecha}`
     return (
-        <div key={post.id} className="card flex">
+        <div key={post.id} className="card flex max-w-30rem m-5">
             <Card title={post.titulo} subTitle={subtitle} header={header}>
                 {post.cuerpo}
             </Card>
