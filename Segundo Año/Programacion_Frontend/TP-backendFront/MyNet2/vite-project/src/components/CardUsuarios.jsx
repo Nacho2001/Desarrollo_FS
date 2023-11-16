@@ -2,7 +2,6 @@ import AvatarUsuario from './AvatarUsuario';
 
 const CardUsuarios = (props) => {
     const usuario = props.usuario;
-    console.log(usuario.imagen)
     return (
         <div className="card flex mt-5">
             <AvatarUsuario props={usuario.imagen}/>

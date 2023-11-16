@@ -77,7 +77,7 @@ export const getUserPosts = async (user) => {
     try {
         const resp = await axios.get(`http://localhost:5000/publicaciones/usuarios/${user}`);
         const posts = resp.data.publicaciones
-        return posts;
+        return posts
     } catch (error) {
         console.error(error);
     }

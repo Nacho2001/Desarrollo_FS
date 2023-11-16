@@ -4,9 +4,8 @@ import  CardPublicacion from '../components/CardPublicacion'
 const Muro = () => {
     const [misPost, setMisPost] = useState([]);
     useEffect(() => {
-        let usuario = "MNacho";
         const getMyPost = async () => {
-            setMisPost(getUserPosts(usuario))
+            setMisPost(await getUserPosts("Nacho"))
         }
         // Corregir funcion Callback
         getMyPost();
@@ -16,7 +15,7 @@ const Muro = () => {
             <h2>Mi Muro</h2>
             <ul>
                 {misPost.map((post) => (
-                    <CardPublicacion post={post}/>
+                    <CardPublicacion post={post} key={post.id}/>
                 ))}
             </ul>
         </>

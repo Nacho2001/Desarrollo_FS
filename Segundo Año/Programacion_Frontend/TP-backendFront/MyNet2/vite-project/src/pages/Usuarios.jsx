@@ -15,7 +15,7 @@ const Usuarios = () => {
             <ul>
                 {
                     usuarios.map((usuario) => (
-                        <CardUsuarios usuario={usuario} />
+                        <CardUsuarios usuario={usuario} key={usuario.id}/>
                     ))
                 }
             </ul>
