@@ -28,7 +28,10 @@ exports.autenticacion = async (req,res) => {
             } else {
                 // Crea el token para el cliente si las credenciales son correctas
                 const token = jwt.sign({userID: usuario.id}, 'MyNetForever', { expiresIn: '2h'})
-                res.json({token})
+                res.status(200).json({
+                    estado:"Ok",
+                    token: token
+                })
             }
         }
     } catch (error) {

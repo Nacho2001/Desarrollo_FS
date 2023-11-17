@@ -13,10 +13,7 @@ const LogIn = () => {
 
     const dispatch = useDispatch()
     const [error, setError] = useState("");
-    const [inputClass, setInputClass] = useState({
-        usernameInput:"",
-        passwordInput:""
-    })
+    const [inputClass, setInputClass] = useState("")
     const setFormData = (event) => {
         setUserData({
             ...userData,
@@ -26,12 +23,20 @@ const LogIn = () => {
     }
     const verificacion2 = async (event) => {
         event.preventDefault();
-        // Pasa las credenciales ingresadas a los estados globales
-        dispatch(setCredenciales(userData.username, userData.password))
         let auth = await autenticar(userData.username, userData.password);
-        if (auth.response.status == 401){
-            setError("Usuario o Contrseña incorrectos")
-            setInputClass("p-invalid")
+        console.log(auth)
+
+        switch (status) {
+            case 401:
+                setError("Usuario o Contrseña incorrectos")
+                setInputClass("p-invalid")
+            case 500:
+                setError("Error del servidor")
+            case 200:
+                // Pasa las credenciales ingresadas a los estados globales y cambia el estado login a true
+                dispatch(setCredenciales(userData.username, userData.password, true))
+            default:
+                setError("Ocurrió un error desconocido");
         }
     }
     return (
@@ -40,11 +45,11 @@ const LogIn = () => {
                 <h1>MyNet</h1>
                 <div className='flex flex-column'>
                     <label className='mb-1'>Nombre de usuario</label>
-                    <InputText name="username" className={inputClass.usernameInput} onChange={(event) => {setFormData(event)}}/>
+                    <InputText name="username" className={inputClass} onChange={(event) => {setFormData(event)}}/>
                 </div>
                 <div className='flex flex-column'>
                     <label className='mt-2 mb-1'>Contraseña</label>
-                    <InputText name="password" type="password" className={inputClass.passwordInput} onChange={(event) => setFormData(event)}/>
+                    <InputText name="password" type="password" className={inputClass} onChange={(event) => setFormData(event)}/>
                     <small className='mt-2' style={{"color":"#CD5C5C"}}>{error}</small>
                 </div>
                 <Button className="mt-3 w-7rem" type="submit" label="Ingresar"/>

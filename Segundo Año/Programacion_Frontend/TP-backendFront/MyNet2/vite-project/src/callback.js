@@ -3,7 +3,14 @@ import axios from 'axios';
 
 export const autenticar = async (username, password) => {
     try {
-        await axios.post("http://localhost:5000/login", {username, password})
+        let res = await axios.post("http://localhost:5000/login", {username, password})
+        if (res == undefined) {
+            let status = 200
+            return status
+        } else {
+            let status = res.response.status
+            return status
+        }
     } catch (error) {
         return error
     }

@@ -37,7 +37,7 @@ const App = () => {
   }
 
   const checkLogin = () => {
-    if (userData.username == "") {
+    if (userData.login == false) {
       return (
         <LogIn/>
       )
