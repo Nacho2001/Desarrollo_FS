@@ -37,8 +37,10 @@ export const obtenerUsuarioUnicio = async(username) => {
 }
 
 export const createUser = async (username, password, email) => {
+    let rol = "usuario"
     try {
-        await axios.post("http://localhost:5000/usuarios", {username, password, email })
+        const res = await axios.post("http://localhost:5000/usuarios", {username, password, email, rol })
+        return res
     } catch (error) {
         console.error(error)
     }

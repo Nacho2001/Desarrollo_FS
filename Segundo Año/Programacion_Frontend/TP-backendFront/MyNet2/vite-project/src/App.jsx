@@ -6,9 +6,9 @@ import Usuarios from './pages/Usuarios';
 import Chat from './pages/Chat';
 import { useState } from "react";
 import { Menubar } from 'primereact/menubar';
-import LogIn from './pages/LogIn';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCredenciales } from './store';
+import Auth from './pages/Auth';
 
 const App = () => {
   const dispatch = useDispatch()
@@ -38,10 +38,12 @@ const App = () => {
 
   const checkLogin = () => {
     if (userData.login == false) {
+      console.log(userData)
       return (
-        <LogIn/>
+        <Auth/>
       )
     } else { 
+      console.log(userData)
       return (
         <div>
           <Menubar model={items2} className="w-full"/>

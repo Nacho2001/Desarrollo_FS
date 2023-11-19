@@ -5,7 +5,7 @@ import { autenticar } from '../callback';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCredenciales } from '../store';
 
-const LogIn = () => {
+const LogIn = ({registro}) => {
     const [userData, setUserData] = useState({
         username:"",
         password:""
@@ -39,20 +39,25 @@ const LogIn = () => {
                 setError("Ocurrió un error desconocido");
         }
     }
+    const cambioEstadoRegistro = () => {
+        registro(false)
+    }
     return (
         <div className='flex justify-content-center'>  
             <form className='flex flex-column w-12 align-items-center' onSubmit={verificacion2}>
                 <h1>MyNet</h1>
                 <div className='flex flex-column'>
                     <label className='mb-1'>Nombre de usuario</label>
-                    <InputText name="username" className={inputClass} onChange={(event) => {setFormData(event)}}/>
+                    <InputText name="username" className={inputClass} value={userData.username} onChange={(event) => {setFormData(event)}}/>
                 </div>
                 <div className='flex flex-column'>
                     <label className='mt-2 mb-1'>Contraseña</label>
-                    <InputText name="password" type="password" className={inputClass} onChange={(event) => setFormData(event)}/>
+                    <InputText name="password" type="password" className={inputClass} value={userData.password} onChange={(event) => setFormData(event)}/>
                     <small className='mt-2' style={{"color":"#CD5C5C"}}>{error}</small>
                 </div>
-                <Button className="mt-3 w-7rem" type="submit" label="Ingresar"/>
+                <Button className="mt-3 mb-4 w-7rem" type="submit" label="Ingresar" severity="success"/>
+                No posee un usuario?
+                <Button className="mt-1 w-8rem" type="submit" label="Registrarse" severity="info" onClick={cambioEstadoRegistro}/>
             </form>
         </div>
     )

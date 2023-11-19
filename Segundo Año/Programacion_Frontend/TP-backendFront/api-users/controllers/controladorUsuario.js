@@ -19,12 +19,27 @@ exports.obtenerUsuarios = async (req,res) => {
 
 // Metodo para crear Usuarios
 exports.crearUsuario = async(req,res) => {
-    try { // Intenta realizar la consulta con Usuario.create()
-        const usuario = await Usuario.create(req.body);
-        res.status(201).json({ // Si tuvo exito, devuelve un mensaje con el codigo 201
-            estado:"Ok",
-            mensaje:`Usuario ${usuario.username} creado con exito!`
-        })
+    try {
+        const usuarioEntrante = req.body.username
+        const busqueda = await Usuario.findAll({
+            where: {
+                username: usuarioEntrante
+            }
+        });
+        if (busqueda == undefined) {
+            // Intenta realizar la consulta con Usuario.create(), una vez que se verificó que el usuario no existe
+            const usuario = await Usuario.create(req.body);
+            res.status(201).json({ // Si tuvo exito, devuelve un mensaje con el codigo 201
+                estado:"Ok",
+                mensaje:`Usuario ${usuario.username} creado con exito!`
+            })
+        } else {
+            res.status(200).json({
+                estado:"Error",
+                mensaje:`El nombre de usuario ${usuarioEntrante} ya se encuentra ocupado, ingrese otro`
+            })
+        }
+
     } catch (error) { // Si falló, muestra el error por terminal y un mensaje con la notificación
         console.error(error);
         res.status(500).json({
