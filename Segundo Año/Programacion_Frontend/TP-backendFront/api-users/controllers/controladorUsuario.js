@@ -26,7 +26,7 @@ exports.crearUsuario = async(req,res) => {
                 username: usuarioEntrante
             }
         });
-        if (busqueda == undefined) {
+        if (busqueda.length == 0) {
             // Intenta realizar la consulta con Usuario.create(), una vez que se verificó que el usuario no existe
             const usuario = await Usuario.create(req.body);
             res.status(201).json({ // Si tuvo exito, devuelve un mensaje con el codigo 201

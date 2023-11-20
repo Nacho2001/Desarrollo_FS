@@ -2,12 +2,11 @@ import {useState} from 'react';
 import {InputText} from 'primereact/inputtext';
 import {Button} from 'primereact/button';
 import { createUser } from '../callback';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setCredenciales } from '../store';
 
 const Register = ({registro}) => {
     const dispatch = useDispatch();
-    const [registrado, setRegistrado] = useState(false)
     const [userData, setUserData] = useState({
         username:"",
         password:"",
@@ -15,7 +14,8 @@ const Register = ({registro}) => {
     })
     const [inputClass, setInputClass] = useState("")
     const [error, setError] = useState("");
-    let message = "Ya posee un usuario?"
+    const [footerText, setFooterText] = useState("Ya posee un usuario?");
+    const [registrado, setRegistrado] = useState(false);
     const setFormData = (event) => {
         setUserData({
             ...userData,
@@ -28,35 +28,38 @@ const Register = ({registro}) => {
     }
     const registrar = async (event) => {
         event.preventDefault();
-        const peticion = await createUser(userData.username,userData.password,userData.email)
-        switch (peticion.status) {
-            case 200:
-                setError(peticion.data.mensaje)
-                setInputClass("p-invalid");
-            case 201:
-                message="Registro exitoso! Inicie sesión"
-                setError("");
-                setInputClass("");
-                setRegistrado(true)
-            default:
-                //setError("No se ha podido ingresar por un error desconocido")
-                console.log(peticion.data.mensaje)
+        if ( userData.username == "" || userData.password == "" || userData.email == "") {
+            setError("Todos los campos deben ser completados")
+        } else {
+            const res = await createUser(userData.username,userData.password,userData.email)
+            switch (res.status) {
+                case 200:
+                    setError(res.data.mensaje)
+                    setInputClass("p-invalid");
+                    break;
+                case 201:
+                    setError("");
+                    setInputClass("");
+                    setFooterText("Registro exitoso! Ya puede iniciar sesión");
+                    setRegistrado(true)
+                    break;
+            }
         }
     }
+    const LoginButton = () => {
+        if (registrado == false){
+            return (
+                <Button className="mt-1 w-10rem" type="submit" label="Iniciar Sesión" severity="info" onClick={cambioEstadoRegistro}/>
+            )
+        } else {
+            return (
+                <Button className="mt-1 w-10rem" type="submit" label="Iniciar Sesión" severity="info" onClick={onLogin}/>
+            )
+        }
+    }
+
     const onLogin = () => {
         dispatch(setCredenciales(userData.username, userData.password, true))
-    }
-    const loginButton = () => {
-        console.log(registrado)
-        if(registrado == false){
-            return (
-                <Button id="loginButton" className="mt-1 w-10rem" type="submit" label="Iniciar Sesión" severity="info" onClick={cambioEstadoRegistro}/>
-            )
-        }else{
-            return (
-                <Button id="loginButton" className="mt-1 w-10rem" type="submit" label="Iniciar Sesión" severity="info" onClick={onLogin}/>
-            )
-        }
     }
     return (
         <div className='flex justify-content-center'>
@@ -75,9 +78,9 @@ const Register = ({registro}) => {
                     <InputText id="password" type="password" name="formCampo" value={userData.password} onChange={(event) => {setFormData(event)}}/>
                 </div>
                 <small className='mt-2' style={{"color":"#CD5C5C"}}>{error}</small>
-                    <Button id="registerButton" className="mt-3 mb-4 w-7rem" type="submit" severity="success" label="Registrar"/>
-                    {message}
-                    {loginButton}
+                <Button id="registerButton" className="mt-3 mb-4 w-7rem" type="submit" severity="success" label="Registrar"/>
+                {footerText}
+                <LoginButton />
             </form> 
         </div>
     )

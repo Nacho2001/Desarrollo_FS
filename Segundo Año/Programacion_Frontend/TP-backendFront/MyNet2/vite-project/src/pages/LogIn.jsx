@@ -1,9 +1,9 @@
 import {useState} from 'react';
 import {InputText} from 'primereact/inputtext';
 import {Button} from 'primereact/button';
-import { autenticar } from '../callback';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCredenciales } from '../store';
+import { autenticar } from '../callback';
 
 const LogIn = ({registro}) => {
     const [userData, setUserData] = useState({
@@ -23,20 +23,27 @@ const LogIn = ({registro}) => {
     }
     const verificacion2 = async (event) => {
         event.preventDefault();
-        let auth = await autenticar(userData.username, userData.password);
-        console.log(auth)
-
-        switch (status) {
-            case 401:
-                setError("Usuario o Contrseña incorrectos")
-                setInputClass("p-invalid")
-            case 500:
-                setError("Error del servidor")
-            case 200:
-                // Pasa las credenciales ingresadas a los estados globales y cambia el estado login a true
-                dispatch(setCredenciales(userData.username, userData.password, true))
-            default:
-                setError("Ocurrió un error desconocido");
+        if (userData.username == "" || userData.password == "") {
+            setError("Todos los campos deben ser completados")
+        } else {
+            let auth = await autenticar(userData.username, userData.password);
+            console.log(auth.status)
+            switch (auth.status) {
+                case 401:
+                    setError("Usuario o Contrseña incorrectos")
+                    setInputClass("p-invalid")
+                    break;
+                case 500:
+                    setError("Error del servidor")
+                    break;
+                case 200:
+                    // Pasa las credenciales ingresadas a los estados globales y cambia el estado login a true
+                    dispatch(setCredenciales(userData.username, userData.password, true))
+                    break;
+                default:
+                    setError("Ocurrió un error desconocido");
+                    break
+            }
         }
     }
     const cambioEstadoRegistro = () => {

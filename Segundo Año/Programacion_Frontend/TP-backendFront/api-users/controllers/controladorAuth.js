@@ -23,7 +23,7 @@ exports.autenticacion = async (req,res) => {
             if (claveGuardada != password){
                 res.status(401).json({
                     estado:"Error",
-                    mensaje:"Clave erronea Gil!"
+                    mensaje:"Nombre de Usuario o Contraseña incorrectos!"
                 })
             } else {
                 // Crea el token para el cliente si las credenciales son correctas
