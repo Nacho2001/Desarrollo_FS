@@ -3,7 +3,7 @@ import { getUserPosts } from "../callback";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import  CardPublicacion from '../components/CardPublicacion'
 import {Button} from 'primereact/button';
-import FormPost from "../components/FormPost";
+import FormAddPost from "../components/FormAddPost";
 
 const Muro = () => {
     const token = useSelector((state) => state.credencialesUsuario.credencialesUsuario.token)
@@ -17,41 +17,35 @@ const Muro = () => {
         // Corregir funcion Callback
         getMyPost();
     }, [])
-    const render = () => {
-        switch (postMode) {
-            case "add":
-                return (
-                    <FormPost/>
-                )
-            case "edit":
-                return (
-                    <FormPost2/>
-                )
-            default:
-                return(
-                    <>
-                        <Button label="Añadir post" icon="pi pi-plus" severity="success"></Button>
-                        <div>
-                            {misPost.map((post) => (
-                                <CardPublicacion post={post} key={post.id}/>
-                            ))}
-                        </div>
-                    </>
-                )
-                break;
-        }
+    const changeMod = (modo) => {
+        setPostMode(modo)
     }
-    return (
-        <>
-            <h2>Mi Muro</h2>
-            <Button label="Añadir post" icon="pi pi-plus" severity="success"></Button>
-            <div>
-                {misPost.map((post) => (
-                    <CardPublicacion post={post} key={post.id}/>
-                ))}
-            </div>
-        </>
-    )
+    switch (postMode) {
+        case "create":
+            console.log(postMode)
+            return (
+                <FormAddPost modo={postMode}/>
+            )
+            break;
+        case "edit":
+            return (
+                <FormPost2/>
+            )
+            break
+        default:
+            return(
+                <>
+                    <h2>Mi Muro</h2>
+                    <Button label="Añadir post" icon="pi pi-plus" severity="success" onClick={() => changeMod("create")}></Button>
+                    <div>
+                        {misPost.map((post) => (
+                            <CardPublicacion post={post} key={post.id}/>
+                        ))}
+                    </div>
+                </>
+            )
+            break;
+    }
 }
 
 export default Muro;
