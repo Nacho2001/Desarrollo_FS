@@ -3,9 +3,6 @@ const express = require('express');
 const router = express.Router();
 const controladorUsuario = require('../controllers/controladorUsuario');
 
-// Importa la funcion verficacion para controlar los tokens
-const checkJWT = require('../middlewares/verificacionJwt');
-
 // Define rutas a las consultas del controller
 
 // Obtener usuarios

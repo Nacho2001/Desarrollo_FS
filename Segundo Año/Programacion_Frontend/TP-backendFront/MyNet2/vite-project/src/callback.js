@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-
 export const autenticar = async (username, password) => {
     try {
         let res = await axios.post("http://localhost:5000/login", {username, password})
@@ -9,9 +8,10 @@ export const autenticar = async (username, password) => {
         return error.response
     }
 }
-export const obtenerUsuarios =  async () => {
+export const obtenerUsuarios =  async (token) => {
+    const headers = {'token': token}
     try {
-        const resp =  await axios.get("http://localhost:5000/usuarios");
+        const resp =  await axios.get("http://localhost:5000/usuarios", {headers});
         const users = resp.data.usuarios;
         return users;
     } catch (error) {
@@ -31,34 +31,37 @@ export const obtenerUsuarioUnicio = async(username) => {
 }
 
 export const createUser = async (username, password, email) => {
-    let rol = "usuario"
+    const rol = "usuario";
     try {
         const res = await axios.post("http://localhost:5000/usuarios", {username, password, email, rol })
         return res
     } catch (error) {
-        console.error(error)
+        return error.response
     }
 }
 
-export const deleteUser = async (id) => {
+export const deleteUser = async (id, token) => {
+    const headers = {'token': token}
     try {
-        await axios.delete("http://localhost:5000/usuarios/"+id)
+        await axios.delete(`http://localhost:5000/usuarios/${id}`, {headers})
     } catch (error) {
         console.error(error)
     }
 }
 
-export const updateUser = async (id, username, password, email, rol) => {
+export const updateUser = async (id, username, password, email, rol, token) => {
+    const headers = {'token':token}
     try {
-        const resp = await axios.put(`http://localhost:5000/usuarios/${id}`, {username, password, email, rol})
+        await axios.put(`http://localhost:5000/usuarios/${id}`, {username, password, email, rol}, {headers})
     } catch (error) {
         console.error(error);
     }
 }
 
-export const getPosts = async () => {
+export const getPosts = async (token) => {
+    const headers = {'token':token}
     try {
-        const resp = await axios.get("http://localhost:5000/publicaciones")
+        const resp = await axios.get("http://localhost:5000/publicaciones", {headers})
         const posts = resp.data.publicaciones
         return posts;
     } catch (error) {
@@ -66,9 +69,10 @@ export const getPosts = async () => {
     }
 }
 
-export const getUniquePost = async (id) => {
+export const getUniquePost = async (id, token) => {
+    const headers = {'token':token}
     try {
-        const resp = await axios.get("http://localhost:5000/publicaciones"+id)
+        const resp = await axios.get(`http://localhost:5000/publicaciones/${id}`, {headers})
         const post = resp.data.publicacion
         return post
     } catch (error) {
@@ -76,9 +80,10 @@ export const getUniquePost = async (id) => {
     }
 }
 
-export const getUserPosts = async (user) => {
+export const getUserPosts = async (user, token) => {
+    const headers = {'token':token}
     try {
-        const resp = await axios.get(`http://localhost:5000/publicaciones/usuarios/${user}`);
+        const resp = await axios.get(`http://localhost:5000/publicaciones/usuarios/${user}`, {headers});
         const posts = resp.data.publicaciones
         return posts
     } catch (error) {
@@ -86,43 +91,48 @@ export const getUserPosts = async (user) => {
     }
 } 
 
-export const addPost = async (titulo,cuerpo,usuario,fecha) => {
+export const addPost = async (titulo,cuerpo,usuario,fecha,token) => {
+    const headers = {'token':token}
     try {
-        await axios.post("http://localhost:5000/publicaciones", {titulo,cuerpo,usuario,fecha})
+        await axios.post("http://localhost:5000/publicaciones", {titulo,cuerpo,usuario,fecha}, {headers})
     } catch (error) {
         console.error(error)
     }
 }
 
-export const deletePost = async (id) => {
+export const deletePost = async (id, token) => {
+    const headers = {'token':token}
     try {
-        await axios.delete("http://localhost:5000/publicaciones/"+id)
+        await axios.delete(`http://localhost:5000/publicaciones/${id}`, {headers})
     } catch (error) {
         
     }
 }
 
-export const updatePost = async (id, titulo, cuerpo, usuario, fecha) => {
+export const updatePost = async (id, titulo, cuerpo, usuario, fecha, token) => {
+    const headers = {'token':token}
     try {
-        await axios.put(`http://localhost:5000/publicaciones/${id}`,{titulo,cuerpo,usuario,fecha})
+        await axios.put(`http://localhost:5000/publicaciones/${id}`,{titulo,cuerpo,usuario,fecha}, {headers})
     } catch (error) {
         console.error(error)
     }
 }
 
 // Obtener publicaciones filtradas por fecha
-export const getPostsBetweenDates = async (fecha1, fecha2) => {
+export const getPostsBetweenDates = async (fecha1, fecha2, token) => {
+    const headers = {'token':token}
     try {
-        await axios.get(`http://localhost:5000/publicaciones/${fecha1}/${fecha2}`)
+        await axios.get(`http://localhost:5000/publicaciones/${fecha1}/${fecha2}`, {headers})
     } catch (error) {
         console.error(error)
     }
 }
 
 // Busca las publicaciones de un usuario especifico, entre las fecha seleccionadas
-export const getUserPostsBetweenDates = async (usuario,fecha1,fecha2) => {
+export const getUserPostsBetweenDates = async (usuario,fecha1,fecha2, token) => {
+    const headers = {'token':token}
     try {
-        await axios.get(`http://localhost5000/usuarios/${usuario}/${fecha1}/${fecha2}`)
+        await axios.get(`http://localhost5000/usuarios/${usuario}/${fecha1}/${fecha2}`, {headers})
     } catch (error) {
         console.error(error)
     }

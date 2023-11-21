@@ -32,7 +32,7 @@ api.get('/api', (req,res) =>{
     const token = req.query.token;
     jwt.verify(token,'clavesecreta', (err,decod) = {
         if (!err){
-            var secrets = ('clave bncaria':'987654', 'pin':'1234');
+            var secrets = {'clave bncaria':'987654', 'pin':'1234'};
             res.json(secrets);        
         } else {
             res.send(err);        

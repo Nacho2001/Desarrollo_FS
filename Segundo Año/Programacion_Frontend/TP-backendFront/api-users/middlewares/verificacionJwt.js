@@ -3,14 +3,14 @@ const jwt = require('jsonwebtoken');
 
 // Valida si existe el cliente posee un token y si es valido, si no lo es, enviará un mensaje de error
 exports.verificacion = (req,res) => {
-    const token = req.headers.authorization;
-    if (!token) {
+    let state = false;
+    if (!req.headers.token) {
         res.status(401).json({
             estado:"Error",
             mensaje:"No se entregado un token"
         })
     } else {
-        jwt.verify(token, 'MyNetForever', (err, decoded) => {
+        jwt.verify(req.headers.token, 'MyNetForever', (err, decoded) => {
             if (err){
                 res.status(401).json({
                     estado:"Error",
@@ -18,8 +18,9 @@ exports.verificacion = (req,res) => {
                 })
             } else {
                 req.userId = decoded.userId;
-                next();
+                state = true
             }
         })
+        return state
     }
 }

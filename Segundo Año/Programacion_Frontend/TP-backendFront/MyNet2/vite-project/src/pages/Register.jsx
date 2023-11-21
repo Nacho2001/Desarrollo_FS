@@ -33,7 +33,7 @@ const Register = ({registro}) => {
         } else {
             const res = await createUser(userData.username,userData.password,userData.email)
             switch (res.status) {
-                case 200:
+                case 400:
                     setError(res.data.mensaje)
                     setInputClass("p-invalid");
                     break;

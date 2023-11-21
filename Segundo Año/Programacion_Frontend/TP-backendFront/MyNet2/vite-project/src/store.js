@@ -1,15 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-export const setCredenciales = (username, password, login) => ({
+export const setCredenciales = (username, password, login, token) => ({
     type:'CREDENCIALES',
-    payload: {username, password, login}
+    payload: {username, password, login, token}
 })
 
 const estadoInicial = {
     credencialesUsuario: {
         username: '',
         password: '',
-        login:false
+        login:false,
+        token:''
     }
 }
 

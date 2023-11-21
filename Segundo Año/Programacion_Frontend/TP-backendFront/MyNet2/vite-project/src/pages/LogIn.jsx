@@ -10,7 +10,6 @@ const LogIn = ({registro}) => {
         username:"",
         password:""
     })
-
     const dispatch = useDispatch()
     const [error, setError] = useState("");
     const [inputClass, setInputClass] = useState("")
@@ -27,7 +26,6 @@ const LogIn = ({registro}) => {
             setError("Todos los campos deben ser completados")
         } else {
             let auth = await autenticar(userData.username, userData.password);
-            console.log(auth.status)
             switch (auth.status) {
                 case 401:
                     setError("Usuario o Contrseña incorrectos")
@@ -37,8 +35,9 @@ const LogIn = ({registro}) => {
                     setError("Error del servidor")
                     break;
                 case 200:
-                    // Pasa las credenciales ingresadas a los estados globales y cambia el estado login a true
-                    dispatch(setCredenciales(userData.username, userData.password, true))
+                const token = auth.data.token    
+                // Pasa las credenciales ingresadas a los estados globales, cambia el estado login a true y envia el token
+                    dispatch(setCredenciales(userData.username, userData.password, true, token))
                     break;
                 default:
                     setError("Ocurrió un error desconocido");

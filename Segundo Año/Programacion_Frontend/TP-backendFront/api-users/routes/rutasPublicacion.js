@@ -2,9 +2,6 @@ const express = require("express");
 const router = express.Router();
 const controladorPost = require("../controllers/controladorPublicaciones");
 
-// Importa la funcion verficacion para controlar los tokens
-const checkJWT = require('../middlewares/verificacionJwt');
-
 // Rutas de publicaciones
 
 // Obtener publicaciones

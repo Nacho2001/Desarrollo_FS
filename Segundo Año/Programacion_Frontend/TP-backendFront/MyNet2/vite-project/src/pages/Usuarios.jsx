@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { obtenerUsuarios } from "../callback";
 import CardUsuarios from "../components/CardUsuarios";
+import { useSelector } from "react-redux";
 const Usuarios = () => {
     const [usuarios,setUsuarios] = useState([]);
+    const token = useSelector((state) => state.credencialesUsuario.credencialesUsuario.token)
     useEffect(() => {
         const buscarUsuarios = async () => {
-            setUsuarios(await obtenerUsuarios());
+            setUsuarios(await obtenerUsuarios(token));
         }
         buscarUsuarios();
     }, [])
