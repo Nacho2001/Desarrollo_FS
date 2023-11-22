@@ -25,7 +25,7 @@ const App = () => {
     {label:'Home', icon:'pi pi-home', command:() => {setPageActiva("Home")}},
     {label:'Muro', icon:'pi pi-bookmark', command:() => {setPageActiva("Muro")}},
     {label:'Usuarios', icon:'pi pi-users', command:() => {setPageActiva("Usuarios")}},
-    {label:'Salir', icon:'pi pi-sign-out', command: () => {logout}}
+    {label:'Salir', icon:'pi pi-sign-out', command: () => {() => {logout}}}
 ]
   const renderizar = () => {
     switch (pageActiva) {
