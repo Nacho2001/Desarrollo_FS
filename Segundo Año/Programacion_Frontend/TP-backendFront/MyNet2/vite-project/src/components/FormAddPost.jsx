@@ -19,6 +19,9 @@ const FormAddPost = () => {
     const enviarPost = () => {
         
     }
+    const cancelarPost = () => {
+        
+    }
     return (
         <form className='flex flex-column align-items-center'>
             <div className='flex flex-column mt-3'>
@@ -34,8 +37,8 @@ const FormAddPost = () => {
                 <InputText id="imagen" className="mt-1 w-13rem" placeholder="Link de imagen" onChange={(event) => {setFormData(event)}}/>
             </div>
             <div>
-                <Button label="Enviar" className="mr-2" severity="success" icon="pi pi-send"/>
-                <Button label="Cancelar" severity="danger" icon="pi pi-times"/>
+                <Button label="Enviar" className="mr-2" severity="success" icon="pi pi-send" onClick={() => {enviarPost}}/>
+                <Button label="Cancelar" severity="danger" icon="pi pi-times" onClick={() => {cancelarPost}}/>
             </div>
 
         </form>

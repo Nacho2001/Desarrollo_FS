@@ -1,7 +1,0 @@
-{
-  "name": "MyNet",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "react-vite"
-}

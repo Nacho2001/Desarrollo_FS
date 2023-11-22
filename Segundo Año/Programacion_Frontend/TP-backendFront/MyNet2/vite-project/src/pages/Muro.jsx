@@ -22,7 +22,6 @@ const Muro = () => {
     }
     switch (postMode) {
         case "create":
-            console.log(postMode)
             return (
                 <FormAddPost modo={postMode}/>
             )
