@@ -3,7 +3,7 @@ import { Button } from 'primereact/button';
 import { deletePost, getUniquePost } from '../callback';
 import { useSelector } from "react-redux";
 
-const CardPublicacionMuro = (props, {renderizar}, {modo}) => {
+const CardPublicacionMuro = (props, {renderizar}) => {
     let post = props.publicacion
     const usuario = useSelector((state) => state.credencialesUsuario.credencialesUsuario);
 
@@ -27,9 +27,9 @@ const CardPublicacionMuro = (props, {renderizar}, {modo}) => {
         if (publicacion == 1){
             alert("Ocurrió un error al cargar datos")
             renderizar()
-        } else{
+        } /*else{
             modo("edicion")
-        }
+        }*/
     }
     const header = () => (
         <img alt="" src={post.imagen} />
