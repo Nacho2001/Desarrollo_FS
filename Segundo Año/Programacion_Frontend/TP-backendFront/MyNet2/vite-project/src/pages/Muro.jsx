@@ -6,6 +6,7 @@ import {Button} from 'primereact/button';
 import FormAddPost from "../components/FormAddPost";
 import FormEditPost from "../components/FormEditPost";
 
+
 const Muro = () => {
     const token = useSelector((state) => state.credencialesUsuario.credencialesUsuario.token)
     const username = useSelector((state) => state.credencialesUsuario.credencialesUsuario.username)
@@ -15,9 +16,6 @@ const Muro = () => {
     const getMyPosts = async () => {
         setMisPost(await getUserPosts(username, token))
     }
-    useEffect(() => {
-        getMyPosts();
-    }, [])
     const cambiarModo = (modo) => {
         setModo(modo)
     }
@@ -26,14 +24,14 @@ const Muro = () => {
             return (
                 <FormAddPost cambiarModo={cambiarModo}/>
             )
-            break;
         case "edicion":
             return (
                 <FormEditPost cambiarModo={cambiarModo} publicacion={post}/>
             )
-            break
         default:
-            getMyPosts()
+            useEffect(() => {
+                getMyPosts();
+            }, [])
             return(
                 <>
                     <h2>Mi Muro</h2>
@@ -45,7 +43,6 @@ const Muro = () => {
                     </div>
                 </>
             )
-            break;
     }
 }
 

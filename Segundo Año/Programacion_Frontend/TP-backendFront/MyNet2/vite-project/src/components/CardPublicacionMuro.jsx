@@ -27,9 +27,9 @@ const CardPublicacionMuro = (props, {renderizar}) => {
         if (publicacion == 1){
             alert("Ocurrió un error al cargar datos")
             renderizar()
-        } /*else{
-            modo("edicion")
-        }*/
+        } else{
+            cambiarModo("edicion")
+        }
     }
     const header = () => (
         <img alt="" src={post.imagen} />
