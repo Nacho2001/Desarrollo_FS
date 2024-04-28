@@ -1,10 +1,11 @@
 const User = require("../model/modelUsuario");
 const TokenCheck = require("../middlewares/jwt");
+const hashing = require("../middlewares/hashPasword");
 
 // Obtener todos los usuarios
 exports.getUsers = async (req, res) => {
-    //const tokenValido = TokenCheck.verficacion(req,res);
-    //if (tokenValido == true) {
+    const tokenValido = TokenCheck.verificacion(req,res);
+    if (tokenValido == true) {
         try {
             const users = await User.findAll()
             res.status(200).json({
@@ -18,7 +19,7 @@ exports.getUsers = async (req, res) => {
                 mensaje: 'Error del servidor'
             })
         }
-    //}
+    }
 }
 
 // Busqueda de usuario por id
@@ -66,6 +67,11 @@ exports.createUser = async(req,res )=> {
                 }
             })
             if (searchEmail == 0) {
+                // Antes de crear el usuario, encripta la clave que guardará
+                const closedPassword = hashing.hashPassword(commingUser.password);
+                // Luego reemplaza la clave no encriptada por la clave generada
+                commingUser.password = closedPassword
+                console.log(commingUser);
                 // Si el usuario no existe, lo crea
                 await User.create(req.body);
                 res.status(201).json({
@@ -95,8 +101,8 @@ exports.createUser = async(req,res )=> {
 
 // Borrar usuario
 exports.deleteUser = async (req,res) => {
-    //const validado = TokenCheck.verificacion(req,res);
-    //if (validado == true) {
+    const validado = TokenCheck.verificacion(req,res);
+    if (validado == true) {
         try { // Borra un usuario con el metodo destroy, buscando el usuario que coincida con el id enviado
             const usuario = await User.destroy({
                 where: {
@@ -114,13 +120,13 @@ exports.deleteUser = async (req,res) => {
                 mensaje:"Ocurrió un error al eliminar el usuario"
             })
         }
-    //}
+    }
 }
 
 //Actualizar usuario
 exports.updateUser = async (req,res) => {
-    //const validado = TokenCheck.verificacion(req,res);
-    //if (validado == true) {
+    const validado = TokenCheck.verificacion(req,res);
+    if (validado == true) {
         // Crea las contantes con el id y los datos actualizados...
         const userId = req.params.id;
         const dataUsuario = req.body;
@@ -143,5 +149,5 @@ exports.updateUser = async (req,res) => {
                 mensaje:"Error al actualizar el usuario"
             })
         }   
-    //}
+    }
 }

@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 
 // validacion del cliente
-exports.verficacion = (req, res) => {
+exports.verificacion = (req, res) => {
     let state = false;
     if (!req.headers.token){
         res.status(401).json({
