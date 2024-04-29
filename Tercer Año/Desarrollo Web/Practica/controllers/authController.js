@@ -44,3 +44,7 @@ exports.autenticacion = async (req,res) => {
         })
     }
 }
+
+// Laboratorios pendientes: 
+// -- Emitir token nuevo luego de que haya expirado el anterior
+// -- Revocar un token
