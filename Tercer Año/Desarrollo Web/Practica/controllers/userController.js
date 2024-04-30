@@ -24,30 +24,33 @@ exports.getUsers = async (req, res) => {
 
 // Busqueda de usuario por id
 exports.getUniqueUser = async (req,res) => {
-    const usuarioSolicitado = req.params.usuario
-    try { // Busca en la BD un usuario por la clave primaria, en este caso, el id
-        const usuarioBuscado = await User.findAll({
-            where: {
-                username: usuarioSolicitado
+    const tokenValido = TokenCheck.verificacion(req,res);
+    if (tokenValido == true) {
+        const usuarioSolicitado = req.params.usuario
+        try { // Busca en la BD un usuario por la clave primaria, en este caso, el id
+            const usuarioBuscado = await User.findAll({
+                where: {
+                    username: usuarioSolicitado
+                }
+            });
+            if (usuarioBuscado == null){
+                res.status(404).json({
+                    estado:"error",
+                    mensaje:"No se ha encontrado el usuario solicitado"
+                })
+            } else {
+                res.status(200).json({ // Si tuvo exito, devuelve el usuario solicitado
+                    estado: "Ok",
+                    usuarioBuscado
+                })
             }
-        });
-        if (usuarioBuscado == null){
-            res.status(404).json({
-                estado:"error",
-                mensaje:"No se ha encontrado el usuario solicitado"
-            })
-        } else {
-            res.status(200).json({ // Si tuvo exito, devuelve el usuario solicitado
-                estado: "Ok",
-                usuarioBuscado
+        } catch (error) { // sino, obtiene el mensaje de error
+            console.error(error);
+            res.status(500).json({
+                estado:"Error",
+                mensaje: "No se ha podido obtener los datos"
             })
         }
-    } catch (error) { // sino, obtiene el mensaje de error
-        console.error(error);
-        res.status(500).json({
-            estado:"Error",
-            mensaje: "No se ha podido obtener los datos"
-        })
     }
 }
 

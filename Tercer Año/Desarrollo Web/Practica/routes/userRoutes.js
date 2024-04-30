@@ -8,9 +8,6 @@ const controller = require('../controllers/userController');
 // Obtener usuarios
 router.get('/', controller.getUsers);
 
-// Crear usuario nuevo
-router.post('/', controller.createUser);
-
 // Obtener usuario por Username
 router.get('/:usuario', controller.getUniqueUser);
 

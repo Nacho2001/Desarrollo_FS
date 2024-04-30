@@ -9,6 +9,7 @@ const sequelize = require('./config/db');
 // Obtiene los archivo de rutas
 const UserRoutes = require('./routes/userRoutes');
 const AuthRoute = require('./routes/authRoute');
+const registerRoute = require('./routes/registerRoute');
 
 // Autenticación en la base
 sequelize.authenticate()
@@ -24,8 +25,9 @@ app.use(express.json());
 app.use(cors());
 
 // Configuración de los endpoints
-app.use('/users', UserRoutes)
-app.use('/auth', AuthRoute)
+app.use('/user', UserRoutes);
+app.use('/login', AuthRoute);
+app.use('/register', registerRoute);
 
 // Define el puerto de la api
 const PORT = 3579
