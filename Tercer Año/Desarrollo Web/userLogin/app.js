@@ -4,7 +4,7 @@ const app = express();
 const cors = require('cors');
 
 // Datos de acceso a la base
-const sequelize = require('./config/db');
+const sequelize = require('./db');
 
 // Obtiene los archivo de rutas
 const UserRoutes = require('./routes/userRoutes');
