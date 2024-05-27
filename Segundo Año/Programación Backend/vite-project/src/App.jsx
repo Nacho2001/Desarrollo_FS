@@ -5,7 +5,7 @@ import { Dashboard } from './pages/Dashboard'
 import { Profile } from './pages/Profile'
 import { Admin } from './pages/Admin'
 import { ProtectedRoute } from './components/ProtectedRoutes'
-import { Login } from './pages/login'
+//import { Login } from './pages/login'
 
 function App(){
   const [usuario,setUsuario] = useState(null);
