@@ -3,7 +3,7 @@ import { Task } from "./entities/task.entity";
 
 export const taskProviders = [
     {
-        provide: 'PHOTO_REPOSITORY',
+        provide: 'TASKS_REPOSITORY',
         useFactory: (dataSource: DataSource) => dataSource.getRepository(Task),
         inject: ['DATA_SOURCE']
     }
