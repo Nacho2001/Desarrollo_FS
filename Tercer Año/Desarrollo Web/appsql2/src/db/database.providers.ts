@@ -11,7 +11,7 @@ export const databaseProviders = [
         port: 3306,
         username: 'usuarioAPI',
         password: 'usuarioAPI',
-        database: 'tasks',
+        database: 'tasks2',
         entities: [
             __dirname + '/../**/*.entity{.ts,.js}',
         ],
