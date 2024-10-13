@@ -1,0 +1,14 @@
+// Importar libreria math
+
+import 'dart:math';
+
+// Exponenciacion
+pow();
+
+// Eleva 2 al cuadrado
+print(pow(2,2));
+
+// Raiz cuadrada
+sqrt();
+// Raiz cuadrada de 9
+print(sqrt(9));

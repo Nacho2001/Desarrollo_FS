@@ -1,0 +1,1 @@
+Esta carpeta contiene los componentes que se utilizan en todo el código
